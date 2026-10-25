@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/SirJohnyD/yomiden-extensions/main/schema/index.schema.json",
+  "title": "YDN catalog (dist/index.json)",
+  "type": "object",
+  "required": ["schemaVersion", "name", "generatedAt", "upstreams", "extensions"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "name": { "type": "string" },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "upstreams": {
+      "type": "object",
+      "required": ["keiyoushi", "lnreader", "lncrawl"],
+      "additionalProperties": false,
+      "properties": {
+        "keiyoushi": { "$ref": "#/$defs/upstream" },
+        "lnreader": { "$ref": "#/$defs/upstream" },
+        "lncrawl": { "$ref": "#/$defs/upstream" }
+      }
+    },
+    "extensions": { "type": "array", "items": { "$ref": "#/$defs/extension" } }
+  },
+  "$defs": {
+    "upstream": {
+      "type": "object",
+      "required": ["url", "commit", "etag", "count", "published"],
+      "properties": {
+        "url": { "type": "string" },
+        "commit": { "type": ["string", "null"] },
+        "etag": { "type": ["string", "null"] },
+        "count": { "type": "integer", "minimum": 0 },
+        "published": { "type": "integer", "minimum": 0 },
+        "generated": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": ["id", "name", "lang", "homeUrl"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "description": "Mihon source id (64-bit, kept as a string)" },
+        "name": { "type": "string" },
+        "lang": { "type": "string" },
+        "homeUrl": { "type": "string" }
+      }
+    },
+    "extension": {
+      "type": "object",
+      "required": ["id", "name", "lang", "contentType", "nsfw", "origin", "package", "version", "versionCode", "url", "sha256", "iconUrl", "sites", "signer", "sources", "needsReview"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "name": { "type": "string" },
+        "lang": { "type": "string" },
+        "contentType": { "enum": ["comic", "novel"] },
+        "nsfw": { "type": "boolean" },
+        "origin": { "enum": ["keiyoushi", "lnreader", "lncrawl"] },
+        "package": { "enum": ["apk", "js"] },
+        "version": { "type": "string" },
+        "versionCode": { "type": ["integer", "null"] },
+        "url": { "type": "string", "format": "uri" },
+        "sha256": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" },
+        "iconUrl": { "type": "string" },
+        "sites": { "type": "array", "items": { "type": "string" } },
+        "signer": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" },
+        "sources": { "type": "array", "items": { "$ref": "#/$defs/source" } },
+        "needsReview": { "type": "boolean" },
+        "upstream": {
+          "type": "object",
+          "required": ["file", "commit", "template", "customized"],
+          "additionalProperties": false,
+          "properties": {
+            "file": { "type": "string" },
+            "commit": { "type": "string" },
+            "template": { "type": "string" },
+            "customized": { "type": "array", "items": { "type": "string" } }
+          }
+        }
+      },
+      "allOf": [
+        {
+          "if": { "properties": { "package": { "const": "apk" } } },
+          "then": { "properties": { "versionCode": { "type": "integer" }, "signer": { "type": "string" }, "origin": { "const": "keiyoushi" } } },
+          "else": { "properties": { "versionCode": { "type": "null" }, "signer": { "type": "null" }, "sha256": { "type": "string" }, "sources": { "maxItems": 0 } } }
+        },
+        {
+          "if": { "properties": { "origin": { "const": "lncrawl" } } },
+          "then": { "required": ["upstream"] }
+        }
+      ]
+    }
+  }
+}

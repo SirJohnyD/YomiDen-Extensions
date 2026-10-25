@@ -1,0 +1,1136 @@
+{
+ "generatorRev": 1,
+ "lncrawl": {
+  "repo": "https://github.com/lncrawl/lightnovel-crawler.git",
+  "branch": "dev",
+  "commit": "59b0382d51927953aa8120c5de62dab23ce3f731",
+  "indexVersion": 1785764141,
+  "crawlers": 446
+ },
+ "counts": {
+  "generated": 46,
+  "skipped": 82,
+  "byTemplate": {
+   "NovelFullTemplate:novel": 9,
+   "WordpressMangaTemplate:comic": 10,
+   "MangaStreamTemplate:novel": 11,
+   "MadaraTemplate:novel": 6,
+   "WordpressTemplate:novel": 10
+  }
+ },
+ "plugins": [
+  {
+   "id": "lncrawl-allnovel",
+   "name": "All Novel",
+   "lang": "en",
+   "contentType": "novel",
+   "version": "1.0.1774172045",
+   "path": "plugins/en/lncrawl-allnovel.js",
+   "baseUrls": [
+    "https://allnovel.org/",
+    "https://www.allnovel.org/"
+   ],
+   "template": "NovelFullTemplate",
+   "jsTemplate": "novelfull",
+   "file": "sources/en/a/allnovel.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-allnovelfull",
+   "name": "All Novel Full",
+   "lang": "en",
+   "contentType": "novel",
+   "version": "1.0.1756838180",
+   "path": "plugins/en/lncrawl-allnovelfull.js",
+   "baseUrls": [
+    "https://allnovelfull.com/",
+    "https://allnovelfull.net/",
+    "https://novgo.net/"
+   ],
+   "template": "NovelFullTemplate",
+   "jsTemplate": "novelfull",
+   "file": "sources/en/a/allnovelfull.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-aquamanga",
+   "name": "Aqua Manga",
+   "lang": "en",
+   "contentType": "comic",
+   "version": "1.0.1781388606",
+   "path": "plugins/en/lncrawl-aquamanga.js",
+   "baseUrls": [
+    "https://aquareader.net/",
+    "https://aquareader.org/"
+   ],
+   "template": "WordpressMangaTemplate",
+   "jsTemplate": "madara",
+   "file": "sources/en/a/aquamanga.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-centralnovel",
+   "name": "Central Novel",
+   "lang": "pt",
+   "contentType": "novel",
+   "version": "1.0.1784829411",
+   "path": "plugins/pt/lncrawl-centralnovel.js",
+   "baseUrls": [
+    "https://centralnovel.com/"
+   ],
+   "template": "MangaStreamTemplate",
+   "jsTemplate": "mangastream",
+   "file": "sources/pt/centralnovel.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-ckandawrites.online",
+   "name": "Ckandawrites Online",
+   "lang": "en",
+   "contentType": "novel",
+   "version": "1.0.1785615708",
+   "path": "plugins/en/lncrawl-ckandawrites.online.js",
+   "baseUrls": [
+    "https://ckandawrites.online/"
+   ],
+   "template": "MangaStreamTemplate",
+   "jsTemplate": "mangastream",
+   "file": "sources/en/c/ckandawrites.online.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-coffeemanga",
+   "name": "Coffee Manga",
+   "lang": "en",
+   "contentType": "comic",
+   "version": "1.0.1775456139",
+   "path": "plugins/en/lncrawl-coffeemanga.js",
+   "baseUrls": [
+    "https://coffeemanga.io/"
+   ],
+   "template": "WordpressMangaTemplate",
+   "jsTemplate": "madara",
+   "file": "sources/en/c/coffeemanga.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-dobytranslations",
+   "name": "dobytranslations.com",
+   "lang": "en",
+   "contentType": "novel",
+   "version": "1.0.1785615708",
+   "path": "plugins/en/lncrawl-dobytranslations.js",
+   "baseUrls": [
+    "https://dobytranslations.com/"
+   ],
+   "template": "MangaStreamTemplate",
+   "jsTemplate": "mangastream",
+   "file": "sources/en/d/dobytranslations.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-duskblossoms",
+   "name": "Dusk Blossoms",
+   "lang": "en",
+   "contentType": "novel",
+   "version": "1.0.1785600849",
+   "path": "plugins/en/lncrawl-duskblossoms.js",
+   "baseUrls": [
+    "https://duskblossoms.com/"
+   ],
+   "template": "MadaraTemplate",
+   "jsTemplate": "madara",
+   "file": "sources/en/d/duskblossoms.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-ebotnovel",
+   "name": "ebotnovel.com",
+   "lang": "en",
+   "contentType": "novel",
+   "version": "1.0.1721758366",
+   "path": "plugins/en/lncrawl-ebotnovel.js",
+   "baseUrls": [
+    "https://ebotnovel.com/"
+   ],
+   "template": "MangaStreamTemplate",
+   "jsTemplate": "mangastream",
+   "file": "sources/en/e/ebotnovel.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-fantasyworldonline",
+   "name": "Fantasy World Online",
+   "lang": "en",
+   "contentType": "novel",
+   "version": "1.0.1775456139",
+   "path": "plugins/en/lncrawl-fantasyworldonline.js",
+   "baseUrls": [
+    "https://www.f-w-o.com/",
+    "https://f-w-o.com/"
+   ],
+   "template": "WordpressTemplate",
+   "jsTemplate": "madara",
+   "file": "sources/en/f/fantasyworldonline.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-freemanga",
+   "name": "Free Manga",
+   "lang": "en",
+   "contentType": "comic",
+   "version": "1.0.1775456139",
+   "path": "plugins/en/lncrawl-freemanga.js",
+   "baseUrls": [
+    "https://freemanga.me/"
+   ],
+   "template": "WordpressMangaTemplate",
+   "jsTemplate": "madara",
+   "file": "sources/en/f/freemanga.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-fuyunovel",
+   "name": "Fuyu Novel",
+   "lang": "id",
+   "contentType": "novel",
+   "version": "1.0.1785615708",
+   "path": "plugins/id/lncrawl-fuyunovel.js",
+   "baseUrls": [
+    "https://fuyu-novel.my.id/"
+   ],
+   "template": "MangaStreamTemplate",
+   "jsTemplate": "mangastream",
+   "file": "sources/id/fuyunovel.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-hiraethtranslation",
+   "name": "Hiraeth Translation",
+   "lang": "en",
+   "contentType": "novel",
+   "version": "1.0.1785613888",
+   "path": "plugins/en/lncrawl-hiraethtranslation.js",
+   "baseUrls": [
+    "https://hiraethtranslation.com/"
+   ],
+   "template": "MadaraTemplate",
+   "jsTemplate": "madara",
+   "file": "sources/en/h/hiraethtranslation.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-illusia",
+   "name": "illusia.com.br",
+   "lang": "pt",
+   "contentType": "novel",
+   "version": "1.0.1775148284",
+   "path": "plugins/pt/lncrawl-illusia.js",
+   "baseUrls": [
+    "https://illusia.com.br/"
+   ],
+   "template": "WordpressTemplate",
+   "jsTemplate": "madara",
+   "file": "sources/pt/illusia.py",
+   "customized": [
+    "parse_title",
+    "parse_cover"
+   ]
+  },
+  {
+   "id": "lncrawl-jobnib",
+   "name": "jobnib.com",
+   "lang": "en",
+   "contentType": "novel",
+   "version": "1.0.1785613888",
+   "path": "plugins/en/lncrawl-jobnib.js",
+   "baseUrls": [
+    "https://jobnib.com/"
+   ],
+   "template": "MangaStreamTemplate",
+   "jsTemplate": "mangastream",
+   "file": "sources/en/j/jobnib.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-kissmanga",
+   "name": "Kiss Manga",
+   "lang": "en",
+   "contentType": "comic",
+   "version": "1.0.1775456139",
+   "path": "plugins/en/lncrawl-kissmanga.js",
+   "baseUrls": [
+    "https://kissmanga.in/"
+   ],
+   "template": "WordpressMangaTemplate",
+   "jsTemplate": "madara",
+   "file": "sources/en/k/kissmanga.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-knoxt",
+   "name": "knoxt.space",
+   "lang": "en",
+   "contentType": "novel",
+   "version": "1.0.1785622925",
+   "path": "plugins/en/lncrawl-knoxt.js",
+   "baseUrls": [
+    "https://knoxt.space/"
+   ],
+   "template": "MangaStreamTemplate",
+   "jsTemplate": "mangastream",
+   "file": "sources/en/k/knoxt.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-kolnovel",
+   "name": "kolnovel.com",
+   "lang": "ar",
+   "contentType": "novel",
+   "version": "1.0.1677111962",
+   "path": "plugins/ar/lncrawl-kolnovel.js",
+   "baseUrls": [
+    "https://kolnovel.com/"
+   ],
+   "template": "MangaStreamTemplate",
+   "jsTemplate": "mangastream",
+   "file": "sources/ar/kolnovel.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-lightnovelfr",
+   "name": "Lightnovel Fr",
+   "lang": "fr",
+   "contentType": "novel",
+   "version": "1.0.1785615708",
+   "path": "plugins/fr/lncrawl-lightnovelfr.js",
+   "baseUrls": [
+    "https://lightnovelfr.com/"
+   ],
+   "template": "MangaStreamTemplate",
+   "jsTemplate": "mangastream",
+   "file": "sources/fr/lightnovelfr.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-lightnovelheaven",
+   "name": "Light Novel Heaven",
+   "lang": "en",
+   "contentType": "novel",
+   "version": "1.0.1775456139",
+   "path": "plugins/en/lncrawl-lightnovelheaven.js",
+   "baseUrls": [
+    "https://lightnovelheaven.com/"
+   ],
+   "template": "WordpressTemplate",
+   "jsTemplate": "madara",
+   "file": "sources/en/l/lightnovelheaven.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-mangaread",
+   "name": "Manga Read",
+   "lang": "en",
+   "contentType": "comic",
+   "version": "1.0.1775456139",
+   "path": "plugins/en/lncrawl-mangaread.js",
+   "baseUrls": [
+    "https://www.mangaread.org/"
+   ],
+   "template": "WordpressMangaTemplate",
+   "jsTemplate": "madara",
+   "file": "sources/en/m/mangaread.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-mangarosie",
+   "name": "Manga Rosie",
+   "lang": "en",
+   "contentType": "comic",
+   "version": "1.0.1775456139",
+   "path": "plugins/en/lncrawl-mangarosie.js",
+   "baseUrls": [
+    "https://mangarosie.me/",
+    "https://mangarosie.love/"
+   ],
+   "template": "WordpressMangaTemplate",
+   "jsTemplate": "madara",
+   "file": "sources/en/m/mangarosie.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-mangatx",
+   "name": "Manga Tx",
+   "lang": "en",
+   "contentType": "comic",
+   "version": "1.0.1775148284",
+   "path": "plugins/en/lncrawl-mangatx.js",
+   "baseUrls": [
+    "https://mangatx.com/"
+   ],
+   "template": "WordpressMangaTemplate",
+   "jsTemplate": "madara",
+   "file": "sources/en/m/mangatx.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-manhuaplus",
+   "name": "Manhua Plus",
+   "lang": "en",
+   "contentType": "comic",
+   "version": "1.0.1775456139",
+   "path": "plugins/en/lncrawl-manhuaplus.js",
+   "baseUrls": [
+    "https://manhuaplus.online/"
+   ],
+   "template": "WordpressMangaTemplate",
+   "jsTemplate": "madara",
+   "file": "sources/en/m/manhuaplus.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-noblemtl",
+   "name": "Noble Mtl",
+   "lang": "en",
+   "contentType": "novel",
+   "version": "1.0.1665419409",
+   "path": "plugins/en/lncrawl-noblemtl.js",
+   "baseUrls": [
+    "https://noblemtl.com/"
+   ],
+   "template": "MangaStreamTemplate",
+   "jsTemplate": "mangastream",
+   "file": "sources/en/n/noblemtl.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-novel-bin",
+   "name": "Novel Bin",
+   "lang": "en",
+   "contentType": "novel",
+   "version": "1.0.1785704342",
+   "path": "plugins/en/lncrawl-novel-bin.js",
+   "baseUrls": [
+    "https://novel-bin.com/"
+   ],
+   "template": "NovelFullTemplate",
+   "jsTemplate": "novelfull",
+   "file": "sources/en/n/novel-bin.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-novel-bin.net",
+   "name": "Novel Bin Net",
+   "lang": "en",
+   "contentType": "novel",
+   "version": "1.0.1785704342",
+   "path": "plugins/en/lncrawl-novel-bin.net.js",
+   "baseUrls": [
+    "https://novel-bin.net/"
+   ],
+   "template": "NovelFullTemplate",
+   "jsTemplate": "novelfull",
+   "file": "sources/en/n/novel-bin.net.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-novelbin.net",
+   "name": "Novelbin Net",
+   "lang": "en",
+   "contentType": "novel",
+   "version": "1.0.1669734061",
+   "path": "plugins/en/lncrawl-novelbin.net.js",
+   "baseUrls": [
+    "https://novelbin.net/"
+   ],
+   "template": "NovelFullTemplate",
+   "jsTemplate": "novelfull",
+   "file": "sources/en/n/novelbin.net.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-novelfull",
+   "name": "Novel Full",
+   "lang": "en",
+   "contentType": "novel",
+   "version": "1.0.1711433823",
+   "path": "plugins/en/lncrawl-novelfull.js",
+   "baseUrls": [
+    "http://novelfull.com/",
+    "https://novelfull.com/",
+    "https://novelfull.net/"
+   ],
+   "template": "NovelFullTemplate",
+   "jsTemplate": "novelfull",
+   "file": "sources/en/n/novelfull.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-novelhard",
+   "name": "Novel Hard",
+   "lang": "en",
+   "contentType": "novel",
+   "version": "1.0.1775456139",
+   "path": "plugins/en/lncrawl-novelhard.js",
+   "baseUrls": [
+    "https://novelhard.com/"
+   ],
+   "template": "WordpressTemplate",
+   "jsTemplate": "madara",
+   "file": "sources/en/n/novelhard.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-novelnextz",
+   "name": "novelnextz.com",
+   "lang": "en",
+   "contentType": "novel",
+   "version": "1.0.1711944256",
+   "path": "plugins/en/lncrawl-novelnextz.js",
+   "baseUrls": [
+    "https://novelnextz.com/"
+   ],
+   "template": "NovelFullTemplate",
+   "jsTemplate": "novelfull",
+   "file": "sources/en/n/novelnextz.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-novlove",
+   "name": "novlove.com",
+   "lang": "en",
+   "contentType": "novel",
+   "version": "1.0.1748576569",
+   "path": "plugins/en/lncrawl-novlove.js",
+   "baseUrls": [
+    "https://novlove.com/"
+   ],
+   "template": "NovelFullTemplate",
+   "jsTemplate": "novelfull",
+   "file": "sources/en/n/novlove.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-pandamanga",
+   "name": "Panda Mangaxyz",
+   "lang": "en",
+   "contentType": "novel",
+   "version": "1.0.1665418828",
+   "path": "plugins/en/lncrawl-pandamanga.js",
+   "baseUrls": [
+    "https://www.pandamanga.xyz/"
+   ],
+   "template": "MangaStreamTemplate",
+   "jsTemplate": "mangastream",
+   "file": "sources/en/p/pandamanga.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-pianmanga",
+   "name": "Pian Manga",
+   "lang": "en",
+   "contentType": "comic",
+   "version": "1.0.1775456139",
+   "path": "plugins/en/lncrawl-pianmanga.js",
+   "baseUrls": [
+    "https://pianmanga.com/"
+   ],
+   "template": "WordpressMangaTemplate",
+   "jsTemplate": "madara",
+   "file": "sources/en/p/pianmanga.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-readmtl",
+   "name": "readmtl.com",
+   "lang": "en",
+   "contentType": "novel",
+   "version": "1.0.1665431613",
+   "path": "plugins/en/lncrawl-readmtl.js",
+   "baseUrls": [
+    "https://readmtl.com/"
+   ],
+   "template": "MadaraTemplate",
+   "jsTemplate": "madara",
+   "file": "sources/en/r/readmtl.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-readnovelfull",
+   "name": "Read Novel Full",
+   "lang": "en",
+   "contentType": "novel",
+   "version": "1.0.1664887435",
+   "path": "plugins/en/lncrawl-readnovelfull.js",
+   "baseUrls": [
+    "https://readnovelfull.com/"
+   ],
+   "template": "NovelFullTemplate",
+   "jsTemplate": "novelfull",
+   "file": "sources/en/r/readnovelfull.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-readwebnovels",
+   "name": "Read Web Novels",
+   "lang": "en",
+   "contentType": "novel",
+   "version": "1.0.1775456139",
+   "path": "plugins/en/lncrawl-readwebnovels.js",
+   "baseUrls": [
+    "https://readwebnovels.net/"
+   ],
+   "template": "WordpressTemplate",
+   "jsTemplate": "madara",
+   "file": "sources/en/r/readwebnovels.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-toonily",
+   "name": "toonily.com",
+   "lang": "en",
+   "contentType": "comic",
+   "version": "1.0.1775148284",
+   "path": "plugins/en/lncrawl-toonily.js",
+   "baseUrls": [
+    "https://toonily.com/"
+   ],
+   "template": "WordpressMangaTemplate",
+   "jsTemplate": "madara",
+   "file": "sources/en/t/toonily.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-translatinotaku",
+   "name": "Translatin Otaku",
+   "lang": "en",
+   "contentType": "novel",
+   "version": "1.0.1785613888",
+   "path": "plugins/en/lncrawl-translatinotaku.js",
+   "baseUrls": [
+    "https://translatinotaku.net/"
+   ],
+   "template": "MadaraTemplate",
+   "jsTemplate": "madara",
+   "file": "sources/en/t/translatinotaku.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-vipnovel",
+   "name": "Vip Novel",
+   "lang": "en",
+   "contentType": "novel",
+   "version": "1.0.1775456139",
+   "path": "plugins/en/lncrawl-vipnovel.js",
+   "baseUrls": [
+    "https://vipnovel.com/"
+   ],
+   "template": "WordpressTemplate",
+   "jsTemplate": "madara",
+   "file": "sources/en/v/vipnovel.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-wbnovel",
+   "name": "WB Novel",
+   "lang": "id",
+   "contentType": "novel",
+   "version": "1.0.1775456139",
+   "path": "plugins/id/lncrawl-wbnovel.js",
+   "baseUrls": [
+    "https://wbnovel.com/"
+   ],
+   "template": "WordpressTemplate",
+   "jsTemplate": "madara",
+   "file": "sources/id/wbnovel.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-webnovelover",
+   "name": "Web Nove Lover",
+   "lang": "id",
+   "contentType": "novel",
+   "version": "1.0.1775456139",
+   "path": "plugins/id/lncrawl-webnovelover.js",
+   "baseUrls": [
+    "https://www.webnovelover.com/"
+   ],
+   "template": "WordpressTemplate",
+   "jsTemplate": "madara",
+   "file": "sources/id/webnovelover.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-webnoveltranslations",
+   "name": "Web Novel Translations",
+   "lang": "en",
+   "contentType": "novel",
+   "version": "1.0.1785613888",
+   "path": "plugins/en/lncrawl-webnoveltranslations.js",
+   "baseUrls": [
+    "https://webnoveltranslations.com/"
+   ],
+   "template": "MadaraTemplate",
+   "jsTemplate": "madara",
+   "file": "sources/en/w/webnoveltranslations.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-wondernovels",
+   "name": "Wonder Novels",
+   "lang": "en",
+   "contentType": "novel",
+   "version": "1.0.1775456139",
+   "path": "plugins/en/lncrawl-wondernovels.js",
+   "baseUrls": [
+    "https://wondernovels.com/"
+   ],
+   "template": "WordpressTemplate",
+   "jsTemplate": "madara",
+   "file": "sources/en/w/wondernovels.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-wuxiaworldsite",
+   "name": "Wuxia World Site",
+   "lang": "en",
+   "contentType": "novel",
+   "version": "1.0.1785681356",
+   "path": "plugins/en/lncrawl-wuxiaworldsite.js",
+   "baseUrls": [
+    "https://wuxiaworld.site/"
+   ],
+   "template": "MadaraTemplate",
+   "jsTemplate": "madara",
+   "file": "sources/en/w/wuxiaworldsite.py",
+   "customized": []
+  },
+  {
+   "id": "lncrawl-zetrotranslation",
+   "name": "Zetro Translation",
+   "lang": "en",
+   "contentType": "novel",
+   "version": "1.0.1775456139",
+   "path": "plugins/en/lncrawl-zetrotranslation.js",
+   "baseUrls": [
+    "https://zetrotranslation.com/"
+   ],
+   "template": "WordpressTemplate",
+   "jsTemplate": "madara",
+   "file": "sources/en/z/zetrotranslation.py",
+   "customized": []
+  }
+ ],
+ "skipped": [
+  {
+   "file": "sources/en/1/1stkissnovel.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/a/amnesiactl.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/a/arangscans.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (This site can not be reached)"
+  },
+  {
+   "file": "sources/en/a/arcanetranslations.py",
+   "template": "MangaStreamTemplate",
+   "reason": "custom logic: select_chapter_body"
+  },
+  {
+   "file": "sources/en/a/asadatrans.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/b/bonnovel.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Cloudflare Error 1000, the zone's DNS points at a prohibited address)"
+  },
+  {
+   "file": "sources/en/b/boxnovel.py",
+   "template": "MadaraTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/b/boxnovelonline.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (This site can not be reached)"
+  },
+  {
+   "file": "sources/en/b/bronovel.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/c/centinni.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/c/clicknovel.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (The domain has expired)"
+  },
+  {
+   "file": "sources/en/d/daonovel.py",
+   "template": "WordpressTemplate",
+   "reason": "custom logic: select_chapter_tags"
+  },
+  {
+   "file": "sources/en/f/fanstrans.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/f/fenrirtranslations.py",
+   "template": "MadaraTemplate",
+   "reason": "custom logic: select_chapter_tags"
+  },
+  {
+   "file": "sources/en/f/freefullnovel.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/h/hanyunovels.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/h/harimanga.py",
+   "template": "WordpressMangaTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/h/hotnovelfull.py",
+   "template": "NovelFullTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/i/imperfectcomic.py",
+   "template": "MangaStreamTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/i/isekaiscan.py",
+   "template": "WordpressMangaTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/i/isekaiscaneu.py",
+   "template": "WordpressMangaTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/k/kingmanga.py",
+   "template": "WordpressMangaTemplate",
+   "reason": "all base urls rejected by lncrawl (Domain is parked and for sale)"
+  },
+  {
+   "file": "sources/en/k/kolnovelnewsite.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/l/latestnovel.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Domain is parked and for sale)"
+  },
+  {
+   "file": "sources/en/l/librarynovel.py",
+   "template": "WordpressTemplate",
+   "reason": "custom logic: select_chapter_tags"
+  },
+  {
+   "file": "sources/en/l/lightnovelkiss.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (This site can not be reached)"
+  },
+  {
+   "file": "sources/en/l/lightnovelshub.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (No longer provides lightnovels)"
+  },
+  {
+   "file": "sources/en/l/lightnoveltv.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (This site can not be reached)"
+  },
+  {
+   "file": "sources/en/l/listnovel.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/l/luminarynovels.py",
+   "template": "MadaraTemplate",
+   "reason": "custom logic: select_chapter_tags"
+  },
+  {
+   "file": "sources/en/m/manga-tx.py",
+   "template": "WordpressMangaTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/m/mangachilllove.py",
+   "template": "WordpressMangaTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/m/mangarockteam.py",
+   "template": "MadaraTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/m/mangastic.py",
+   "template": "WordpressMangaTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/m/mangaweebs.py",
+   "template": "WordpressMangaTemplate",
+   "reason": "all base urls rejected by lncrawl (Domain is parked and for sale)"
+  },
+  {
+   "file": "sources/en/m/manhwachill.py",
+   "template": "WordpressMangaTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/m/meownovel.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/m/mixednovel.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/m/mltnovels.py",
+   "template": "MangaStreamTemplate",
+   "reason": "all base urls rejected by lncrawl (Redirects to an ad network)"
+  },
+  {
+   "file": "sources/en/m/mostnovel.py",
+   "template": "WordpressTemplate",
+   "reason": "custom logic: select_chapter_tags"
+  },
+  {
+   "file": "sources/en/m/myboxnovel.py",
+   "template": "MadaraTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/n/neosekaitranslations.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/n/newnovelorg.py",
+   "template": "MadaraTemplate",
+   "reason": "all base urls rejected by lncrawl (Redirects to a parked lander)"
+  },
+  {
+   "file": "sources/en/n/noobchan.py",
+   "template": "WordpressMangaTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/n/novelarrow.py",
+   "template": "NovelFullTemplate",
+   "reason": "custom logic: _get_slug, _get_chapter_id, _api_url, _get_json, _extract_payload, select_chapter_tags, parse_chapter_item, download_chapter, _meta_content"
+  },
+  {
+   "file": "sources/en/n/novelbin.py",
+   "template": "NovelFullTemplate",
+   "reason": "custom logic: select_chapter_tags"
+  },
+  {
+   "file": "sources/en/n/novelcake.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/n/novelcrush.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/n/novelfullplus.py",
+   "template": "NovelFullTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/n/novelhulk.py",
+   "template": "NovelFullTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/n/novelhunters.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/n/novelmic.py",
+   "template": "WordpressMangaTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/n/novelmultiverse.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/n/novelnext.py",
+   "template": "NovelFullTemplate",
+   "reason": "custom logic: select_chapter_body"
+  },
+  {
+   "file": "sources/en/n/novelsite.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/n/novelsrock.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Web server is down)"
+  },
+  {
+   "file": "sources/en/n/noveltranslate.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/o/omgnovels.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/o/overabook.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/p/pandanovelorg.py",
+   "template": "NovelFullTemplate",
+   "reason": "all base urls rejected by lncrawl (Domain is parked and for sale)"
+  },
+  {
+   "file": "sources/en/p/peryinfo.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/r/randomnovel.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/r/readnovelz.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Redirects to webnovelonline.net)"
+  },
+  {
+   "file": "sources/en/s/skynovel.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/s/sonicmtl.py",
+   "template": "MadaraTemplate",
+   "reason": "custom logic: select_chapter_body"
+  },
+  {
+   "file": "sources/en/s/supernovel.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Domain is parked and for sale)"
+  },
+  {
+   "file": "sources/en/s/systemtranslation.py",
+   "template": "MangaStreamTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/t/tamagotl.py",
+   "template": "MangaStreamTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/t/tipnovel.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/t/topmanhua.py",
+   "template": "WordpressMangaTemplate",
+   "reason": "all base urls rejected by lncrawl (Redirects to an ad network)"
+  },
+  {
+   "file": "sources/en/t/tunovelaligera.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Broken. Chapters does not load)"
+  },
+  {
+   "file": "sources/en/u/usefulnovel.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/v/viewnovel.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/w/woopread.py",
+   "template": "WordpressTemplate",
+   "reason": "custom logic: download_chapter"
+  },
+  {
+   "file": "sources/en/w/wordrain.py",
+   "template": "WordpressTemplate",
+   "reason": "custom logic: search"
+  },
+  {
+   "file": "sources/en/w/writerupdates.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/z/zinmanga.py",
+   "template": "WordpressMangaTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/en/z/zinnovel.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/fr/lnmtlfr.py",
+   "template": "WordpressTemplate",
+   "reason": "custom logic: parse_volume_list"
+  },
+  {
+   "file": "sources/id/morenovel.py",
+   "template": "WordpressTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  },
+  {
+   "file": "sources/pt/phoenixnovels.py",
+   "template": "WordpressTemplate",
+   "reason": "custom logic: parse_volume_list, download_chapter"
+  },
+  {
+   "file": "sources/ru/bestmanga.py",
+   "template": "MadaraTemplate",
+   "reason": "all base urls rejected by lncrawl (Site is down)"
+  }
+ ]
+}

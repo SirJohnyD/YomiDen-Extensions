@@ -1,0 +1,11 @@
+{
+  "_comment": "Manual de-dup decisions for the YDN aggregator (spec §5.5). Applied after automatic domain matching. Reviewed by SirJohnyD 2026-10-24.",
+  "sites": [
+    { "domain": "topmanhua.com",      "decision": "keep",  "reason": "Different site from Keiyoushi TopManhua.fan / TopManhua.net; publish the lncrawl plugin" },
+    { "domain": "zinmanga.com",       "decision": "skip",  "reason": "Dead", "use": { "origin": "keiyoushi", "extension": "Zinmanga.net", "homeUrl": "https://www.zinmanga.net" } },
+    { "domain": "manhuaplus.online",  "decision": "skip",  "reason": "Dead", "use": { "origin": "keiyoushi", "extension": "Manhua Plus", "homeUrl": "https://manhuaplus.com" } },
+    { "domain": "coffeemanga.io",     "decision": "skip",  "reason": "Dead" },
+    { "domain": "anime-sama.fr",      "decision": "skip",  "reason": "Dead" },
+    { "domain": "beautymanga.com",    "decision": "skip",  "reason": "Dead (earlier match to MyReadingManga was a false positive)" }
+  ]
+}

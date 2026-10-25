@@ -1,0 +1,66 @@
+# Written to run at the ROOT of SirJohnyD/yomiden-extensions (the contents of the app repo's ydn/ folder).
+# Re-pulls Keiyoushi / LNReader / lncrawl, regenerates the lncrawl plugins, rebuilds dist/index.json.
+name: YDN sync
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 */6 * * *'
+
+concurrency:
+  group: ydn-sync
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Cache downloaded LNReader plugins
+        uses: actions/cache@v4
+        with:
+          path: .cache/lnreader
+          key: ydn-lnreader-${{ github.run_id }}
+          restore-keys: ydn-lnreader-
+
+      - name: Install generator dependencies
+        run: npm ci --no-audit --no-fund
+        working-directory: tools/lncrawl-gen
+
+      - name: Generate lncrawl plugins
+        run: node generate.mjs
+        working-directory: tools/lncrawl-gen
+
+      - name: Aggregate catalog
+        run: python3 -I tools/aggregate.py
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+
+      - name: Test generated plugins
+        run: node test.mjs
+        working-directory: tools/lncrawl-gen
+
+      - name: Commit changes
+        run: |
+          git config user.name "ydn-sync[bot]"
+          git config user.email "ydn-sync@users.noreply.github.com"
+          git add dist plugins
+          if git diff --cached --quiet; then
+            echo "No catalog changes."
+          else
+            git commit -m "ydn: sync catalog"
+            git push origin "HEAD:${GITHUB_REF_NAME}"
+          fi

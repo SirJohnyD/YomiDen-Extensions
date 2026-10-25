@@ -1,0 +1,16 @@
+{
+  "name": "ydn-lncrawl-gen",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Converts lightnovel-crawler template crawlers into YomiDen/LNReader-format JS plugins",
+  "scripts": {
+    "generate": "node generate.mjs",
+    "test": "node test.mjs"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0",
+    "quickjs-emscripten": "^0.31.0"
+  },
+  "dependencies": {}
+}
