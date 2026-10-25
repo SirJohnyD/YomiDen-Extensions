@@ -1,26 +1,26 @@
 {
  "schemaVersion": 1,
  "name": "YomiDen Extensions (YDN)",
- "generatedAt": "2026-10-25T04:17:48Z",
+ "generatedAt": "2026-10-25T11:29:53Z",
  "upstreams": {
   "keiyoushi": {
    "url": "https://raw.githubusercontent.com/keiyoushi/extensions/repo/index.json",
-   "commit": null,
-   "etag": null,
+   "commit": "1893a2fce49a7aeb887c38bfb57d4147eccfd4e8",
+   "etag": "\"75acdf3845138ac95dc83b6d99aa14ecd689265b0cdeeb1a6001fc39e0efca53\"",
    "count": 1426,
    "published": 1426
   },
   "lnreader": {
    "url": "https://raw.githubusercontent.com/LNReader/lnreader-plugins/plugins/v3.0.0/.dist/plugins.min.json",
-   "commit": null,
-   "etag": null,
+   "commit": "53c03cc6d723711e73467df92aaf4daac195da87",
+   "etag": "\"1041b1ef6640121e1ff8adff2fb39d2b9fc7cd4628cf0153a08691956b270e47\"",
    "count": 322,
    "published": 322
   },
   "lncrawl": {
    "url": "https://raw.githubusercontent.com/lncrawl/lightnovel-crawler/dev/sources/_index.json",
    "commit": "59b0382d51927953aa8120c5de62dab23ce3f731",
-   "etag": null,
+   "etag": "\"e4e979ab244c5ce009e82636810e829d5fba4d7c42b8e5c443b856ab69b00833\"",
    "count": 446,
    "generated": 46,
    "published": 23
