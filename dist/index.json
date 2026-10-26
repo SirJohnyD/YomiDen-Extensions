@@ -1,21 +1,21 @@
 {
  "schemaVersion": 1,
  "name": "YomiDen Extensions (YDN)",
- "generatedAt": "2026-10-25T16:19:44Z",
+ "generatedAt": "2026-10-26T13:03:09Z",
  "upstreams": {
   "keiyoushi": {
    "url": "https://raw.githubusercontent.com/keiyoushi/extensions/repo/index.json",
-   "commit": "5b5ee928e8ec4033b35b9602ded28870e63c5155",
-   "etag": "\"d238e7b2e4ba20d21bc80cc4925a229be92f34c7dee4e158b2d8051348601e15\"",
+   "commit": "2754e7430c66f79f88ef3c2a452fdedc74fa8616",
+   "etag": "\"0d7e8a29115d6648016c15874553aab6c0a5c17bbb858731fad9cc7dbd370a6e\"",
    "count": 1431,
    "published": 1431
   },
   "lnreader": {
    "url": "https://raw.githubusercontent.com/LNReader/lnreader-plugins/plugins/v3.0.0/.dist/plugins.min.json",
-   "commit": "70c4b90b44f5fac7d8e92730b018c75e7250c5d0",
-   "etag": "\"854e412f598c9b710735622b1fe9ffc8f4f92eebb1bbbd97386616b39c8f9eda\"",
-   "count": 325,
-   "published": 325
+   "commit": "4ee4e9a71a03a23294f9ccf91e92262b5b899b3f",
+   "etag": "\"f68a4b6c467d9eb6321a407b3e51d43027bc86bbeaa6a0d3fbb3c114137f1c56\"",
+   "count": 326,
+   "published": 326
   },
   "lncrawl": {
    "url": "https://raw.githubusercontent.com/lncrawl/lightnovel-crawler/dev/sources/_index.json",
@@ -11326,10 +11326,10 @@
    "nsfw": false,
    "origin": "keiyoushi",
    "package": "apk",
-   "version": "1.6.56",
-   "versionCode": 106056,
-   "url": "https://github.com/keiyoushi/extensions/releases/download/23345ef/tachiyomi-en.coffeemangaunoriginal-v1.6.56.apk",
-   "sha256": "873a5facb418a7e4183399395ede012b5c6897eb6672c0a346fbdbcb8f702232",
+   "version": "1.6.57",
+   "versionCode": 106057,
+   "url": "https://github.com/keiyoushi/extensions/releases/download/949dea2/tachiyomi-en.coffeemangaunoriginal-v1.6.57.apk",
+   "sha256": "18b05e415a24802378084f7a536264f7a889c4127946251eb41bd2b5127fa4e7",
    "iconUrl": "https://cdn.jsdelivr.net/gh/keiyoushi/extensions-source@main/src/en/coffeemangaunoriginal/res/mipmap-xhdpi/ic_launcher.png",
    "sites": [
     "coffeemanga.net"
@@ -11434,10 +11434,10 @@
    "nsfw": false,
    "origin": "keiyoushi",
    "package": "apk",
-   "version": "1.6.0",
-   "versionCode": 106000,
-   "url": "https://github.com/keiyoushi/extensions/releases/download/6512a2e/tachiyomi-en.comichubfree-v1.6.0.apk",
-   "sha256": "1c885b40b2865adf7183a871ceb6ca129a43ce527a89dbda84b8d778ea642701",
+   "version": "1.6.1",
+   "versionCode": 106001,
+   "url": "https://github.com/keiyoushi/extensions/releases/download/949dea2/tachiyomi-en.comichubfree-v1.6.1.apk",
+   "sha256": "77b803cca83422acdee45ca2f22a7109c4c997cf7400c63fb98527c8db3a4deb",
    "iconUrl": "https://cdn.jsdelivr.net/gh/keiyoushi/extensions-source@main/src/en/comichubfree/res/mipmap-xhdpi/ic_launcher.png",
    "sites": [
     "comichubfree.com"
@@ -11515,10 +11515,10 @@
    "nsfw": false,
    "origin": "keiyoushi",
    "package": "apk",
-   "version": "1.6.58",
-   "versionCode": 106058,
-   "url": "https://github.com/keiyoushi/extensions/releases/download/f1edb03/tachiyomi-en.comix-v1.6.58.apk",
-   "sha256": "bad197b018c933d352205a861b965aa4aa96cda1c2aab690389450720264d7ae",
+   "version": "1.6.59",
+   "versionCode": 106059,
+   "url": "https://github.com/keiyoushi/extensions/releases/download/949dea2/tachiyomi-en.comix-v1.6.59.apk",
+   "sha256": "042127481c1928d2ca7cfb519e0943df21a31c7824b789db0bc7c1692b4e770e",
    "iconUrl": "https://cdn.jsdelivr.net/gh/keiyoushi/extensions-source@main/src/en/comix/res/mipmap-xhdpi/ic_launcher.png",
    "sites": [
     "comix.to"
@@ -15241,10 +15241,10 @@
    "nsfw": false,
    "origin": "keiyoushi",
    "package": "apk",
-   "version": "1.6.26",
-   "versionCode": 106026,
-   "url": "https://github.com/keiyoushi/extensions/releases/download/b2f4318/tachiyomi-en.mangadotnet-v1.6.26.apk",
-   "sha256": "b64378cdb37e5ecc4f676dcfe00cff68553186d36abfafba0bef51ca42fac49b",
+   "version": "1.6.27",
+   "versionCode": 106027,
+   "url": "https://github.com/keiyoushi/extensions/releases/download/949dea2/tachiyomi-en.mangadotnet-v1.6.27.apk",
+   "sha256": "6adca335ac845e09b29954281c8c06d66defb65664a052e67e56f2bb5218a4dd",
    "iconUrl": "https://cdn.jsdelivr.net/gh/keiyoushi/extensions-source@main/src/all/mangadotnet/res/mipmap-xhdpi/ic_launcher.png",
    "sites": [
     "mangadot.net"
@@ -21890,10 +21890,10 @@
    "nsfw": false,
    "origin": "keiyoushi",
    "package": "apk",
-   "version": "1.6.56",
-   "versionCode": 106056,
-   "url": "https://github.com/keiyoushi/extensions/releases/download/e97033f/tachiyomi-en.zazamanga-v1.6.56.apk",
-   "sha256": "b19bf655f9666b18abf752fac151dce8b8d62ca12f1e01ff533bec46899cc58d",
+   "version": "1.6.57",
+   "versionCode": 106057,
+   "url": "https://github.com/keiyoushi/extensions/releases/download/949dea2/tachiyomi-en.zazamanga-v1.6.57.apk",
+   "sha256": "d79f1a4faeb7c4bda828b8a02bf77a5bfaadc7c9056552ad2819ca247ad28eb2",
    "iconUrl": "https://cdn.jsdelivr.net/gh/keiyoushi/extensions-source@main/src/en/zazamanga/res/mipmap-xhdpi/ic_launcher.png",
    "sites": [
     "zazamanga.com"
@@ -22599,10 +22599,10 @@
    "nsfw": false,
    "origin": "keiyoushi",
    "package": "apk",
-   "version": "1.6.70",
-   "versionCode": 106070,
-   "url": "https://github.com/keiyoushi/extensions/releases/download/7363e42/tachiyomi-es.emperorscan-v1.6.70.apk",
-   "sha256": "14f9d96cfa05948fdb0721c6609c2acc119e62129f0c2c459b47473e94652ab2",
+   "version": "1.6.71",
+   "versionCode": 106071,
+   "url": "https://github.com/keiyoushi/extensions/releases/download/949dea2/tachiyomi-es.emperorscan-v1.6.71.apk",
+   "sha256": "2b3871cdd159587c13c5209c1d9601d4e1eae46de9519bc75115e4fd54eb0a06",
    "iconUrl": "https://cdn.jsdelivr.net/gh/keiyoushi/extensions-source@main/src/es/emperorscan/res/mipmap-xhdpi/ic_launcher.png",
    "sites": [
     "imperiomanhwa.com"
@@ -23490,10 +23490,10 @@
    "nsfw": false,
    "origin": "keiyoushi",
    "package": "apk",
-   "version": "1.6.1",
-   "versionCode": 106001,
-   "url": "https://github.com/keiyoushi/extensions/releases/download/d64b4de/tachiyomi-es.mangasin-v1.6.1.apk",
-   "sha256": "0f562ae51788620ae74f59a4114ca9083c1f6a2f51dcf3d13e13d1583034007f",
+   "version": "1.6.2",
+   "versionCode": 106002,
+   "url": "https://github.com/keiyoushi/extensions/releases/download/949dea2/tachiyomi-es.mangasin-v1.6.2.apk",
+   "sha256": "7c89261ebd1ecdbde7c8c9812c50f1ac877a905a2a198a258ad9eb1d882799d7",
    "iconUrl": "https://cdn.jsdelivr.net/gh/keiyoushi/extensions-source@main/src/es/mangasin/res/mipmap-xhdpi/ic_launcher.png",
    "sites": [
     "m440.in"
@@ -26149,10 +26149,10 @@
    "nsfw": true,
    "origin": "keiyoushi",
    "package": "apk",
-   "version": "1.6.55",
-   "versionCode": 106055,
-   "url": "https://github.com/keiyoushi/extensions/releases/download/e97033f/tachiyomi-fr.toonfr-v1.6.55.apk",
-   "sha256": "4d5f98356dc331ce1b6a6611a70f4434883010a1587b3b24bcb4a39dd1a0af93",
+   "version": "1.6.56",
+   "versionCode": 106056,
+   "url": "https://github.com/keiyoushi/extensions/releases/download/949dea2/tachiyomi-fr.toonfr-v1.6.56.apk",
+   "sha256": "64b0b12ed4e7ec56090a1dffa4aa33cf234322af83a015fa84d4dbc579f74792",
    "iconUrl": "https://cdn.jsdelivr.net/gh/keiyoushi/extensions-source@main/src/fr/toonfr/res/mipmap-xhdpi/ic_launcher.png",
    "sites": [
     "toonfr.com"
@@ -27121,10 +27121,10 @@
    "nsfw": false,
    "origin": "keiyoushi",
    "package": "apk",
-   "version": "1.6.1",
-   "versionCode": 106001,
-   "url": "https://github.com/keiyoushi/extensions/releases/download/8ef06cd-1/tachiyomi-id.komiku-v1.6.1.apk",
-   "sha256": "f48c696ef63890116c8827f5ac22802105559bdbcc48ac2cc1d10347dc560d95",
+   "version": "1.6.2",
+   "versionCode": 106002,
+   "url": "https://github.com/keiyoushi/extensions/releases/download/949dea2/tachiyomi-id.komiku-v1.6.2.apk",
+   "sha256": "5579df00b9276b5649686b6d2772652befc8ed0c8800a63a2d9d4267c608b0fe",
    "iconUrl": "https://cdn.jsdelivr.net/gh/keiyoushi/extensions-source@main/src/id/komiku/res/mipmap-xhdpi/ic_launcher.png",
    "sites": [
     "komiku.org"
@@ -27661,21 +27661,21 @@
    "nsfw": false,
    "origin": "keiyoushi",
    "package": "apk",
-   "version": "1.6.79",
-   "versionCode": 106079,
-   "url": "https://github.com/keiyoushi/extensions/releases/download/e97033f/tachiyomi-id.mgkomik-v1.6.79.apk",
-   "sha256": "ff9c21943f2afc7a99ec4f735416e86da85534fb8669837ae8cc6ba02438b50e",
+   "version": "1.6.80",
+   "versionCode": 106080,
+   "url": "https://github.com/keiyoushi/extensions/releases/download/949dea2/tachiyomi-id.mgkomik-v1.6.80.apk",
+   "sha256": "62d6179f7c17dc746f74713caf8f0dd394652c4967136666e2d86a3bc87680b1",
    "iconUrl": "https://cdn.jsdelivr.net/gh/keiyoushi/extensions-source@main/src/id/mgkomik/res/mipmap-xhdpi/ic_launcher.png",
    "sites": [
-    "id.mgkomik.cc"
+    "web1.mgkomik.cc"
    ],
    "signer": "9add655a78e96c4ec7a53ef89dccb557cb5d767489fac5e785d671a5a75d4da2",
    "sources": [
     {
-     "id": "5845004992097969882",
+     "id": "385263422541320229",
      "name": "MG Komik",
      "lang": "id",
-     "homeUrl": "https://id.mgkomik.cc"
+     "homeUrl": "https://web1.mgkomik.cc"
     }
    ],
    "needsReview": false
@@ -28471,10 +28471,10 @@
    "nsfw": false,
    "origin": "keiyoushi",
    "package": "apk",
-   "version": "1.6.3",
-   "versionCode": 106003,
-   "url": "https://github.com/keiyoushi/extensions/releases/download/d64b4de/tachiyomi-id.westmanga-v1.6.3.apk",
-   "sha256": "da74a7913ad2a2385d1f0c4e0af4b0555b659ce1a576e3e0bad0eefe18455152",
+   "version": "1.6.4",
+   "versionCode": 106004,
+   "url": "https://github.com/keiyoushi/extensions/releases/download/949dea2/tachiyomi-id.westmanga-v1.6.4.apk",
+   "sha256": "b2fb91cddf965e3a615fe67195c8014415b8d1c993b171b1bde39847c7bc557d",
    "iconUrl": "https://cdn.jsdelivr.net/gh/keiyoushi/extensions-source@main/src/id/westmanga/res/mipmap-xhdpi/ic_launcher.png",
    "sites": [
     "v1.westmanga.my"
@@ -31961,13 +31961,13 @@
    "nsfw": false,
    "origin": "keiyoushi",
    "package": "apk",
-   "version": "1.6.55",
-   "versionCode": 106055,
-   "url": "https://github.com/keiyoushi/extensions/releases/download/e97033f/tachiyomi-ja.rawbaka-v1.6.55.apk",
-   "sha256": "8d399d7e9b64bbd033ca2746e51b913c9b3fc1b028be214b7c746675ffeed943",
+   "version": "1.6.56",
+   "versionCode": 106056,
+   "url": "https://github.com/keiyoushi/extensions/releases/download/949dea2/tachiyomi-ja.rawbaka-v1.6.56.apk",
+   "sha256": "c7e6104f842dbb45b590b3fe4c96859cdb7d54df0bd6f21d2d1eed0f47e4b487",
    "iconUrl": "https://cdn.jsdelivr.net/gh/keiyoushi/extensions-source@main/src/ja/rawbaka/res/mipmap-xhdpi/ic_launcher.png",
    "sites": [
-    "rawbaka.com"
+    "rawbaka.site"
    ],
    "signer": "9add655a78e96c4ec7a53ef89dccb557cb5d767489fac5e785d671a5a75d4da2",
    "sources": [
@@ -31975,7 +31975,7 @@
      "id": "6022634600056613514",
      "name": "RawBaka",
      "lang": "ja",
-     "homeUrl": "https://rawbaka.com"
+     "homeUrl": "https://rawbaka.site"
     }
    ],
    "needsReview": false
@@ -38633,10 +38633,10 @@
    "nsfw": false,
    "origin": "keiyoushi",
    "package": "apk",
-   "version": "1.6.19",
-   "versionCode": 106019,
-   "url": "https://github.com/keiyoushi/extensions/releases/download/d0c0864/tachiyomi-tr.koreliscans-v1.6.19.apk",
-   "sha256": "6daaa8640598d7e8253d4979bed2e3871788eb91612ec558d304edc06a4fada3",
+   "version": "1.6.20",
+   "versionCode": 106020,
+   "url": "https://github.com/keiyoushi/extensions/releases/download/949dea2/tachiyomi-tr.koreliscans-v1.6.20.apk",
+   "sha256": "c2d4acb31fb9e4fd3519627b452be102b74953cdc3730e914b15db481e212f18",
    "iconUrl": "https://cdn.jsdelivr.net/gh/keiyoushi/extensions-source@main/src/tr/koreliscans/res/mipmap-xhdpi/ic_launcher.png",
    "sites": [
     "nabicix.com"
@@ -40928,10 +40928,10 @@
    "nsfw": false,
    "origin": "keiyoushi",
    "package": "apk",
-   "version": "1.6.1",
-   "versionCode": 106001,
-   "url": "https://github.com/keiyoushi/extensions/releases/download/aa14252/tachiyomi-vi.leesincomic-v1.6.1.apk",
-   "sha256": "b741d08f40cd046a0fb748d5b7e17b3b2cf5cfae072175ccd5ca0dc01d0af7fb",
+   "version": "1.6.2",
+   "versionCode": 106002,
+   "url": "https://github.com/keiyoushi/extensions/releases/download/949dea2/tachiyomi-vi.leesincomic-v1.6.2.apk",
+   "sha256": "c0169b7eb3ab289f63e7c6c73e1919657ef5ac430a248801ed6feb80469165ad",
    "iconUrl": "https://cdn.jsdelivr.net/gh/keiyoushi/extensions-source@main/src/vi/leesincomic/res/mipmap-xhdpi/ic_launcher.png",
    "sites": [
     "leesincomic.com"
@@ -44899,10 +44899,10 @@
    "nsfw": false,
    "origin": "lnreader",
    "package": "js",
-   "version": "2.3.8",
+   "version": "2.3.9",
    "versionCode": null,
    "url": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/FreeWebNovel[readnovelfull].js",
-   "sha256": "24b9205d311730950becb1b06f504a56416452ad5d606d398cbb209361e0a07a",
+   "sha256": "7c6f2908b519f8cc67782837a59f7a3144cfdda049ea47333e2152e79debbc3f",
    "iconUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/public/static/multisrc/readnovelfull/fwn.com/icon.png",
    "sites": [
     "freewebnovel.com"
@@ -45059,10 +45059,10 @@
    "nsfw": false,
    "origin": "lnreader",
    "package": "js",
-   "version": "2.2.7",
+   "version": "2.2.8",
    "versionCode": null,
    "url": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/russian/ranobelib.js",
-   "sha256": "5198fddc9f4c16522e165878accd2cc31024e9ddfe0b681b47ef23dadb33f3b5",
+   "sha256": "236d98f7260b36ae29cf541ddeaa02a8fa0721547317ba1102be822c9ebf172c",
    "iconUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/public/static/src/ru/ranobelib/icon.png",
    "sites": [
     "ranobelib.me"
@@ -45199,10 +45199,10 @@
    "nsfw": false,
    "origin": "lnreader",
    "package": "js",
-   "version": "1.2.5",
+   "version": "1.2.6",
    "versionCode": null,
    "url": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/wtrlab.js",
-   "sha256": "1318b0c26253ffff62db1afbaa5be0ae1b3e587515157c2e3b90be059985ca6b",
+   "sha256": "1ca149cee213de291e7043b8c1d10cb865da8518a24d90ec6c0173abbb983c0d",
    "iconUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/public/static/src/en/wtrlab/icon.png",
    "sites": [
     "wtr-lab.com"
@@ -45872,6 +45872,26 @@
    "needsReview": false
   },
   {
+   "id": "bronstl",
+   "name": "BronsTL",
+   "lang": "en",
+   "contentType": "novel",
+   "nsfw": false,
+   "origin": "lnreader",
+   "package": "js",
+   "version": "1.0.0",
+   "versionCode": null,
+   "url": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/bronstl.js",
+   "sha256": "b47890efc6bb366e85041bc3ce126971c6d6200be3158f693e54e8f9ea147fba",
+   "iconUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/public/static/src/en/bronstl/icon.png",
+   "sites": [
+    "bronstl.com"
+   ],
+   "signer": null,
+   "sources": [],
+   "needsReview": false
+  },
+  {
    "id": "centralnovel",
    "name": "Central Novel",
    "lang": "pt",
@@ -46119,10 +46139,10 @@
    "nsfw": false,
    "origin": "lnreader",
    "package": "js",
-   "version": "1.0.1",
+   "version": "1.0.3",
    "versionCode": null,
    "url": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/daotekno.js",
-   "sha256": "fa05f642a91a5068d11266eb5c3f078b14d3a64303609c0256250047c28b9a20",
+   "sha256": "894cf9a663a05343226045d6d89218bcc5cb7adc998dc990ad9c9ceccca34f2c",
    "iconUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/public/static/src/en/daotekno/icon.png",
    "sites": [
     "daotekno.com"
@@ -46719,10 +46739,10 @@
    "nsfw": false,
    "origin": "lnreader",
    "package": "js",
-   "version": "2.0.1",
+   "version": "2.0.3",
    "versionCode": null,
    "url": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/genesis.js",
-   "sha256": "ba54be3520424ffc453e7c09e9c2dc6117887b60850c01df6144c57b498449b5",
+   "sha256": "e753d6b85b96135370b22a8c800272891f1a45d69cdbd8ee784510e338e6e97c",
    "iconUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/public/static/src/en/genesis/icon.png",
    "sites": [
     "genesistudio.com"
@@ -50039,10 +50059,10 @@
    "nsfw": false,
    "origin": "lnreader",
    "package": "js",
-   "version": "2.3.1",
+   "version": "2.3.2",
    "versionCode": null,
    "url": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/royalroad.js",
-   "sha256": "9eb6acc6df7bdc66e320380d0882435bb480b2cfa28b0b8e9013d0f8b60ab806",
+   "sha256": "52ec66b5fe1d8e772e5b54774b73710e68866fd874ac1c7e865f3d6538163c37",
    "iconUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/public/static/src/en/royalroad/icon.png",
    "sites": [
     "royalroad.com"
@@ -50159,10 +50179,10 @@
    "nsfw": false,
    "origin": "lnreader",
    "package": "js",
-   "version": "1.0.0",
+   "version": "1.2.0",
    "versionCode": null,
    "url": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/arabic/seanovel.js",
-   "sha256": "92f2439613c210815087ac0540506dfd12414723c60c66c0b855f9c9f7e35174",
+   "sha256": "2e2c8e1a948a21e40b84c0b06cbfd8befe829892bd235ff6874258932aac671f",
    "iconUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/public/static/src/ar/seanovel/icon.png",
    "sites": [
     "seanovel.org"
@@ -50499,10 +50519,10 @@
    "nsfw": false,
    "origin": "lnreader",
    "package": "js",
-   "version": "1.0.1",
+   "version": "1.0.2",
    "versionCode": null,
    "url": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/toasteful.js",
-   "sha256": "9afdbda870ec7d1150ea94639723bc2763d4834b574e81739c3753874e5e5fce",
+   "sha256": "22fe8d6d229d7aaa36f2dcd87eb0a349d6b7f9c4da4b4e5717e4447e41c749bb",
    "iconUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/public/static/src/en/toasteful/icon.png",
    "sites": [
     "toasteful.com"
@@ -50819,10 +50839,10 @@
    "nsfw": false,
    "origin": "lnreader",
    "package": "js",
-   "version": "1.0.3",
+   "version": "1.1.0",
    "versionCode": null,
    "url": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/webnovel.js",
-   "sha256": "f5bdabcbd5fd881d80b849ad95e5d4a87e3cc5c197784f4eaa5fe09adc758e48",
+   "sha256": "3c41d40d605d7ba87618a1644dcccc38e3e641b59748e519100989ec33f21d32",
    "iconUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/public/static/src/en/webnovel/icon.png",
    "sites": [
     "webnovel.com"
