@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "name": "YomiDen Extensions (YDN)",
- "generatedAt": "2026-10-26T13:03:09Z",
+ "generatedAt": "2026-10-27T05:05:11Z",
  "upstreams": {
   "keiyoushi": {
    "url": "https://raw.githubusercontent.com/keiyoushi/extensions/repo/index.json",
@@ -12,8 +12,8 @@
   },
   "lnreader": {
    "url": "https://raw.githubusercontent.com/LNReader/lnreader-plugins/plugins/v3.0.0/.dist/plugins.min.json",
-   "commit": "4ee4e9a71a03a23294f9ccf91e92262b5b899b3f",
-   "etag": "\"f68a4b6c467d9eb6321a407b3e51d43027bc86bbeaa6a0d3fbb3c114137f1c56\"",
+   "commit": "e137fdf111f69dc61cd1ca8c46cfc3f3ab35cf06",
+   "etag": "\"a3fb362e08c84909641c0ea562dd9de8be9eecc70b9892ceca5d91061e0c2167\"",
    "count": 326,
    "published": 326
   },
@@ -47999,10 +47999,10 @@
    "nsfw": false,
    "origin": "lnreader",
    "package": "js",
-   "version": "2.3.0",
+   "version": "2.3.1",
    "versionCode": null,
    "url": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/indonesian/MeioNovel[madara].js",
-   "sha256": "eae85d59e0baf0b42b37d541d22b95886b72af451cad3e9702eb3b25f3e943a0",
+   "sha256": "edd0f398a8c8e404ac360ddb9615151bc570483571a8a06ce0eb7c9a0e08eaa2",
    "iconUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/public/static/multisrc/madara/meionovel/icon.png",
    "sites": [
     "meionovels.com"
