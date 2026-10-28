@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "name": "YomiDen Extensions (YDN)",
- "generatedAt": "2026-10-28T12:54:53Z",
+ "generatedAt": "2026-10-28T22:35:29Z",
  "upstreams": {
   "keiyoushi": {
    "url": "https://raw.githubusercontent.com/keiyoushi/extensions/repo/index.json",
@@ -12,10 +12,10 @@
   },
   "lnreader": {
    "url": "https://raw.githubusercontent.com/LNReader/lnreader-plugins/plugins/v3.0.0/.dist/plugins.min.json",
-   "commit": "acd22a062b3a26b1b9bf3c44829fe931903b942b",
-   "etag": "\"3ac8b3d5e0ddd2fa7a85c0c899f5266f9042830dcef824a0d4f6814afec9ba57\"",
-   "count": 327,
-   "published": 327
+   "commit": "89c8165b4faac2a683d663d68f8b681dad4368ec",
+   "etag": "\"210b21a1f91525e5e9e752068fdb8931199d88b9bdae99437fb96bda6f5a44c8\"",
+   "count": 328,
+   "published": 328
   },
   "lncrawl": {
    "url": "https://raw.githubusercontent.com/lncrawl/lightnovel-crawler/dev/sources/_index.json",
@@ -48000,6 +48000,26 @@
    "needsReview": false
   },
   {
+   "id": "luminaretranslations",
+   "name": "Luminare Translations",
+   "lang": "en",
+   "contentType": "novel",
+   "nsfw": false,
+   "origin": "lnreader",
+   "package": "js",
+   "version": "1.0.0",
+   "versionCode": null,
+   "url": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/luminaretranslations.js",
+   "sha256": "70f698f0f0a3356542bd51f77d0383eaaa7ce41b21d92e6f67b7724503ed08b5",
+   "iconUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/public/static/src/en/luminaretranslations/icon.png",
+   "sites": [
+    "luminaretranslations.com"
+   ],
+   "signer": null,
+   "sources": [],
+   "needsReview": false
+  },
+  {
    "id": "lunarletters",
    "name": "LunarLetters",
    "lang": "en",
@@ -50167,10 +50187,10 @@
    "nsfw": false,
    "origin": "lnreader",
    "package": "js",
-   "version": "2.3.3",
+   "version": "2.3.4",
    "versionCode": null,
    "url": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/royalroad.js",
-   "sha256": "a567156961f58f450148fe8cc88b315244aaf83d795bcc2a7760c278e7606b4a",
+   "sha256": "46ef0eb65bcbf4bae381db181f24141f79d1b61d411ab9a5fff35730baaad5ec",
    "iconUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/public/static/src/en/royalroad/icon.png",
    "sites": [
     "royalroad.com"
