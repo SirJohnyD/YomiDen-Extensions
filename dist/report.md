@@ -1,15 +1,15 @@
 # YDN catalog report
 
-Generated at 2026-10-28T05:42:16Z
+Generated at 2026-10-28T12:54:53Z
 
 ## Published
 
 | origin | comic | novel | total |
 |---|---|---|---|
 | keiyoushi | 1435 | 0 | 1435 |
-| lnreader | 0 | 326 | 326 |
+| lnreader | 0 | 327 | 327 |
 | lncrawl | 4 | 19 | 23 |
-| **all** | 1439 | 345 | 1784 |
+| **all** | 1439 | 346 | 1785 |
 
 Flagged `needsReview`: 4 (see dedupe-review.md)
 
