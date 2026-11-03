@@ -5,6 +5,13 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '17 */6 * * *'
+  push:
+    branches:
+      - main
+    paths:
+      - 'tools/aggregate.py'
+      - 'tests/**'
+      - '.github/workflows/ydn-sync.yml'
 
 concurrency:
   group: ydn-sync
@@ -44,23 +51,38 @@ jobs:
         run: node generate.mjs
         working-directory: tools/lncrawl-gen
 
+      - name: Test generated plugins
+        run: node test.mjs
+        working-directory: tools/lncrawl-gen
+
+      - name: Commit generated plugin snapshot
+        run: |
+          git config user.name "ydn-sync[bot]"
+          git config user.email "ydn-sync@users.noreply.github.com"
+          git add plugins
+          if ! git diff --cached --quiet; then
+            git commit -m "ydn: snapshot generated plugins"
+          fi
+
+      - name: Capture generated plugin commit
+        id: plugin-ref
+        run: echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Test YDN aggregator
+        run: python3 -m unittest discover -s tests -v
+
       - name: Aggregate catalog
         run: python3 -I tools/aggregate.py
         env:
           GITHUB_TOKEN: ${{ github.token }}
-
-      - name: Test generated plugins
-        run: node test.mjs
-        working-directory: tools/lncrawl-gen
+          YDN_PUBLIC_BASE: https://raw.githubusercontent.com/${{ github.repository }}/${{ steps.plugin-ref.outputs.sha }}/
 
       - name: Commit changes
         run: |
           git config user.name "ydn-sync[bot]"
           git config user.email "ydn-sync@users.noreply.github.com"
           git add dist plugins
-          if git diff --cached --quiet; then
-            echo "No catalog changes."
-          else
+          if ! git diff --cached --quiet; then
             git commit -m "ydn: sync catalog"
-            git push origin "HEAD:${GITHUB_REF_NAME}"
           fi
+          git push origin "HEAD:${GITHUB_REF_NAME}"
