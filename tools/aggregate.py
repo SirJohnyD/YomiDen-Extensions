@@ -77,11 +77,51 @@ def github_commit(repo, branch):
         headers = {"User-Agent": "yomiden-ydn-aggregate", "Accept": "application/vnd.github+json"}
         if os.environ.get("GITHUB_TOKEN"):
             headers["Authorization"] = "Bearer " + os.environ["GITHUB_TOKEN"]
-        req = urllib.request.Request("https://api.github.com/repos/%s/commits/%s" % (repo, branch), headers=headers)
+        ref = urllib.parse.quote(branch, safe="")
+        req = urllib.request.Request("https://api.github.com/repos/%s/commits/%s" % (repo, ref), headers=headers)
         with urllib.request.urlopen(req, timeout=30) as r:
             return json.loads(r.read())["sha"]
     except Exception:
         return None
+
+
+def raw_github_url(repo, revision, path):
+    return "https://raw.githubusercontent.com/%s/%s/%s" % (repo, revision, path.lstrip("/"))
+
+
+def keiyoushi_source_urls(commit):
+    if not commit:
+        return KEI_INDEX, KEI_ASSETS
+    return (
+        raw_github_url("keiyoushi/extensions", commit, "index.json"),
+        raw_github_url("keiyoushi/extensions", commit, "release-assets.json"),
+    )
+
+
+def lnreader_index_url(commit):
+    if not commit:
+        return LNR_INDEX
+    return raw_github_url("LNReader/lnreader-plugins", commit, ".dist/plugins.min.json")
+
+
+def pin_lnreader_plugin_url(url, commit):
+    if not commit:
+        return url
+    branch_prefix = "https://raw.githubusercontent.com/LNReader/lnreader-plugins/plugins/v3.0.0/"
+    if url.startswith(branch_prefix):
+        return raw_github_url(
+            "LNReader/lnreader-plugins",
+            commit,
+            url[len(branch_prefix):],
+        )
+    return url
+
+
+def lnreader_cache_path(cache_dir, plugin):
+    # The repo can replace code without changing id/version. Key cached bytes by the resolved URL too.
+    url_key = hashlib.sha256(plugin["url"].encode("utf-8")).hexdigest()[:16]
+    file_name = "%s-%s-%s.js" % (plugin["id"], plugin["version"], url_key)
+    return os.path.join(cache_dir, re.sub(r"[^\w.-]", "_", file_name))
 
 
 def domain_of(url):
@@ -121,7 +161,7 @@ def favicon(domain):
 # ---------------------------------------------------------------------------------------------------------------
 def build_keiyoushi(index, assets):
     signer = index.get("signingKey")
-    out, mismatched = [], 0
+    out, unverified = [], 0
     for e in index["extensionList"]["extensions"]:
         pkg = e["packageName"]
         sources = [
@@ -132,10 +172,17 @@ def build_keiyoushi(index, assets):
         pkg_lang = pkg.split(".extension.")[-1].split(".")[0]
         lang = next(iter(langs)) if len(langs) == 1 else ("all" if pkg_lang == "all" else "multi")
         apk_url = e["resources"]["apkUrl"]
-        asset = (assets.get(pkg) or {}).get("apk") or {}
-        sha = asset.get("sha256")
-        if sha and asset.get("name") != apk_url.rsplit("/", 1)[-1]:
-            sha, mismatched = None, mismatched + 1
+        release_asset = assets.get(pkg)
+        if isinstance(release_asset, str):
+            # The new string schema's values do not match GitHub's digest for the tagged APK, so do not
+            # publish them as byte checksums. The app still pins the signing certificate.
+            sha, unverified = None, unverified + 1
+        else:
+            # Backward compatibility with the previous {package: {apk: {name, sha256}}} schema.
+            asset = (release_asset or {}).get("apk") or {}
+            sha = asset.get("sha256")
+            if sha and asset.get("name") != apk_url.rsplit("/", 1)[-1]:
+                sha, unverified = None, unverified + 1
         sites = sorted({d for d in (domain_of(s["homeUrl"]) for s in sources) if d})
         out.append({
             "id": pkg, "name": e["name"], "lang": lang, "contentType": "comic",
@@ -144,7 +191,7 @@ def build_keiyoushi(index, assets):
             "iconUrl": e["resources"].get("iconUrl", ""), "sites": sites, "signer": signer, "sources": sources,
             "needsReview": False,
         })
-    return out, mismatched
+    return out, unverified
 
 
 def build_lnreader(plugins):
@@ -152,7 +199,7 @@ def build_lnreader(plugins):
     os.makedirs(cache_dir, exist_ok=True)
 
     def fetch(p):
-        path = os.path.join(cache_dir, re.sub(r"[^\w.-]", "_", "%s-%s.js" % (p["id"], p["version"])))
+        path = lnreader_cache_path(cache_dir, p)
         if not os.path.exists(path):
             url = urllib.parse.quote(p["url"], safe=":/%")
             body, _ = http_get(url)
@@ -326,9 +373,21 @@ def main():
     with open(os.path.join(PLUGINS, "manifest.json"), encoding="utf-8") as f:
         manifest = json.load(f)
 
-    kei_idx, kei_etag = fetch_json(KEI_INDEX, "keiyoushi-index.json", offline)
-    assets, _ = fetch_json(KEI_ASSETS, "keiyoushi-release-assets.json", offline)
-    lnr_idx, lnr_etag = fetch_json(LNR_INDEX, "lnreader-plugins.json", offline)
+    kei_commit = None if offline else github_commit("keiyoushi/extensions", "repo")
+    lnr_commit = None if offline else github_commit("LNReader/lnreader-plugins", "plugins/v3.0.0")
+    if not offline and (not kei_commit or not lnr_commit):
+        raise SystemExit("could not resolve Keiyoushi and LNReader refs to pin their catalog inputs")
+
+    kei_index_url, kei_assets_url = keiyoushi_source_urls(kei_commit)
+    lnr_source_index_url = lnreader_index_url(lnr_commit)
+    kei_idx, kei_etag = fetch_json(kei_index_url, "keiyoushi-index.json", offline)
+    assets, _ = fetch_json(kei_assets_url, "keiyoushi-release-assets.json", offline)
+    lnr_idx, lnr_etag = fetch_json(lnr_source_index_url, "lnreader-plugins.json", offline)
+    if lnr_commit:
+        lnr_idx = [
+            {**plugin, "url": pin_lnreader_plugin_url(plugin["url"], lnr_commit)}
+            for plugin in lnr_idx
+        ]
     lnc_idx, lnc_etag, lnc_url = None, None, None
     for br in LNCRAWL_BRANCHES:
         try:
@@ -343,12 +402,17 @@ def main():
     for url, reason in (lnc_idx.get("rejected") or {}).items():
         rejected[domain_of(url)] = reason
 
-    kei, mismatched = build_keiyoushi(kei_idx, assets)
+    kei, unverified_checksums = build_keiyoushi(kei_idx, assets)
+    if unverified_checksums:
+        log("%d keiyoushi APK(s) have unverified SHA-256 metadata; it was omitted" % unverified_checksums)
     lnr, unknown_lang, failed = build_lnreader(lnr_idx)
     lnc = build_lncrawl(manifest)
     pub_lnr, pub_lnc, skipped, review, notes = dedupe(kei, lnr, lnc, overrides, rejected)
-    if mismatched:
-        notes.append("%d keiyoushi APK(s) had no matching release-assets sha256 (sha256 = null)" % mismatched)
+    if unverified_checksums:
+        notes.append(
+            "%d keiyoushi APK(s) had an unverified release-assets checksum (sha256 = null; signer verification remains)"
+            % unverified_checksums
+        )
     if unknown_lang:
         notes.append("unmapped LNReader language names: %s" % ", ".join(unknown_lang))
     if failed:
@@ -360,15 +424,13 @@ def main():
     if dup:
         raise SystemExit("duplicate extension ids: %s" % dup[:10])
 
-    kei_commit = github_commit("keiyoushi/extensions", "repo")
-    lnr_commit = github_commit("LNReader/lnreader-plugins", "plugins/v3.0.0")
     catalog = {
         "schemaVersion": 1,
         "name": "YomiDen Extensions (YDN)",
         "generatedAt": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
         "upstreams": {
-            "keiyoushi": {"url": KEI_INDEX, "commit": kei_commit, "etag": kei_etag, "count": len(kei_idx["extensionList"]["extensions"]), "published": len(kei)},
-            "lnreader": {"url": LNR_INDEX, "commit": lnr_commit, "etag": lnr_etag, "count": len(lnr_idx), "published": len(pub_lnr)},
+            "keiyoushi": {"url": kei_index_url, "commit": kei_commit, "etag": kei_etag, "count": len(kei_idx["extensionList"]["extensions"]), "published": len(kei)},
+            "lnreader": {"url": lnr_source_index_url, "commit": lnr_commit, "etag": lnr_etag, "count": len(lnr_idx), "published": len(pub_lnr)},
             "lncrawl": {"url": lnc_url, "commit": manifest["lncrawl"]["commit"], "etag": lnc_etag, "count": manifest["lncrawl"]["crawlers"], "generated": len(lnc), "published": len(pub_lnc)},
         },
         "extensions": extensions,
