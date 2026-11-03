@@ -1,7 +1,7 @@
 {
  "schemaVersion": 1,
  "name": "YomiDen Extensions (YDN)",
- "generatedAt": "2026-11-03T15:03:58Z",
+ "generatedAt": "2026-11-03T23:23:46Z",
  "upstreams": {
   "keiyoushi": {
    "url": "https://raw.githubusercontent.com/keiyoushi/extensions/58040a3a019040e96802cf6843da6d3f13f50973/index.json",
@@ -44875,7 +44875,7 @@
    "package": "js",
    "version": "1.0.1774172045",
    "versionCode": null,
-   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/8457ba043a98cccde6aa3093adf6f53a4025d57a/plugins/en/lncrawl-allnovel.js",
+   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/45672a96644be386b05c8a29ed3e31efd1941cee/plugins/en/lncrawl-allnovel.js",
    "sha256": "ddd4d3bc29b46a0b5670a6e0ec875be19c747f19b0e4cb76253cf147f1df2775",
    "iconUrl": "https://www.google.com/s2/favicons?sz=128&domain=allnovel.org",
    "sites": [
@@ -44901,7 +44901,7 @@
    "package": "js",
    "version": "1.0.1785615708",
    "versionCode": null,
-   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/8457ba043a98cccde6aa3093adf6f53a4025d57a/plugins/en/lncrawl-ckandawrites.online.js",
+   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/45672a96644be386b05c8a29ed3e31efd1941cee/plugins/en/lncrawl-ckandawrites.online.js",
    "sha256": "0400e40e60b60575ae4b68ef73e4b81266ca291467013696371062a863251d25",
    "iconUrl": "https://www.google.com/s2/favicons?sz=128&domain=ckandawrites.online",
    "sites": [
@@ -44927,7 +44927,7 @@
    "package": "js",
    "version": "1.0.1785615708",
    "versionCode": null,
-   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/8457ba043a98cccde6aa3093adf6f53a4025d57a/plugins/en/lncrawl-dobytranslations.js",
+   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/45672a96644be386b05c8a29ed3e31efd1941cee/plugins/en/lncrawl-dobytranslations.js",
    "sha256": "15103fcfd4ed3963b8d85efb6bf126ec2d14a706b72f3a6d1ac231d590f26e8f",
    "iconUrl": "https://www.google.com/s2/favicons?sz=128&domain=dobytranslations.com",
    "sites": [
@@ -44953,7 +44953,7 @@
    "package": "js",
    "version": "1.0.1721758366",
    "versionCode": null,
-   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/8457ba043a98cccde6aa3093adf6f53a4025d57a/plugins/en/lncrawl-ebotnovel.js",
+   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/45672a96644be386b05c8a29ed3e31efd1941cee/plugins/en/lncrawl-ebotnovel.js",
    "sha256": "63acfa0f01c00a8ea423ac2313456fd898e9fc8390dc57cd80d8148cc9df06d3",
    "iconUrl": "https://www.google.com/s2/favicons?sz=128&domain=ebotnovel.com",
    "sites": [
@@ -44979,7 +44979,7 @@
    "package": "js",
    "version": "1.0.1775456139",
    "versionCode": null,
-   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/8457ba043a98cccde6aa3093adf6f53a4025d57a/plugins/en/lncrawl-fantasyworldonline.js",
+   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/45672a96644be386b05c8a29ed3e31efd1941cee/plugins/en/lncrawl-fantasyworldonline.js",
    "sha256": "9ff744e15f03df9d3398cbf1785f073ac2f133f5338cdbfb8dc8b21f680f1af6",
    "iconUrl": "https://www.google.com/s2/favicons?sz=128&domain=f-w-o.com",
    "sites": [
@@ -45005,7 +45005,7 @@
    "package": "js",
    "version": "1.0.1775456139",
    "versionCode": null,
-   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/8457ba043a98cccde6aa3093adf6f53a4025d57a/plugins/en/lncrawl-freemanga.js",
+   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/45672a96644be386b05c8a29ed3e31efd1941cee/plugins/en/lncrawl-freemanga.js",
    "sha256": "6dceff9a4f5472f9789d06f032a5aa9d005b869c0eb7e7d97c89afd5f993ddba",
    "iconUrl": "https://www.google.com/s2/favicons?sz=128&domain=freemanga.me",
    "sites": [
@@ -45031,7 +45031,7 @@
    "package": "js",
    "version": "1.0.1785615708",
    "versionCode": null,
-   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/8457ba043a98cccde6aa3093adf6f53a4025d57a/plugins/id/lncrawl-fuyunovel.js",
+   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/45672a96644be386b05c8a29ed3e31efd1941cee/plugins/id/lncrawl-fuyunovel.js",
    "sha256": "d1e1c1b781a909f10fa5379ccf54f9e79c85d0d9a9d690b9b943fc59f08b2f83",
    "iconUrl": "https://www.google.com/s2/favicons?sz=128&domain=fuyu-novel.my.id",
    "sites": [
@@ -45057,7 +45057,7 @@
    "package": "js",
    "version": "1.0.1785613888",
    "versionCode": null,
-   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/8457ba043a98cccde6aa3093adf6f53a4025d57a/plugins/en/lncrawl-jobnib.js",
+   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/45672a96644be386b05c8a29ed3e31efd1941cee/plugins/en/lncrawl-jobnib.js",
    "sha256": "3cbda4e91b16a6ce3fae08e6175bcabfd9bc1611841be25eed9ab9da9aee21fd",
    "iconUrl": "https://www.google.com/s2/favicons?sz=128&domain=jobnib.com",
    "sites": [
@@ -45083,7 +45083,7 @@
    "package": "js",
    "version": "1.0.1775456139",
    "versionCode": null,
-   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/8457ba043a98cccde6aa3093adf6f53a4025d57a/plugins/en/lncrawl-mangarosie.js",
+   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/45672a96644be386b05c8a29ed3e31efd1941cee/plugins/en/lncrawl-mangarosie.js",
    "sha256": "77afa75e9877baabc43359dfb733a868ca441cfd237814db963bf335191d1914",
    "iconUrl": "https://www.google.com/s2/favicons?sz=128&domain=mangarosie.me",
    "sites": [
@@ -45110,7 +45110,7 @@
    "package": "js",
    "version": "1.0.1775148284",
    "versionCode": null,
-   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/8457ba043a98cccde6aa3093adf6f53a4025d57a/plugins/en/lncrawl-mangatx.js",
+   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/45672a96644be386b05c8a29ed3e31efd1941cee/plugins/en/lncrawl-mangatx.js",
    "sha256": "5ff861c758058761b086e88323ef43f16e700dfef4012e4024da483875c7291b",
    "iconUrl": "https://www.google.com/s2/favicons?sz=128&domain=mangatx.com",
    "sites": [
@@ -45136,7 +45136,7 @@
    "package": "js",
    "version": "1.0.1785704342",
    "versionCode": null,
-   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/8457ba043a98cccde6aa3093adf6f53a4025d57a/plugins/en/lncrawl-novel-bin.js",
+   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/45672a96644be386b05c8a29ed3e31efd1941cee/plugins/en/lncrawl-novel-bin.js",
    "sha256": "52c4cd59a8a780759f5625aa6661ed6a685a3548c34dbdb107769d5d6c81a29b",
    "iconUrl": "https://www.google.com/s2/favicons?sz=128&domain=novel-bin.com",
    "sites": [
@@ -45162,7 +45162,7 @@
    "package": "js",
    "version": "1.0.1785704342",
    "versionCode": null,
-   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/8457ba043a98cccde6aa3093adf6f53a4025d57a/plugins/en/lncrawl-novel-bin.net.js",
+   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/45672a96644be386b05c8a29ed3e31efd1941cee/plugins/en/lncrawl-novel-bin.net.js",
    "sha256": "80b8c07ba0c4916f3120c91d48952a59296ef0504763dea82a8c50ba7bc0a472",
    "iconUrl": "https://www.google.com/s2/favicons?sz=128&domain=novel-bin.net",
    "sites": [
@@ -45188,7 +45188,7 @@
    "package": "js",
    "version": "1.0.1669734061",
    "versionCode": null,
-   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/8457ba043a98cccde6aa3093adf6f53a4025d57a/plugins/en/lncrawl-novelbin.net.js",
+   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/45672a96644be386b05c8a29ed3e31efd1941cee/plugins/en/lncrawl-novelbin.net.js",
    "sha256": "a2ef36f0bd72da88f881fbcc5a14343f16d036228101786c06305c095f69b076",
    "iconUrl": "https://www.google.com/s2/favicons?sz=128&domain=novelbin.net",
    "sites": [
@@ -45214,7 +45214,7 @@
    "package": "js",
    "version": "1.0.1775456139",
    "versionCode": null,
-   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/8457ba043a98cccde6aa3093adf6f53a4025d57a/plugins/en/lncrawl-novelhard.js",
+   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/45672a96644be386b05c8a29ed3e31efd1941cee/plugins/en/lncrawl-novelhard.js",
    "sha256": "1eeaa98fefef8e7a3f3087439f07acc69aff724e4525366bb5ee39d3ffc3e026",
    "iconUrl": "https://www.google.com/s2/favicons?sz=128&domain=novelhard.com",
    "sites": [
@@ -45240,7 +45240,7 @@
    "package": "js",
    "version": "1.0.1711944256",
    "versionCode": null,
-   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/8457ba043a98cccde6aa3093adf6f53a4025d57a/plugins/en/lncrawl-novelnextz.js",
+   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/45672a96644be386b05c8a29ed3e31efd1941cee/plugins/en/lncrawl-novelnextz.js",
    "sha256": "edbb0730ded02794d91f11b9e7149c85be7f54d5231132446e86e2325d64794d",
    "iconUrl": "https://www.google.com/s2/favicons?sz=128&domain=novelnextz.com",
    "sites": [
@@ -45266,7 +45266,7 @@
    "package": "js",
    "version": "1.0.1748576569",
    "versionCode": null,
-   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/8457ba043a98cccde6aa3093adf6f53a4025d57a/plugins/en/lncrawl-novlove.js",
+   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/45672a96644be386b05c8a29ed3e31efd1941cee/plugins/en/lncrawl-novlove.js",
    "sha256": "b7f1f2b0ed481ab51c92a97034a96a356288364908889011718f75b4ceac9ccd",
    "iconUrl": "https://www.google.com/s2/favicons?sz=128&domain=novlove.com",
    "sites": [
@@ -45292,7 +45292,7 @@
    "package": "js",
    "version": "1.0.1665418828",
    "versionCode": null,
-   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/8457ba043a98cccde6aa3093adf6f53a4025d57a/plugins/en/lncrawl-pandamanga.js",
+   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/45672a96644be386b05c8a29ed3e31efd1941cee/plugins/en/lncrawl-pandamanga.js",
    "sha256": "66733bc7fabe5924a94a1a5fb628728deb53d8335ea0752a11049c01afe8f110",
    "iconUrl": "https://www.google.com/s2/favicons?sz=128&domain=pandamanga.xyz",
    "sites": [
@@ -45318,7 +45318,7 @@
    "package": "js",
    "version": "1.0.1775456139",
    "versionCode": null,
-   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/8457ba043a98cccde6aa3093adf6f53a4025d57a/plugins/en/lncrawl-pianmanga.js",
+   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/45672a96644be386b05c8a29ed3e31efd1941cee/plugins/en/lncrawl-pianmanga.js",
    "sha256": "c783445faaf4ac8f0425f0744ea03ef9b6eaaaedbaf872e394237bfaabb32306",
    "iconUrl": "https://www.google.com/s2/favicons?sz=128&domain=pianmanga.com",
    "sites": [
@@ -45344,7 +45344,7 @@
    "package": "js",
    "version": "1.0.1665431613",
    "versionCode": null,
-   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/8457ba043a98cccde6aa3093adf6f53a4025d57a/plugins/en/lncrawl-readmtl.js",
+   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/45672a96644be386b05c8a29ed3e31efd1941cee/plugins/en/lncrawl-readmtl.js",
    "sha256": "9b3e79916c9481dfc7a0a81e04a5d864d6ca20224b84b4626835fd9ea01a6f7c",
    "iconUrl": "https://www.google.com/s2/favicons?sz=128&domain=readmtl.com",
    "sites": [
@@ -45370,7 +45370,7 @@
    "package": "js",
    "version": "1.0.1775456139",
    "versionCode": null,
-   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/8457ba043a98cccde6aa3093adf6f53a4025d57a/plugins/en/lncrawl-readwebnovels.js",
+   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/45672a96644be386b05c8a29ed3e31efd1941cee/plugins/en/lncrawl-readwebnovels.js",
    "sha256": "8dcafb425931fabead644a02fdd330fdfe76127e14d94eb4afbd7de260317b59",
    "iconUrl": "https://www.google.com/s2/favicons?sz=128&domain=readwebnovels.net",
    "sites": [
@@ -45396,7 +45396,7 @@
    "package": "js",
    "version": "1.0.1775456139",
    "versionCode": null,
-   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/8457ba043a98cccde6aa3093adf6f53a4025d57a/plugins/en/lncrawl-vipnovel.js",
+   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/45672a96644be386b05c8a29ed3e31efd1941cee/plugins/en/lncrawl-vipnovel.js",
    "sha256": "3fa263cd519defe7fc36436f606fb4278d8f706751d25b17c21993c9790fbd67",
    "iconUrl": "https://www.google.com/s2/favicons?sz=128&domain=vipnovel.com",
    "sites": [
@@ -45422,7 +45422,7 @@
    "package": "js",
    "version": "1.0.1785613888",
    "versionCode": null,
-   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/8457ba043a98cccde6aa3093adf6f53a4025d57a/plugins/en/lncrawl-webnoveltranslations.js",
+   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/45672a96644be386b05c8a29ed3e31efd1941cee/plugins/en/lncrawl-webnoveltranslations.js",
    "sha256": "09123cd7d130e2192be7f3293bf320c4d35f94c5daa03ed974864b4568fdd360",
    "iconUrl": "https://www.google.com/s2/favicons?sz=128&domain=webnoveltranslations.com",
    "sites": [
@@ -45448,7 +45448,7 @@
    "package": "js",
    "version": "1.0.1775456139",
    "versionCode": null,
-   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/8457ba043a98cccde6aa3093adf6f53a4025d57a/plugins/en/lncrawl-wondernovels.js",
+   "url": "https://raw.githubusercontent.com/SirJohnyD/YomiDen-Extensions/45672a96644be386b05c8a29ed3e31efd1941cee/plugins/en/lncrawl-wondernovels.js",
    "sha256": "64351cba1fc18d872cbc4755635de76c0f05befb1d04f650a8095400b5b0f7c7",
    "iconUrl": "https://www.google.com/s2/favicons?sz=128&domain=wondernovels.com",
    "sites": [
