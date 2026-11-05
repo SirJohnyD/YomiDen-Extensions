@@ -10,6 +10,7 @@ on:
       - main
     paths:
       - 'tools/aggregate.py'
+      - 'plugins/patches/**'
       - 'tests/**'
       - '.github/workflows/ydn-sync.yml'
 
@@ -54,6 +55,12 @@ jobs:
       - name: Test generated plugins
         run: node test.mjs
         working-directory: tools/lncrawl-gen
+
+      - name: Vendor LNReader plugins
+        # before the snapshot commit: published URLs are pinned to that commit and must contain plugins/vendor
+        run: python3 -I tools/aggregate.py --vendor-only
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
 
       - name: Commit generated plugin snapshot
         run: |
