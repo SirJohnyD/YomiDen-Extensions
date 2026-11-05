@@ -1,0 +1,11 @@
+{
+ "id": "noveldex-comics",
+ "name": "NovelDex Comics",
+ "lang": "en",
+ "contentType": "comic",
+ "nsfw": false,
+ "version": "1.0.0-ydn.1",
+ "site": "https://noveldex.io",
+ "iconUrl": "https://noveldex.io/favicon.ico",
+ "credit": "LNReader noveldex plugin (MIT)"
+}

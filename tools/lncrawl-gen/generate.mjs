@@ -314,7 +314,11 @@ function main() {
   }
 
   // write output
-  for (const f of existsSync(PLUGINS) ? readdirSync(PLUGINS) : []) rmSync(join(PLUGINS, f), { recursive: true, force: true });
+  // YomiDen: only clear lncrawl output; vendored LNReader copies, our patches and own plugins live alongside it
+  const KEEP = new Set(['vendor', 'patches', 'own']);
+  for (const f of existsSync(PLUGINS) ? readdirSync(PLUGINS) : []) {
+    if (!KEEP.has(f)) rmSync(join(PLUGINS, f), { recursive: true, force: true });
+  }
   mkdirSync(PLUGINS, { recursive: true });
   const manifestPlugins = [];
   for (const p of plugins.sort((a, b) => a.cfg.id.localeCompare(b.cfg.id))) {
