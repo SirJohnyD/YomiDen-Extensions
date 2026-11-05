@@ -25,6 +25,12 @@ was made against). If upstream later changes a patched plugin, our patch keeps b
 `dist/patch-review.md`; diff the vendored copy against the patch, port what you need, then run
 `python3 tools/aggregate.py --ack-patch <id>`.
 
+YDN-only plugins derived from LNReader ones live in `plugins/own/<id>.js` + `<id>.json` (catalog metadata); they are published with
+origin `lnreader`. NovelDex is the first case: `node tools/noveldex/build.mjs <noveldex.ts>` builds the patched novel plugin
+(`plugins/patches/noveldex.js`, adds type and origin to the genres so the app can detect the format) and `NovelDex Comics`
+(`plugins/own/noveldex-comics.js`). `tools/cross-format-audit.py` writes `cross-format-report.md` (sites that likely host the
+other format).
+
 Keiyoushi APKs stay linked to upstream releases: they are signed, so a patched copy could not be installed over them.
 
 ## Run locally

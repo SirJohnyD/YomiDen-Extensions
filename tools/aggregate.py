@@ -339,6 +339,29 @@ def vendor_lnreader(entries, plugins, commit, *, root=ROOT, public_base=None):
     return out, reviews
 
 
+def build_own(own_dir=None, root=ROOT, public_base=None):
+    """YDN-only plugins derived from LNReader ones (plugins/own/<id>.js + <id>.json meta). Origin stays "lnreader" for credit."""
+    own_dir = own_dir or os.path.join(PLUGINS, "own")
+    public_base = public_base or PUBLIC_BASE
+    out = []
+    if not os.path.isdir(own_dir):
+        return out
+    for fn in sorted(os.listdir(own_dir)):
+        if not fn.endswith(".json"):
+            continue
+        meta = json.load(open(os.path.join(own_dir, fn), encoding="utf-8"))
+        js_path = os.path.join(own_dir, meta["id"] + ".js")
+        d = domain_of(meta.get("site", ""))
+        out.append({
+            "id": meta["id"], "name": meta["name"], "lang": meta["lang"], "contentType": meta["contentType"],
+            "nsfw": bool(meta.get("nsfw", False)), "origin": "lnreader", "package": "js", "version": meta["version"],
+            "versionCode": None, "url": public_base + os.path.relpath(js_path, root).replace(os.sep, "/"),
+            "sha256": hashlib.sha256(read_bytes(js_path)).hexdigest(), "iconUrl": meta.get("iconUrl", ""),
+            "sites": [d] if d else [], "signer": None, "sources": [], "needsReview": False,
+        })
+    return out
+
+
 def ack_patch(plugin_id):
     fid = safe_plugin_id(plugin_id)
     lock = json.load(open(os.path.join(VENDOR_DIR, "lock.json"), encoding="utf-8"))["plugins"]
@@ -529,13 +552,16 @@ def main():
         log("%d keiyoushi APK(s) have unverified SHA-256 metadata; it was omitted" % unverified_checksums)
     lnr, unknown_lang, failed = build_lnreader(lnr_idx)
     lnr, patch_reviews = vendor_lnreader(lnr, lnr_idx, lnr_commit)
+    own = build_own()
+    if any(o["id"] in {e["id"] for e in lnr} for o in own):
+        raise SystemExit("plugins/own ids must not collide with LNReader plugin ids")
     os.makedirs(DIST, exist_ok=True)
     write_if_changed(os.path.join(DIST, "patch-review.md"), render_patch_review(patch_reviews))
     if "--vendor-only" in sys.argv:
         log("vendored %d LNReader plugins, %d patched plugin(s) need review" % (len(lnr), len(patch_reviews)))
         return
     lnc = build_lncrawl(manifest)
-    pub_lnr, pub_lnc, skipped, review, notes = dedupe(kei, lnr, lnc, overrides, rejected)
+    pub_lnr, pub_lnc, skipped, review, notes = dedupe(kei, lnr + own, lnc, overrides, rejected)
     if unverified_checksums:
         notes.append(
             "%d keiyoushi APK(s) had an unverified release-assets checksum (sha256 = null; signer verification remains)"
