@@ -28,12 +28,14 @@ may appear without a bump, so consumers must ignore unknown keys.
 | `package` | `"apk"` \| `"js"` | How to install |
 | `version` | string | APK: `versionName`. JS: upstream version; lncrawl: `<generatorRev>.0.<upstream crawler epoch>` (monotonic) |
 | `versionCode` | int \| null | APK only |
-| `url` | string | Download URL. Keiyoushi/LNReader: the upstream URL (linked, not re-hosted). lncrawl: raw URL of the plugin in this repo (`.../main/plugins/<lang>/<id>.js`) |
+| `url` | string | Download URL. Keiyoushi: the upstream APK URL (linked, not re-hosted). LNReader: raw URL of OUR copy (`plugins/vendor/lnreader/<id>.js`, or `plugins/patches/<id>.js` when patched). lncrawl: raw URL of the plugin in this repo (`.../plugins/<lang>/<id>.js`) |
 | `sha256` | string \| null | Lower-case hex of the downloaded file. JS: always set, **this is the integrity pin**. APK: from Keiyoushi `release-assets.json`; null if upstream lacks it |
 | `iconUrl` | string | Upstream icon; lncrawl uses a favicon service for the first site |
 | `sites` | string[] | Home domains, lower-case, `www.`/`m.` stripped. Used for de-dup and "also available as" |
 | `signer` | string \| null | APK: Keiyoushi `signingKey` (SHA-256 fingerprint of the signing certificate, from its `index.json`). JS: `null` |
 | `sources` | object[] | APK: `{id, name, lang, homeUrl}` per source (`id` is a string; 64-bit). JS: `[]` |
+| `upstreamUrl` | string | LNReader only: commit-pinned URL of the upstream file our copy came from |
+| `upstreamSha256` | string | LNReader only: sha256 of that upstream file. Equals `sha256` unless the plugin is patched (then `version` ends in `-ydn.N`) |
 | `needsReview` | bool | `true` = published, but a human has not yet decided whether it duplicates another site on a different TLD (see `dist/dedupe-review.md`) |
 | `upstream` | object | lncrawl only: `{file, commit, template, customized}`; the lncrawl source file + commit this plugin was generated from (attribution, GPL-3.0), the lncrawl template class, and overridden method names that the port approximates |
 

@@ -66,6 +66,8 @@
         "signer": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" },
         "sources": { "type": "array", "items": { "$ref": "#/$defs/source" } },
         "needsReview": { "type": "boolean" },
+        "upstreamUrl": { "type": "string", "format": "uri" },
+        "upstreamSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
         "upstream": {
           "type": "object",
           "required": ["file", "commit", "template", "customized"],

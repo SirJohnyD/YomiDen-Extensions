@@ -24,6 +24,8 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), 
 CACHE = os.path.join(ROOT, ".cache")
 DIST = os.path.join(ROOT, "dist")
 PLUGINS = os.path.join(ROOT, "plugins")
+VENDOR_DIR = os.path.join(PLUGINS, "vendor", "lnreader")
+PATCH_DIR = os.path.join(PLUGINS, "patches")
 PUBLIC_BASE = os.environ.get("YDN_PUBLIC_BASE", "https://raw.githubusercontent.com/SirJohnyD/yomiden-extensions/main/")
 
 KEI_INDEX = "https://raw.githubusercontent.com/keiyoushi/extensions/repo/index.json"
@@ -229,6 +231,123 @@ def build_lnreader(plugins):
     return out, sorted(unknown_lang), failed
 
 
+# --- Vendoring (LNReader plugins are re-hosted here so broken ones can be fixed without waiting for upstream) -------
+
+PATCH_VERSION_RE = re.compile(r"^\s*//\s*ydn-patch:\s*(\d+)\s*$", re.M)
+
+
+def safe_plugin_id(plugin_id):
+    return re.sub(r"[^\w.-]", "_", plugin_id)
+
+
+def read_bytes(path):
+    with open(path, "rb") as f:
+        return f.read()
+
+
+def write_bytes_if_changed(path, data):
+    if os.path.exists(path) and read_bytes(path) == data:
+        return False
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    with open(path + ".tmp", "wb") as f:
+        f.write(data)
+    os.replace(path + ".tmp", path)
+    return True
+
+
+def patch_revision(patch_bytes):
+    """`// ydn-patch: N` anywhere in the patch picks N for the `-ydn.N` version suffix (default 1)."""
+    m = PATCH_VERSION_RE.search(patch_bytes.decode("utf-8", "replace"))
+    return int(m.group(1)) if m else 1
+
+
+def vendor_lnreader_entry(entry, upstream_bytes, upstream_url, *, vendor_dir, patch_dir, public_base, root):
+    """Returns (new_entry, review_or_None). new_entry points at OUR raw copy (origin stays "lnreader").
+
+    plugins/vendor/lnreader/<id>.js always mirrors upstream (so a patch can be diffed against it). If
+    plugins/patches/<id>.js exists it is what gets published instead; the patch is never written by this tool.
+    plugins/patches/<id>.base holds the upstream sha256 the patch was made against; when upstream moves on, the
+    plugin is reported (patch-review.md) and our patch keeps being served until a human rebases it and runs
+    `aggregate.py --ack-patch <id>`.
+    """
+    fid = safe_plugin_id(entry["id"])
+    upstream_sha = hashlib.sha256(upstream_bytes).hexdigest()
+    vendor_path = os.path.join(vendor_dir, fid + ".js")
+    write_bytes_if_changed(vendor_path, upstream_bytes)
+    patch_path = os.path.join(patch_dir, fid + ".js")
+    out = dict(entry)
+    out["upstreamUrl"] = upstream_url
+    out["upstreamSha256"] = upstream_sha
+    review = None
+    if os.path.exists(patch_path):
+        patch_bytes = read_bytes(patch_path)
+        out["url"] = public_base + os.path.relpath(patch_path, root).replace(os.sep, "/")
+        out["sha256"] = hashlib.sha256(patch_bytes).hexdigest()
+        out["version"] = "%s-ydn.%d" % (entry["version"], patch_revision(patch_bytes))
+        base_path = os.path.join(patch_dir, fid + ".base")
+        if not os.path.exists(base_path):
+            # first time we see this patch: assume it is based on the current upstream
+            with open(base_path, "w", encoding="utf-8", newline="\n") as f:
+                f.write(upstream_sha + "\n")
+        base_sha = open(base_path, encoding="utf-8").read().strip()
+        if base_sha != upstream_sha:
+            review = {"id": entry["id"], "name": entry["name"], "upstreamVersion": entry["version"],
+                      "baseSha256": base_sha, "upstreamSha256": upstream_sha, "upstreamUrl": upstream_url,
+                      "vendorFile": os.path.relpath(vendor_path, root).replace(os.sep, "/"),
+                      "patchFile": os.path.relpath(patch_path, root).replace(os.sep, "/")}
+    else:
+        out["url"] = public_base + os.path.relpath(vendor_path, root).replace(os.sep, "/")
+        out["sha256"] = upstream_sha
+    return out, review
+
+
+def render_patch_review(reviews):
+    lines = ["# Patched plugins whose upstream changed", "",
+             "Our patch is still served. Diff `plugins/vendor/lnreader/<id>.js` against the patch, port what is needed, "
+             "bump `// ydn-patch: N`, then run `python3 tools/aggregate.py --ack-patch <id>`.", ""]
+    if not reviews:
+        lines.append("Nothing to review.")
+    for r in sorted(reviews, key=lambda r: r["id"]):
+        lines += ["## %s (`%s`)" % (r["name"], r["id"]), "",
+                  "- upstream version: %s" % r["upstreamVersion"],
+                  "- patch based on sha256: `%s`" % r["baseSha256"],
+                  "- upstream now: `%s`" % r["upstreamSha256"],
+                  "- upstream file: %s" % r["upstreamUrl"],
+                  "- compare: `%s` vs `%s`" % (r["vendorFile"], r["patchFile"]), ""]
+    return "\n".join(lines) + "\n"
+
+
+def vendor_lnreader(entries, plugins, commit, *, root=ROOT, public_base=None):
+    """Vendors every successfully downloaded LNReader plugin. `plugins` is the (url-pinned) upstream index."""
+    public_base = public_base or PUBLIC_BASE
+    cache_dir = os.path.join(CACHE, "lnreader")
+    by_id = {p["id"]: p for p in plugins}
+    out, reviews, lock = [], [], {}
+    for e in entries:
+        p = by_id[e["id"]]
+        upstream_bytes = read_bytes(lnreader_cache_path(cache_dir, p))
+        new, review = vendor_lnreader_entry(
+            e, upstream_bytes, p["url"], vendor_dir=VENDOR_DIR, patch_dir=PATCH_DIR, public_base=public_base, root=root,
+        )
+        out.append(new)
+        lock[e["id"]] = {"version": e["version"], "upstreamUrl": p["url"], "upstreamSha256": new["upstreamSha256"]}
+        if review:
+            reviews.append(review)
+    os.makedirs(VENDOR_DIR, exist_ok=True)
+    lock_doc = {"upstream": "LNReader/lnreader-plugins", "commit": commit, "plugins": lock}
+    write_if_changed(os.path.join(VENDOR_DIR, "lock.json"), json.dumps(lock_doc, indent=1, sort_keys=True) + "\n")
+    return out, reviews
+
+
+def ack_patch(plugin_id):
+    fid = safe_plugin_id(plugin_id)
+    lock = json.load(open(os.path.join(VENDOR_DIR, "lock.json"), encoding="utf-8"))["plugins"]
+    sha = lock[plugin_id]["upstreamSha256"]
+    with open(os.path.join(PATCH_DIR, fid + ".base"), "w", encoding="utf-8", newline="\n") as f:
+        f.write(sha + "\n")
+    log("patch for %s now based on upstream %s" % (plugin_id, sha))
+
+
 def _safe(fn, x):
     try:
         return fn(x)
@@ -368,6 +487,9 @@ def write_if_changed(path, text):
 
 def main():
     offline = "--offline" in sys.argv
+    if "--ack-patch" in sys.argv:
+        ack_patch(sys.argv[sys.argv.index("--ack-patch") + 1])
+        return
     with open(os.path.join(ROOT, "overrides.json"), encoding="utf-8") as f:
         overrides = json.load(f)
     with open(os.path.join(PLUGINS, "manifest.json"), encoding="utf-8") as f:
@@ -406,6 +528,12 @@ def main():
     if unverified_checksums:
         log("%d keiyoushi APK(s) have unverified SHA-256 metadata; it was omitted" % unverified_checksums)
     lnr, unknown_lang, failed = build_lnreader(lnr_idx)
+    lnr, patch_reviews = vendor_lnreader(lnr, lnr_idx, lnr_commit)
+    os.makedirs(DIST, exist_ok=True)
+    write_if_changed(os.path.join(DIST, "patch-review.md"), render_patch_review(patch_reviews))
+    if "--vendor-only" in sys.argv:
+        log("vendored %d LNReader plugins, %d patched plugin(s) need review" % (len(lnr), len(patch_reviews)))
+        return
     lnc = build_lncrawl(manifest)
     pub_lnr, pub_lnc, skipped, review, notes = dedupe(kei, lnr, lnc, overrides, rejected)
     if unverified_checksums:
@@ -413,6 +541,8 @@ def main():
             "%d keiyoushi APK(s) had an unverified release-assets checksum (sha256 = null; signer verification remains)"
             % unverified_checksums
         )
+    if patch_reviews:
+        notes.append("%d patched LNReader plugin(s) changed upstream, see patch-review.md" % len(patch_reviews))
     if unknown_lang:
         notes.append("unmapped LNReader language names: %s" % ", ".join(unknown_lang))
     if failed:
