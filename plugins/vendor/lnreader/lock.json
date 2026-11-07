@@ -1,5 +1,5 @@
 {
- "commit": "a7ddcd836f83728f80f28841ff2f1816f4529947",
+ "commit": "45daf1d08b46dca6efdf6d38f250da95771967d2",
  "plugins": {
   "1stkissnovel": {
    "upstreamSha256": "7357a2983951a623ad69af0462147b03ffdf15b8765e17b5d3757d33473f2cdf",
@@ -37,9 +37,9 @@
    "version": "2.3.10"
   },
   "FuckNovelpia": {
-   "upstreamSha256": "e0fa93c82d70d53c38525565ffb70e9eeeb096945e5d8aca449ffa3b0197a43e",
+   "upstreamSha256": "9a2a6b44f917866b54e8c061eaa45b6b18b8b265b82eaa893ca54c59e22c9ee9",
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/fucknovelpia.js",
-   "version": "1.1.3"
+   "version": "1.1.4"
   },
   "HasuTL": {
    "upstreamSha256": "5dc757580271026bbbb1a84ddec85e0a5fcc2df74e0f147b71a818381ee615b9",
@@ -742,9 +742,9 @@
    "version": "1.0.1"
   },
   "ln.hako": {
-   "upstreamSha256": "d69339103964eb025e430a60f9bcb0fc67be9fc557cf7cc6d639b42de61c7ee0",
+   "upstreamSha256": "00889f326108265b3ea0dbcedc1956733d4ee38bc8cd02070ad3ac9595d03ba5",
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/vietnamese/LNHako.js",
-   "version": "1.2.0"
+   "version": "1.2.1"
   },
   "lncrawler": {
    "upstreamSha256": "3d52b51687369710ebc75d45b4530aea09339bb897cf25a0b3b4bd29f176b4a4",
@@ -1032,9 +1032,9 @@
    "version": "1.4.5"
   },
   "novelfrance": {
-   "upstreamSha256": "b5ebf19afde0f804f059f777144f8be2ef2596bf3664138420cda797922c189e",
+   "upstreamSha256": "c3e2af60568522ffea2b7ba21edbc2f3b44ce30fc3a44b3b33cb1bb57f17ddae",
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/french/novelfrance.js",
-   "version": "1.0.1"
+   "version": "1.0.2"
   },
   "novelfull": {
    "upstreamSha256": "34493d590208c3a01b25cff8e38a45f19e1474e6548c8c934f15b8c20c8280d1",
