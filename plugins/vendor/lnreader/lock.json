@@ -1,5 +1,5 @@
 {
- "commit": "45daf1d08b46dca6efdf6d38f250da95771967d2",
+ "commit": "ba60ce3aee01e906f49ce7dca6d399cb0748a3f9",
  "plugins": {
   "1stkissnovel": {
    "upstreamSha256": "7357a2983951a623ad69af0462147b03ffdf15b8765e17b5d3757d33473f2cdf",
@@ -287,9 +287,9 @@
    "version": "1.1.12"
   },
   "cherrymistcafe": {
-   "upstreamSha256": "19d8dbd449ed1bc33cad4b6c975c0c4aaf124cb811cc660cb9104d43c293e63e",
-   "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/CherryMistCafe[fictioneer].js",
-   "version": "1.2.1"
+   "upstreamSha256": "ed568fc2af0466fe07c3787c4983c0bca26b5a571cdd4c56c0516e81f45350ef",
+   "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/cherrymistcafe.js",
+   "version": "2.0.0"
   },
   "chikari": {
    "upstreamSha256": "9d58ad264fc25750c4fdd8e22be4764f85ec2d19fae40ccc16e103f02e9aa3ae",
@@ -332,9 +332,9 @@
    "version": "1.1.0"
   },
   "daoistquest": {
-   "upstreamSha256": "109db15c256ed9ec308dab7c6acdd26cdaaeede1e93940686c46991fc6bc01f4",
+   "upstreamSha256": "644d131fc0618e959e5f592c17cc5df523a18ddabca7710a608d3b2101a69fdf",
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/DaoistQuest[fictioneer].js",
-   "version": "1.2.1"
+   "version": "1.3.1"
   },
   "daonovel": {
    "upstreamSha256": "426307f48c8cc070342db42b78ac11877f753750de163b171f5e0afe3e3116af",
@@ -352,9 +352,9 @@
    "version": "1.1.12"
   },
   "dearestrosalie": {
-   "upstreamSha256": "a0d2f8e8ddf21b96bb98faea98ead707c1ef4d98bfe3b6cd6e421817787c3965",
+   "upstreamSha256": "f1c235e5fd1bc9f9b7d07b6403cd24447f2bc839c9311375cf6d6f51641e4767",
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/DearestRosalie[fictioneer].js",
-   "version": "1.2.0"
+   "version": "1.3.0"
   },
   "dilartube": {
    "upstreamSha256": "18f8687a15f70f7b42314d494c24ed541fa1852200dc7aa2c757ae32788a814e",
@@ -442,9 +442,9 @@
    "version": "2.4.0"
   },
   "fenrir": {
-   "upstreamSha256": "db2d10890d0c91c25914bcc47119733f7de6140b9db43dc69a1e68f4f51bf4aa",
+   "upstreamSha256": "cff30b14b528634a5b3c174a471b023b4d1dcbc98759033b8fe90b37056416bb",
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/fenrirrealm.js",
-   "version": "1.1.5"
+   "version": "1.1.6"
   },
   "ficbook": {
    "upstreamSha256": "b472cbabb3c40111304a11feeb8140ed3eadc9c6f826dd901044d1c4a66cf607",
@@ -459,6 +459,11 @@
   "firebirdsnest": {
    "upstreamSha256": "c50ff48aaac582066cf67bbf45e61280293d3487db681e8f7c29ce4c86ae380c",
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/firebirdsnest.js",
+   "version": "1.0.0"
+  },
+  "firsttrytranslations": {
+   "upstreamSha256": "d10b3a2976a2df2d3510c58d9243fa68420e305650b7e948833b285f152d523f",
+   "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/firsttrytranslations.js",
    "version": "1.0.0"
   },
   "fortuneeternal": {
@@ -527,9 +532,9 @@
    "version": "1.0.1"
   },
   "hexnovels": {
-   "upstreamSha256": "5979684a439a819260dd9850978ca7da24a58bd632257fdaa1b5db8abda9361a",
+   "upstreamSha256": "4f155f9f3c7f6b7db9934fd8bc67de439309a70dc12a440877621f86008b1199",
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/russian/hexnovels.js",
-   "version": "1.0.1"
+   "version": "1.0.2"
   },
   "hiraethtranslation": {
    "upstreamSha256": "78cba9c707113ed2520f2d733b2cdce6bd37a0e94e285f8b02ba9861063cbd4e",
@@ -557,9 +562,9 @@
    "version": "1.1.1"
   },
   "illusia": {
-   "upstreamSha256": "595d929c0a18ae770744814254956b85de17dc3b63f53efcc783aaec5fc89322",
+   "upstreamSha256": "460cf195ff248f28bf0049f5e1db975313079e19f172fee8c55d814a42906a3b",
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/portuguese/Illusia[fictioneer].js",
-   "version": "1.2.0"
+   "version": "1.3.0"
   },
   "indratranslations": {
    "upstreamSha256": "b07e0c2ce6a21342ef6d936144f210ebd459f151692a758a1daf51949b522ab7",
@@ -722,9 +727,9 @@
    "version": "1.0.2"
   },
   "lilyonthevalley": {
-   "upstreamSha256": "5fc8da163cb88ec4f6c2b1b2153f740b01dfb658df54d3d932b8761e8e50f0ff",
+   "upstreamSha256": "70bd2fdf1eec8c60c42050b65cbc9bc9e52dc9c9ca54a99b141a18e7b1ed1150",
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/LilyontheValley[fictioneer].js",
-   "version": "1.2.1"
+   "version": "1.3.1"
   },
   "linovel": {
    "upstreamSha256": "970205e1d6d4c7b6301bd69d4f43b1c00c093de9b75dc9fc9710d45368b04ee4",
@@ -790,6 +795,11 @@
    "upstreamSha256": "59b396f9cc26131705c602e001041322d257cbac06854f47c91596ef81ac1daf",
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/LunarLetters[madara].js",
    "version": "2.4.0"
+  },
+  "machineslicedbread": {
+   "upstreamSha256": "8806ef17422617e760f674601290c0c6abc21419de9fd08bdb36a32fdeaa939e",
+   "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/machineslicedbread.js",
+   "version": "1.0.0"
   },
   "maehwasup": {
    "upstreamSha256": "e331fe77a9dd4f0ed710330b1e59f98fa479911f4e8c4c80bff81a88a9602bb2",
@@ -921,6 +931,11 @@
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/NeoSekaiTranslations[madara].js",
    "version": "2.4.0"
   },
+  "nephologytl": {
+   "upstreamSha256": "7fb96606fd98e134f61268b72681731d8b002d68a09a923dd312d743219892ab",
+   "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/nephologytl.js",
+   "version": "1.0.0"
+  },
   "nettruyen": {
    "upstreamSha256": "1580e4b8b08688419992fe5c21627b75c04c9177b78436b186dbfb3cff1aa988",
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/vietnamese/nettruyen.js",
@@ -976,6 +991,11 @@
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/NovelTranslate[madara].js",
    "version": "2.4.0"
   },
+  "novelaligera4fan": {
+   "upstreamSha256": "87299687bec64200bea040e9444e3b3962ef6c8ccadd78b6483793a4bbf402d4",
+   "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/spanish/novelaligera4fan.js",
+   "version": "1.0.0"
+  },
   "novelarchive": {
    "upstreamSha256": "18b6176d4b669e42bccf10bcc8abcfd573db5c9546d51d0f5ed00e6c30a806e4",
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/novelarchive.js",
@@ -1022,9 +1042,9 @@
    "version": "1.0.8"
   },
   "noveldex": {
-   "upstreamSha256": "2e03b536b00f2b5050910cc2cac41daa226a167a604ac024319eacdc563adc66",
+   "upstreamSha256": "bfa6fa19af49582a00929e4ef994ee2a6d5d0af3211c9ff291441c56b1110ba0",
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/noveldex.js",
-   "version": "1.0.0"
+   "version": "1.0.1"
   },
   "novelfire": {
    "upstreamSha256": "72ef0d74a87f28448033c19927eaa31dcfab758b3f321c53a370619439303254",
@@ -1052,9 +1072,9 @@
    "version": "1.1.2"
   },
   "novelib": {
-   "upstreamSha256": "c8568b78363aa41ea8b45303177c25fc8c6d690011ba0d3e8a3e5046bcb700fd",
+   "upstreamSha256": "cb4113e2578fc4f7dd6aa18fa31ff6f8b3f803b77956ec02da639397222c8fb2",
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/NovelLib[fictioneer].js",
-   "version": "1.2.0"
+   "version": "1.3.0"
   },
   "novelight": {
    "upstreamSha256": "246d7ac9c7a0d0b2f84aa5ed37c972670073b363d563275d4cd2e35f0a4b070b",
@@ -1147,9 +1167,9 @@
    "version": "1.1.12"
   },
   "novelupdates": {
-   "upstreamSha256": "33869ccad1722ca17770451cd8fee1cffe550a7ac85098368fc5b86c81c40982",
+   "upstreamSha256": "a900b13ee85560e187dee9a00a39b10e2592f45ced1095cf47e7dae449699e7f",
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/novelupdates.js",
-   "version": "0.9.9"
+   "version": "0.9.10"
   },
   "novelyra": {
    "upstreamSha256": "974fb4123076a6e416f5b2ff1f3cc709e92294d5889b97d0299982a70e1a8822",
@@ -1202,19 +1222,19 @@
    "version": "2.1.1"
   },
   "peachpuff": {
-   "upstreamSha256": "6001c6ca2b92c187ef1a2a79e22a45d3b3489f6cfff8e9264d2066decdcbfac9",
-   "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/peachpuff.js",
-   "version": "1.0.0"
+   "upstreamSha256": "9244166b500ae9ba334c67db9fcd81c6477cfb64f3296a0b6376ec3ea627c153",
+   "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/PeachPuffTranslations[fictioneer].js",
+   "version": "1.3.0"
   },
   "penguinsquad": {
-   "upstreamSha256": "b3cecd08debfd3efce6c32266c1bd1b84846316292fbaa16fe37ca2e1741ca9e",
+   "upstreamSha256": "d6f5815b83dd5d815073dd05271f7b5f54f5cd80f2a76814040225c62483523b",
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/PenguinSquad[fictioneer].js",
-   "version": "1.2.0"
+   "version": "1.3.0"
   },
   "prizmatranslation": {
-   "upstreamSha256": "f95230d3425373ef8982396dc94c43b5364df29e951636efc7826ba7803e50c2",
+   "upstreamSha256": "93beffc08c2ba584a4ff9c1ef3e0a12a90143f191878af155702e87dcbb4fc1b",
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/Prizma[fictioneer].js",
-   "version": "1.2.0"
+   "version": "1.3.0"
   },
   "puffinfolio": {
    "upstreamSha256": "d62a5671a913c164e9a43fb230498ae38eb422ee7a94ad3607a5d47bf5306c57",
@@ -1321,6 +1341,11 @@
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/french/rezerowebnovelfr.js",
    "version": "1.0.3"
   },
+  "rinkagetranslation": {
+   "upstreamSha256": "77b454ff824fdb3cf6d7f7db139649c9abf8d571fa92be1b283316b51fe51fa5",
+   "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/rinkagetranslation.js",
+   "version": "1.0.0"
+  },
   "riwyat": {
    "upstreamSha256": "87f7bfa77712651e407ac3bed2eab92cd4517d21713887e11d141d13c566ae19",
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/arabic/Riwyat[madara].js",
@@ -1352,9 +1377,9 @@
    "version": "2.4.0"
   },
   "scribblehub": {
-   "upstreamSha256": "c5b54c265fc816054129c95366f729778359bb83644392bfc4b6809ac0563ec7",
+   "upstreamSha256": "8e1244dfca8de42fccdf0bdef381917857aabb4e2811543615ab9b525841ceb4",
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/scribblehub.js",
-   "version": "1.0.2"
+   "version": "1.1.0"
   },
   "seanovel": {
    "upstreamSha256": "2e2c8e1a948a21e40b84c0b06cbfd8befe829892bd235ff6874258932aac671f",
@@ -1474,6 +1499,11 @@
   "truyenss.com": {
    "upstreamSha256": "9e6ce02bf41fbcf06c94985d7a9bf157f7b8d257403c81314050f8cef553fbac",
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/vietnamese/truyenss.js",
+   "version": "1.0.0"
+  },
+  "tseirptranslations": {
+   "upstreamSha256": "0185d92625f265e765d63c9c79076e7f3b0ce13e5b44fe45ae28d0dd32bb0d51",
+   "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/tseirptranslations.js",
    "version": "1.0.0"
   },
   "tsundoku": {
@@ -1602,9 +1632,9 @@
    "version": "1.0.3"
   },
   "wuxiaworld": {
-   "upstreamSha256": "8895ae294f4a865bd3540839e21b03185ce8b2cb1a925cb51efb83a2bf7c430b",
+   "upstreamSha256": "89da31dc720b84543e95304465967dfe5f336eb83e963298fdf1e48500824244",
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/wuxiaworld.js",
-   "version": "0.5.1"
+   "version": "0.6.0"
   },
   "wuxiaworld.site": {
    "upstreamSha256": "189f008a9edaa2fcaf69226fa68f3467f457e975b04a00cb231a560c07078952",
