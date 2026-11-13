@@ -1,5 +1,5 @@
 {
- "commit": "368cb9fa2a1f2f24b8d84748ce0ab6cd00620e63",
+ "commit": "1e116f19e55223881e6cf2c0ff5736b7a49556f4",
  "plugins": {
   "1stkissnovel": {
    "upstreamSha256": "7357a2983951a623ad69af0462147b03ffdf15b8765e17b5d3757d33473f2cdf",
@@ -870,6 +870,11 @@
    "upstreamSha256": "59b396f9cc26131705c602e001041322d257cbac06854f47c91596ef81ac1daf",
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/LunarLetters[madara].js",
    "version": "2.4.0"
+  },
+  "lupussensei": {
+   "upstreamSha256": "1fe9b0b2c14f6aee9daeb92708581d5f23e4e21d5f291f56b1bb8d3b33fe5244",
+   "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/lupussensei.js",
+   "version": "1.0.0"
   },
   "machineslicedbread": {
    "upstreamSha256": "8806ef17422617e760f674601290c0c6abc21419de9fd08bdb36a32fdeaa939e",
