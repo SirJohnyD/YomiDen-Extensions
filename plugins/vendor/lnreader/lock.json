@@ -1,5 +1,5 @@
 {
- "commit": "1e116f19e55223881e6cf2c0ff5736b7a49556f4",
+ "commit": "8045ab30ca80b8f07f6e2835df866d6d4591516e",
  "plugins": {
   "1stkissnovel": {
    "upstreamSha256": "7357a2983951a623ad69af0462147b03ffdf15b8765e17b5d3757d33473f2cdf",
@@ -212,9 +212,9 @@
    "version": "1.1.12"
   },
   "bailiantales": {
-   "upstreamSha256": "5e51ec3586bb70b48a0a5533baf69f8fd4a596181d749aff2daa51c6d4ab9823",
-   "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/BaiLianTales[madara].js",
-   "version": "2.4.0"
+   "upstreamSha256": "ccf0e930098e9632f629b0e64969777a6f6cd5e23eb6fd7686d34dd5f0e2f797",
+   "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/BaiLianTales.js",
+   "version": "2.3.0"
   },
   "bakainua": {
    "upstreamSha256": "5a3b2342668bbf7b2058a73c0923ea6039d8c01c3304139298d8cfa519a468ad",
