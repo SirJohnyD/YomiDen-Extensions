@@ -1,5 +1,5 @@
 {
- "commit": "8045ab30ca80b8f07f6e2835df866d6d4591516e",
+ "commit": "856746623208323bad8fab6423c89f1deeadf9f8",
  "plugins": {
   "1stkissnovel": {
    "upstreamSha256": "7357a2983951a623ad69af0462147b03ffdf15b8765e17b5d3757d33473f2cdf",
@@ -487,9 +487,9 @@
    "version": "2.4.0"
   },
   "fenrir": {
-   "upstreamSha256": "cff30b14b528634a5b3c174a471b023b4d1dcbc98759033b8fe90b37056416bb",
+   "upstreamSha256": "3db4eff79e11056602c7776af74b9dc4b8b87acf2cb0c3f417ef6593f4445a1d",
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/fenrirrealm.js",
-   "version": "1.1.6"
+   "version": "1.2.0"
   },
   "ficbook": {
    "upstreamSha256": "b472cbabb3c40111304a11feeb8140ed3eadc9c6f826dd901044d1c4a66cf607",
@@ -1122,9 +1122,9 @@
    "version": "1.0.0"
   },
   "novelbin": {
-   "upstreamSha256": "3dd72e2b2cd24d711d3eb585c0f58f2bd92cff5dceb2fb3031c29becc6251822",
+   "upstreamSha256": "2b1484e86c5aa266ce0cd8dbe598b6f5bfb9d5fc0a807b74939f6a6f16304a8c",
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/novelbin.js",
-   "version": "3.0.0"
+   "version": "3.0.1"
   },
   "novelbookid": {
    "upstreamSha256": "449fd86ea60b08074891c9f893ddeb8a2a83d038dd95173a4a5e0d8b3ccb0d5e",
@@ -1352,9 +1352,9 @@
    "version": "1.3.0"
   },
   "penguinsquad": {
-   "upstreamSha256": "d6f5815b83dd5d815073dd05271f7b5f54f5cd80f2a76814040225c62483523b",
-   "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/PenguinSquad[fictioneer].js",
-   "version": "1.3.0"
+   "upstreamSha256": "48faab19ac65fbb8cda179f3085a950552c63f12ccbc33b064d735f2334eb214",
+   "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/penguinsquad.js",
+   "version": "2.0.0"
   },
   "pinkmuffintl": {
    "upstreamSha256": "59e617adb63b77ac19bf3290391e476caec43ecd52726a2f492ad6c60afc78bb",
