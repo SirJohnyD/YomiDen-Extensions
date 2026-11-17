@@ -1,22 +1,22 @@
 # YDN catalog report
 
-Generated at 2026-11-16T22:01:46Z
+Generated at 2026-11-17T07:54:49Z
 
 ## Published
 
 | origin | comic | novel | total |
 |---|---|---|---|
-| keiyoushi | 1692 | 0 | 1692 |
+| keiyoushi | 1710 | 0 | 1710 |
 | lnreader | 1 | 372 | 373 |
 | lncrawl | 4 | 19 | 23 |
-| **all** | 1697 | 391 | 2088 |
+| **all** | 1715 | 391 | 2106 |
 
 Flagged `needsReview`: 4 (see dedupe-review.md)
 
 - lncrawl generated plugins: 46
 - lncrawl crawlers not ported (legacy/custom/dead/other templates): 400
 - template crawlers skipped by the generator: 82
-- NOTE: 1692 keiyoushi APK(s) had an unverified release-assets checksum (sha256 = null; signer verification remains)
+- NOTE: 1710 keiyoushi APK(s) had an unverified release-assets checksum (sha256 = null; signer verification remains)
 - NOTE: 1 patched LNReader plugin(s) changed upstream, see patch-review.md
 
 ## Skipped by de-dup (23)
