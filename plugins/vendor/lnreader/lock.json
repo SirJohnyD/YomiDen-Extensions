@@ -1,5 +1,5 @@
 {
- "commit": "856746623208323bad8fab6423c89f1deeadf9f8",
+ "commit": "157c343826a09e3e53bd2ef911ceefb79c1b81ad",
  "plugins": {
   "1stkissnovel": {
    "upstreamSha256": "7357a2983951a623ad69af0462147b03ffdf15b8765e17b5d3757d33473f2cdf",
@@ -1287,9 +1287,9 @@
    "version": "1.0.0"
   },
   "novelupdates": {
-   "upstreamSha256": "a900b13ee85560e187dee9a00a39b10e2592f45ced1095cf47e7dae449699e7f",
+   "upstreamSha256": "f55e529df3d2b13f850ab737f8018d9272b4cae23f329050ae50c5153288032a",
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/novelupdates.js",
-   "version": "0.9.10"
+   "version": "0.9.11"
   },
   "novelyra": {
    "upstreamSha256": "974fb4123076a6e416f5b2ff1f3cc709e92294d5889b97d0299982a70e1a8822",
