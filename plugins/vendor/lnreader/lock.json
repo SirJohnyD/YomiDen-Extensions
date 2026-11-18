@@ -1,5 +1,5 @@
 {
- "commit": "157c343826a09e3e53bd2ef911ceefb79c1b81ad",
+ "commit": "dd8d14cef07060d54646a7a6bfe4e0e4db8520dc",
  "plugins": {
   "1stkissnovel": {
    "upstreamSha256": "7357a2983951a623ad69af0462147b03ffdf15b8765e17b5d3757d33473f2cdf",
@@ -1080,6 +1080,11 @@
    "upstreamSha256": "8d62ced993eed2fc17a9b4ce3e43b69119a66943c40320feff9ce17fc2c9e123",
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/novel7s.js",
    "version": "1.0.1"
+  },
+  "novelId": {
+   "upstreamSha256": "05c2ad861e63fd0dad4d7c39b878e9e16b1aebe626ab43cfcb2cc31e6cb55788",
+   "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/indonesian/novelId.js",
+   "version": "1.0.0"
   },
   "novelTL": {
    "upstreamSha256": "758d7ae8e8579aeb3c628fb9c6300b27a6fd8829da898c36cb4cd404679f100a",
