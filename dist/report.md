@@ -1,12 +1,12 @@
 # YDN catalog report
 
-Generated at 2026-11-18T03:38:19Z
+Generated at 2026-11-18T07:28:31Z
 
 ## Published
 
 | origin | comic | novel | total |
 |---|---|---|---|
-| keiyoushi | 1710 | 0 | 1710 |
+| keiyoushi | 1714 | 0 | 1714 |
 | lnreader | 1 | 372 | 373 |
 | lncrawl | 4 | 19 | 23 |
 | littlesurvival | 3 | 0 | 3 |
@@ -16,14 +16,14 @@ Generated at 2026-11-18T03:38:19Z
 | felipegfa | 93 | 0 | 93 |
 | shosetsu | 0 | 98 | 98 |
 | paperback | 1 | 0 | 1 |
-| **all** | 1820 | 489 | 2309 |
+| **all** | 1824 | 489 | 2313 |
 
 Flagged `needsReview`: 4 (see dedupe-review.md)
 
 - lncrawl generated plugins: 46
 - lncrawl crawlers not ported (legacy/custom/dead/other templates): 400
 - template crawlers skipped by the generator: 82
-- NOTE: 1710 keiyoushi APK(s) had an unverified release-assets checksum (sha256 = null; signer verification remains)
+- NOTE: 1714 keiyoushi APK(s) had an unverified release-assets checksum (sha256 = null; signer verification remains)
 - NOTE: 1 patched LNReader plugin(s) changed upstream, see patch-review.md
 
 ## Skipped by de-dup (1315)
