@@ -1,6 +1,6 @@
 # YDN catalog report
 
-Generated at 2026-11-18T01:54:57Z
+Generated at 2026-11-18T03:38:19Z
 
 ## Published
 
@@ -15,7 +15,8 @@ Generated at 2026-11-18T01:54:57Z
 | cursed-manga | 6 | 0 | 6 |
 | felipegfa | 93 | 0 | 93 |
 | shosetsu | 0 | 98 | 98 |
-| **all** | 1819 | 489 | 2308 |
+| paperback | 1 | 0 | 1 |
+| **all** | 1820 | 489 | 2309 |
 
 Flagged `needsReview`: 4 (see dedupe-review.md)
 
@@ -24,7 +25,6 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 - template crawlers skipped by the generator: 82
 - NOTE: 1710 keiyoushi APK(s) had an unverified release-assets checksum (sha256 = null; signer verification remains)
 - NOTE: 1 patched LNReader plugin(s) changed upstream, see patch-review.md
-- NOTE: shosetsu-universe: GET https://repo.shosetsu.app/universe/index.json failed: HTTP Error 404: Not Found
 
 ## Skipped by de-dup (1315)
 
