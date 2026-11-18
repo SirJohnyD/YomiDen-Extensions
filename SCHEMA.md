@@ -12,7 +12,7 @@ may appear without a bump, so consumers must ignore unknown keys.
 | `schemaVersion` | int | `1` |
 | `name` | string | Display name of the repo (`YomiDen Extensions (YDN)`) |
 | `generatedAt` | ISO-8601 UTC | Only changes when the catalog content changes |
-| `upstreams` | object | `keiyoushi`, `lnreader`, `lncrawl`, each `{url, commit, etag, count, published}`; `lncrawl` also has `generated`. `count` = entries upstream, `published` = entries that survived de-dup. `commit` is null when it could not be resolved |
+| `upstreams` | object | `keiyoushi`, `lnreader`, `lncrawl` and supplemental comic repositories, each `{url, commit, etag, count, published}`; `lncrawl` also has `generated`. `count` = entries upstream, `published` = entries that survived de-dup. `commit` is null when it could not be resolved |
 | `extensions` | array | Sorted by `origin`, then `id` |
 
 ## Extension entry
@@ -22,17 +22,17 @@ may appear without a bump, so consumers must ignore unknown keys.
 | `id` | string | Unique in the whole catalog. APK: Android package name. JS: plugin id (`lncrawl-<module>` for lncrawl). For JS it must equal the plugin's own `id` (source id = `hash("ydn:" + id)` / `hash("lnr:" + id)`) |
 | `name` | string | Display name |
 | `lang` | string | ISO code (`en`, `pt-BR`), `all` or `multi` |
-| `contentType` | `"comic"` \| `"novel"` | Keiyoushi = comic, LNReader = novel, lncrawl = either |
-| `nsfw` | bool | Keiyoushi `contentWarning` NSFW; others currently `false` |
-| `origin` | `"keiyoushi"` \| `"lnreader"` \| `"lncrawl"` | Attribution / debugging; shown only in extension details |
+| `contentType` | `"comic"` \| `"novel"` | APK = comic, LNReader = novel, lncrawl = either |
+| `nsfw` | bool | APK content warning; supplemental mixed content is also flagged |
+| `origin` | `"keiyoushi"` \| `"lnreader"` \| `"lncrawl"` or the supplemental repository key (`littlesurvival`, `kavita`, `suwayomi`, `cursed-manga`, `felipegfa`) | Attribution / debugging; shown only in extension details |
 | `package` | `"apk"` \| `"js"` | How to install |
 | `version` | string | APK: `versionName`. JS: upstream version; lncrawl: `<generatorRev>.0.<upstream crawler epoch>` (monotonic) |
 | `versionCode` | int \| null | APK only |
-| `url` | string | Download URL. Keiyoushi: the upstream APK URL (linked, not re-hosted). LNReader: raw URL of OUR copy (`plugins/vendor/lnreader/<id>.js`, or `plugins/patches/<id>.js` when patched). lncrawl: raw URL of the plugin in this repo (`.../plugins/<lang>/<id>.js`) |
-| `sha256` | string \| null | Lower-case hex of the downloaded file. JS: always set, **this is the integrity pin**. APK: from Keiyoushi `release-assets.json`; null if upstream lacks it |
+| `url` | string | Download URL. APK: the upstream APK URL (linked, not re-hosted). LNReader: raw URL of OUR copy (`plugins/vendor/lnreader/<id>.js`, or `plugins/patches/<id>.js` when patched). lncrawl: raw URL of the plugin in this repo (`.../plugins/<lang>/<id>.js`) |
+| `sha256` | string \| null | Lower-case hex of the downloaded file. JS: always set, **this is the integrity pin**. APK: null when a verified asset checksum is unavailable |
 | `iconUrl` | string | Upstream icon; lncrawl uses a favicon service for the first site |
 | `sites` | string[] | Home domains, lower-case, `www.`/`m.` stripped. Used for de-dup and "also available as" |
-| `signer` | string \| null | APK: Keiyoushi `signingKey` (SHA-256 fingerprint of the signing certificate, from its `index.json`). JS: `null` |
+| `signer` | string \| null | APK: the upstream signing certificate SHA-256 fingerprint. JS: `null` |
 | `sources` | object[] | APK: `{id, name, lang, homeUrl}` per source (`id` is a string; 64-bit). JS: `[]` |
 | `upstreamUrl` | string | LNReader only: commit-pinned URL of the upstream file our copy came from |
 | `upstreamSha256` | string | LNReader only: sha256 of that upstream file. Equals `sha256` unless the plugin is patched (then `version` ends in `-ydn.N`) |

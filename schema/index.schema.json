@@ -16,7 +16,12 @@
       "properties": {
         "keiyoushi": { "$ref": "#/$defs/upstream" },
         "lnreader": { "$ref": "#/$defs/upstream" },
-        "lncrawl": { "$ref": "#/$defs/upstream" }
+        "lncrawl": { "$ref": "#/$defs/upstream" },
+        "littlesurvival": { "$ref": "#/$defs/upstream" },
+        "kavita": { "$ref": "#/$defs/upstream" },
+        "suwayomi": { "$ref": "#/$defs/upstream" },
+        "cursed-manga": { "$ref": "#/$defs/upstream" },
+        "felipegfa": { "$ref": "#/$defs/upstream" }
       }
     },
     "extensions": { "type": "array", "items": { "$ref": "#/$defs/extension" } }
@@ -55,7 +60,7 @@
         "lang": { "type": "string" },
         "contentType": { "enum": ["comic", "novel"] },
         "nsfw": { "type": "boolean" },
-        "origin": { "enum": ["keiyoushi", "lnreader", "lncrawl"] },
+        "origin": { "enum": ["keiyoushi", "lnreader", "lncrawl", "littlesurvival", "kavita", "suwayomi", "cursed-manga", "felipegfa"] },
         "package": { "enum": ["apk", "js"] },
         "version": { "type": "string" },
         "versionCode": { "type": ["integer", "null"] },
@@ -83,8 +88,8 @@
       "allOf": [
         {
           "if": { "properties": { "package": { "const": "apk" } } },
-          "then": { "properties": { "versionCode": { "type": "integer" }, "signer": { "type": "string" }, "origin": { "const": "keiyoushi" } } },
-          "else": { "properties": { "versionCode": { "type": "null" }, "signer": { "type": "null" }, "sha256": { "type": "string" }, "sources": { "maxItems": 0 } } }
+          "then": { "properties": { "contentType": { "const": "comic" }, "versionCode": { "type": "integer" }, "signer": { "type": "string" }, "origin": { "enum": ["keiyoushi", "littlesurvival", "kavita", "suwayomi", "cursed-manga", "felipegfa"] } } },
+          "else": { "properties": { "origin": { "enum": ["lnreader", "lncrawl"] }, "versionCode": { "type": "null" }, "signer": { "type": "null" }, "sha256": { "type": "string" }, "sources": { "maxItems": 0 } } }
         },
         {
           "if": { "properties": { "origin": { "const": "lncrawl" } } },

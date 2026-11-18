@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """YDN catalog aggregator (spec 5.1 / 5.5). Python 3 stdlib only.
 
-Fetches Keiyoushi (APK), LNReader (JS) and the lncrawl index, merges them with the plugins produced by
+Fetches comic APK feeds, LNReader (JS) and the lncrawl index, merges them with the plugins produced by
 tools/lncrawl-gen, de-duplicates by domain (priority keiyoushi > lnreader > lncrawl), applies overrides.json and
 writes dist/index.json, dist/report.md and dist/dedupe-review.md.
 
@@ -33,6 +33,21 @@ KEI_ASSETS = "https://raw.githubusercontent.com/keiyoushi/extensions/repo/releas
 LNR_INDEX = "https://raw.githubusercontent.com/LNReader/lnreader-plugins/plugins/v3.0.0/.dist/plugins.min.json"
 LNCRAWL_INDEX = "https://raw.githubusercontent.com/lncrawl/lightnovel-crawler/%s/sources/_index.json"
 LNCRAWL_BRANCHES = ["dev", "master", "main"]
+
+# Order determines which supplemental APK wins when publishers package the same source.
+# Fingerprints come from the respective repository metadata and must be reviewed if rotated.
+COMIC_REPOS = {
+    "littlesurvival": ("LittleSurvival/copymanga-copy20", "index.min.json",
+                       "896d1ca35175c42baf61b1a157e4354df9568beed4ccc82a03762d1167005e79"),
+    "kavita": ("Kareadita/tach-extension", "index.min.json",
+               "5887aee6597996821a1f05ec0d88cac45ec2847143278ac6b1efc657bfad6be0"),
+    "suwayomi": ("Suwayomi/tachiyomi-extension", "index.min.json",
+                 "263228f0827ca0b66e8aad8eba50d71c0f13927fe6912520f8a05f19667283bc"),
+    "cursed-manga": ("mojuru/cursed-manga-repo", "index.json",
+                     "a5e2027162d4b7294d54fd069af923eee4078cc097765d3a0d84a747d3a8356e"),
+    "felipegfa": ("FelipeGFA/extensoes", "index.json",
+                  "9bf5754a79fd686cb77e6335a2a9e5351ad73ca824c27b09e7b3437f806fea77"),
+}
 
 LNR_LANG = {
     "English": "en", "Русский": "ru", "العربية": "ar", "Español": "es", "Français": "fr", "Türkçe": "tr",
@@ -194,6 +209,99 @@ def build_keiyoushi(index, assets):
             "needsReview": False,
         })
     return out, unverified
+
+
+def build_comic_repo(origin, index, base):
+    _, filename, signer = COMIC_REPOS[origin]
+    if filename == "index.json":
+        if index["signingKey"].lower() != signer:
+            raise ValueError(f"{origin} APK signing fingerprint changed")
+        entries, _ = build_keiyoushi(index, {})
+        for entry, raw in zip(entries, index["extensionList"]["extensions"]):
+            entry["origin"] = origin
+            # Mixed feeds can contain mature titles. Keep them out of the SFW tab.
+            entry["nsfw"] |= "MIXED" in raw.get("contentWarning", "").upper()
+        return entries
+
+    entries = []
+    for raw in index:
+        apk, package = raw["apk"], raw["pkg"]
+        if not re.fullmatch(r"[\w.-]+\.apk", apk) or not re.fullmatch(r"[\w.]+", package):
+            raise ValueError(f"{origin} has an invalid APK filename or package: {package}")
+        sources = [
+            {"id": str(source["id"]), "name": source["name"], "lang": source["lang"],
+             "homeUrl": source.get("baseUrl", "")}
+            for source in raw.get("sources", [])
+        ]
+        sites = sorted({domain_of(source["homeUrl"]) for source in sources} - {""})
+        icon_url = base + "icon/" + package + ".png"
+        if origin == "littlesurvival" and package != "eu.kanade.tachiyomi.extension.zh.copymanga":
+            icon_url = favicon(sites[0]) if sites else ""
+        entries.append({
+            "id": package, "name": raw["name"].removeprefix("Tachiyomi: "), "lang": raw["lang"],
+            "contentType": "comic", "nsfw": bool(raw["nsfw"]), "origin": origin, "package": "apk",
+            "version": raw["version"], "versionCode": int(raw["code"]), "url": base + "apk/" + apk,
+            "sha256": None, "iconUrl": icon_url, "sites": sites,
+            "signer": signer, "sources": sources, "needsReview": False,
+        })
+    return entries
+
+
+def source_sites(entry):
+    if entry["sources"]:
+        return {(domain, source["lang"]) for source in entry["sources"]
+                if (domain := domain_of(source["homeUrl"]))}
+    return {(domain, entry["lang"]) for domain in entry["sites"]}
+
+
+def add_comic_repos(existing, previous, offline):
+    """Keep published entries and reuse each verified snapshot if its feed is briefly unavailable."""
+    ids = {e["id"] for e in existing}
+    comics = [e for e in existing if e["contentType"] == "comic"]
+    source_ids = {source["id"] for entry in comics for source in entry["sources"] if source["id"]}
+    sites = set().union(*(source_sites(entry) for entry in comics))
+    added, upstreams, skipped, notes = [], {}, [], []
+    for origin, (repo, filename, signer) in COMIC_REPOS.items():
+        try:
+            commit = None if offline else github_commit(repo, "repo")
+            if not offline and not commit:
+                raise RuntimeError("could not resolve repo branch")
+            base = raw_github_url(repo, commit or "repo", "")
+            url = base + filename
+            index, etag = fetch_json(url, f"{origin}-index.json", offline)
+            if filename != "index.json":
+                meta, _ = fetch_json(base + "repo.json", f"{origin}-repo.json", offline)
+                if meta["meta"]["signingKeyFingerprint"].lower() != signer:
+                    raise ValueError("APK signing fingerprint changed")
+            candidates = build_comic_repo(origin, index, base)
+            if not candidates or any(
+                not e["id"].startswith("eu.kanade.tachiyomi.extension.")
+                or urllib.parse.urlparse(e["url"]).scheme != "https" for e in candidates
+            ):
+                raise ValueError("feed contains no compatible comic APKs or has an invalid download URL")
+            upstreams[origin] = {"url": url, "commit": commit, "etag": etag,
+                                 "count": len(candidates), "published": 0}
+        except (RuntimeError, ValueError, KeyError, TypeError) as error:
+            if origin not in previous.get("upstreams", {}):
+                raise SystemExit(f"{origin}: unable to load initial extension feed: {error}") from error
+            notes.append(f"{origin}: using the previous snapshot ({error})")
+            upstreams[origin] = {**previous["upstreams"][origin], "published": 0}
+            candidates = [e for e in previous["extensions"] if e["origin"] == origin and e["signer"] == signer]
+        for entry in candidates:
+            entry_ids = {source["id"] for source in entry["sources"] if source["id"]}
+            entry_sites = source_sites(entry)
+            covered_sites = (entry_sites and entry_sites <= sites
+                             and all(source["homeUrl"] for source in entry["sources"]))
+            if entry["id"] in ids or entry_ids & source_ids or covered_sites:
+                skipped.append({"origin": origin, "id": entry["id"], "name": entry["name"],
+                                "reason": "package, source ID or site and language already covered"})
+                continue
+            added.append(entry)
+            ids.add(entry["id"])
+            source_ids.update(entry_ids)
+            sites.update(entry_sites)
+            upstreams[origin]["published"] += 1
+    return added, upstreams, skipped, notes
 
 
 def build_lnreader(plugins):
@@ -470,7 +578,7 @@ def dedupe(kei, lnr, lnc, overrides, rejected_domains):
 def render_report(catalog, skipped, review, notes, extras):
     c = Counter((e["origin"], e["contentType"]) for e in catalog["extensions"])
     lines = ["# YDN catalog report", "", "Generated at %s" % catalog["generatedAt"], "", "## Published", "", "| origin | comic | novel | total |", "|---|---|---|---|"]
-    for o in ("keiyoushi", "lnreader", "lncrawl"):
+    for o in ("keiyoushi", "lnreader", "lncrawl", *COMIC_REPOS):
         lines.append("| %s | %d | %d | %d |" % (o, c[(o, "comic")], c[(o, "novel")], c[(o, "comic")] + c[(o, "novel")]))
     lines.append("| **all** | %d | %d | %d |" % (sum(v for (o, t), v in c.items() if t == "comic"), sum(v for (o, t), v in c.items() if t == "novel"), len(catalog["extensions"])))
     lines += ["", "Flagged `needsReview`: %d (see dedupe-review.md)" % len(review), ""]
@@ -574,7 +682,16 @@ def main():
     if failed:
         notes.append("LNReader plugins that failed to download and were left out: %s" % ", ".join(failed))
 
-    extensions = sorted(kei + pub_lnr + pub_lnc, key=lambda e: (e["origin"], e["id"]))
+    index_path = os.path.join(DIST, "index.json")
+    previous = {}
+    if os.path.exists(index_path):
+        with open(index_path, encoding="utf-8") as f:
+            previous = json.load(f)
+    existing = kei + pub_lnr + pub_lnc
+    added, upstreams, comic_skips, comic_notes = add_comic_repos(existing, previous, offline)
+    skipped.extend(comic_skips)
+    notes.extend(comic_notes)
+    extensions = sorted(existing + added, key=lambda e: (e["origin"], e["id"]))
     ids = [e["id"] for e in extensions]
     dup = [i for i, n in Counter(ids).items() if n > 1]
     if dup:
@@ -588,16 +705,12 @@ def main():
             "keiyoushi": {"url": kei_index_url, "commit": kei_commit, "etag": kei_etag, "count": len(kei_idx["extensionList"]["extensions"]), "published": len(kei)},
             "lnreader": {"url": lnr_source_index_url, "commit": lnr_commit, "etag": lnr_etag, "count": len(lnr_idx), "published": len(pub_lnr)},
             "lncrawl": {"url": lnc_url, "commit": manifest["lncrawl"]["commit"], "etag": lnc_etag, "count": manifest["lncrawl"]["crawlers"], "generated": len(lnc), "published": len(pub_lnc)},
+            **upstreams,
         },
         "extensions": extensions,
     }
     # keep the old timestamp / volatile upstream fields when nothing real changed, so CI only commits real changes
-    index_path = os.path.join(DIST, "index.json")
-    os.makedirs(DIST, exist_ok=True)
-    if os.path.exists(index_path):
-        with open(index_path, encoding="utf-8") as f:
-            prev = json.load(f)
-
+    if previous:
         def stable(c):
             d = json.loads(json.dumps(c))
             d.pop("generatedAt", None)
@@ -605,9 +718,9 @@ def main():
                 u.pop("etag", None)
             return d
 
-        if stable(prev) == stable(catalog):
-            catalog["generatedAt"] = prev["generatedAt"]
-            catalog["upstreams"] = prev["upstreams"]
+        if stable(previous) == stable(catalog):
+            catalog["generatedAt"] = previous["generatedAt"]
+            catalog["upstreams"] = previous["upstreams"]
     write_if_changed(index_path, json.dumps(catalog, ensure_ascii=False, indent=1) + "\n")
     extras = {
         "lncrawl generated plugins": len(lnc),
