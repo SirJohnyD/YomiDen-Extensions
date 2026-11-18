@@ -19,8 +19,8 @@ decisions live in `overrides.json`.
 | Requested repository | Catalog coverage |
 |---|---|
 | Yūzōnō Tachiyomi | The live manga index only carries a migration entry pointing to Keiyoushi, which YDN already includes. |
-| Paperback | The supplied repo links to Paperback extensions built for its iOS runtime. Each source would need a port. |
-| Shosetsu (official, Universe, noaione, Jobobby04, suhan-paradkar, ShosetLazyExtensions) | The catalog imports Lua sources from reachable feeds. The Universe index currently returns 404 at the supplied location. |
+| Paperback | The catalog includes the legacy AEManga (Arabic) bridge entry. Other sources in the supplied directory require their own compatibility checks or newer runtime support. |
+| Shosetsu (official, Universe, noaione, Jobobby04, suhan-paradkar, ShosetLazyExtensions) | The catalog imports Lua sources from reachable feeds. Shosetsu Universe is fetched from its upstream GitLab repository. |
 | IReader and NovelSourcery | These use native novel extension APIs. YDN's novels use its JS runtime. Each missing source would need a port or corresponding app runtime. |
 | Yūzōnō Anime | The APKs implement Aniyomi's anime API. YDN supports comics and novels. |
 
@@ -28,6 +28,11 @@ decisions live in `overrides.json`.
 - Catalog the app reads: `https://raw.githubusercontent.com/SirJohnyD/yomiden-extensions/main/dist/index.json`
 - Format: [`SCHEMA.md`](SCHEMA.md), JSON Schema in `schema/`
 - Rebuilt every 6 hours by `.github/workflows/ydn-sync.yml` (also runnable manually)
+
+## Paperback bundles
+AEManga is compiled from xOnlyFadi’s [pinned legacy distribution](https://github.com/xOnlyFadi/xonlyfadi-extensions/tree/977e6092959fc671c92ff7dde9180e4fa5a804da/0.6/AEManga).
+The upstream TypeScript and GPL-3.0 license are available from the [0.6 source tree](https://github.com/xOnlyFadi/xonlyfadi-extensions/tree/441da55360645b4f02945898a6ba031fafb3f40b).
+The converter lowers the bundle to ES2016 and wraps it for YomiDen’s Paperback bridge. The catalog records checksums for both the original and generated bundle.
 
 ## Vendored LNReader plugins and patches
 Every LNReader plugin is copied to `plugins/vendor/lnreader/<id>.js` (mirror of upstream at the pinned commit, listed with

@@ -69,3 +69,6 @@ Keiyoushi, then LNReader, then lncrawl, and **per content type** (a comic extens
 `overrides.json` is applied last (`keep` / `skip` / `use`). lncrawl `rejected` domains are dropped. Same site name on a
 different TLD is published with `needsReview: true` and listed in `dist/dedupe-review.md`. `dist/report.md` has the counts
 and the skipped list.
+
+Legacy Paperback entries use `package: "js"` and `origin: "paperback"`. The catalog points to a
+compiled bridge wrapper and uses `upstreamUrl` and `upstreamSha256` for the original bundle.

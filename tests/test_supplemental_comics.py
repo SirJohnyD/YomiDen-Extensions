@@ -1,7 +1,7 @@
 import unittest
 from unittest.mock import patch
 
-from tools.aggregate import COMIC_REPOS, add_comic_repos, build_comic_repo
+from tools.aggregate import COMIC_REPOS, add_comic_repos, add_paperback, add_shosetsu_repos, build_comic_repo
 
 
 class SupplementalComicTests(unittest.TestCase):
@@ -52,3 +52,23 @@ class SupplementalComicTests(unittest.TestCase):
         self.assertEqual(upstreams["kavita"]["published"], 1)
         self.assertEqual(len(skipped), 3)
         self.assertEqual(len(notes), 1)
+
+
+    def test_paperback_does_not_shadow_current_comic_sources(self):
+        candidate = {"contentType": "comic", "lang": "ar", "sites": ["manga.ae"]}
+        apk = {"contentType": "comic", "lang": "en", "sites": [],
+               "sources": [{"homeUrl": "https://manga.ae", "lang": "all"}]}
+        novel = {"contentType": "novel", "lang": "ar", "sites": ["manga.ae"]}
+        self.assertEqual(add_paperback([novel], [candidate]), [candidate])
+        self.assertEqual(add_paperback([apk], [candidate]), [])
+
+    def test_universe_keeps_snapshot_from_previous_key_if_index_is_down(self):
+        root = "https://gitlab.com/shosetsuorg/extensions/-/raw/dev/"
+        saved = {"id": "shosetsu-123", "name": "Example", "lang": "en", "shosetsu": {"root": root}}
+        previous = {"upstreams": {"shosetsu-official": {"count": 1}}, "extensions": [saved]}
+        with patch.dict("tools.aggregate.SHOSETSU_REPOS", {"shosetsu-universe": root}, clear=True):
+            with patch("tools.aggregate.fetch_json", side_effect=RuntimeError("unavailable")):
+                entries, upstreams, notes = add_shosetsu_repos([], previous, False)
+        self.assertEqual(entries, [saved])
+        self.assertEqual(upstreams["shosetsu-universe"]["published"], 1)
+        self.assertTrue(notes)

@@ -13,6 +13,7 @@ import hashlib
 import json
 import os
 import re
+import subprocess
 import sys
 import time
 import urllib.error
@@ -50,13 +51,17 @@ COMIC_REPOS = {
 }
 
 SHOSETSU_REPOS = {
-    "shosetsu-official": "https://gitlab.com/shosetsuorg/extensions/-/raw/dev/",
-    "shosetsu-universe": "https://repo.shosetsu.app/universe/",
+    "shosetsu-universe": "https://gitlab.com/shosetsuorg/extensions/-/raw/dev/",
     "shosetsu-noaione": "https://raw.githubusercontent.com/noaione/shosetsu-extensions/master/",
     "shosetsu-jobobby": "https://jobobby04.github.io/ShosetsuExtensions/master/",
     "shosetsu-suhan": "https://raw.githubusercontent.com/suhan-paradkar/ShosetsuExtensions/master/",
     "shosetsu-lazy": "https://raw.githubusercontent.com/capthehacker99/ShosetLazyExtensions/master/",
 }
+
+# Legacy Paperback bundles must pass the app's QuickJS bridge before being added here.
+PAPERBACK_REPO = "xOnlyFadi/xonlyfadi-extensions"
+PAPERBACK_BUILD = "977e6092959fc671c92ff7dde9180e4fa5a804da"
+PAPERBACK_SOURCES = {"AEManga": "ar"}
 
 LNR_LANG = {
     "English": "en", "Русский": "ru", "العربية": "ar", "Español": "es", "Français": "fr", "Türkçe": "tr",
@@ -346,7 +351,10 @@ def add_shosetsu_repos(existing, previous, offline):
             state = {"url": url, "commit": None, "etag": etag, "count": len(index["scripts"]), "published": 0}
             return key, candidates, state, None
         except (RuntimeError, ValueError, KeyError, TypeError) as error:
-            state = previous.get("upstreams", {}).get(key, {})
+            previous_upstreams = previous.get("upstreams", {})
+            state = previous_upstreams.get(key, {})
+            if key == "shosetsu-universe" and not state:
+                state = previous_upstreams.get("shosetsu-official", {})
             candidates = [e for e in previous.get("extensions", [])
                           if e.get("shosetsu", {}).get("root") == root]
             return key, candidates, {**state, "published": 0} if state else None, f"{key}: {error}"
@@ -373,6 +381,52 @@ def add_shosetsu_repos(existing, previous, offline):
                 names.add(entry_name)
                 state["published"] += 1
     return entries, upstreams, notes
+
+
+def prepare_paperback(offline):
+    """Convert the pinned legacy bundles before CI snapshots plugins for publication."""
+    root = raw_github_url(PAPERBACK_REPO, PAPERBACK_BUILD, "0.6/")
+    index, etag = fetch_json(root + "versioning.json", f"paperback-{PAPERBACK_BUILD}.json", offline)
+    entries = []
+    for entry in index["sources"]:
+        source_id = entry["id"]
+        if source_id not in PAPERBACK_SOURCES:
+            continue
+        upstream_url = f"{root}{source_id}/source.js"
+        cache = os.path.join(CACHE, "paperback", PAPERBACK_BUILD, source_id + ".js")
+        index_path = os.path.join(CACHE, "upstream", f"paperback-{PAPERBACK_BUILD}.json")
+        if not os.path.isfile(cache):
+            bundle, _ = http_get(upstream_url)
+            write_bytes_if_changed(cache, bundle)
+        converter = os.path.join(ROOT, "tools", "lncrawl-gen", "prepare-paperback.mjs")
+        code = subprocess.check_output(["node", converter, index_path, cache, source_id])
+        plugin_id = "paperback-" + source_id
+        path = f"plugins/paperback/{plugin_id}.js"
+        write_bytes_if_changed(os.path.join(ROOT, path), code)
+        entries.append({
+            "id": plugin_id, "name": entry["name"], "lang": PAPERBACK_SOURCES[source_id],
+            "contentType": "comic", "nsfw": entry.get("contentRating") != "EVERYONE",
+            "origin": "paperback", "package": "js", "version": entry["version"] + "-ydn.1",
+            "versionCode": None, "url": PUBLIC_BASE + path, "sha256": hashlib.sha256(code).hexdigest(),
+            "iconUrl": f'{root}{source_id}/includes/{entry["icon"]}',
+            "sites": [domain_of(entry["websiteBaseURL"])], "signer": None, "sources": [],
+            "needsReview": False, "upstreamUrl": upstream_url,
+            "upstreamSha256": hashlib.sha256(read_bytes(cache)).hexdigest(),
+        })
+    upstream = {"url": root + "versioning.json", "commit": PAPERBACK_BUILD, "etag": etag,
+                "count": len(index["sources"]), "published": 0}
+    return entries, upstream
+
+
+def add_paperback(existing, candidates):
+    covered = set()
+    for entry in existing:
+        if entry["contentType"] != "comic":
+            continue
+        covered.update((site, entry["lang"]) for site in entry["sites"])
+        covered.update((domain_of(source["homeUrl"]), source["lang"]) for source in entry.get("sources", []))
+    return [entry for entry in candidates
+            if not any((site, entry["lang"]) in covered or (site, "all") in covered for site in entry["sites"])]
 
 
 def build_lnreader(plugins):
@@ -649,7 +703,7 @@ def dedupe(kei, lnr, lnc, overrides, rejected_domains):
 def render_report(catalog, skipped, review, notes, extras):
     c = Counter((e["origin"], e["contentType"]) for e in catalog["extensions"])
     lines = ["# YDN catalog report", "", "Generated at %s" % catalog["generatedAt"], "", "## Published", "", "| origin | comic | novel | total |", "|---|---|---|---|"]
-    for o in ("keiyoushi", "lnreader", "lncrawl", *COMIC_REPOS, "shosetsu"):
+    for o in ("keiyoushi", "lnreader", "lncrawl", *COMIC_REPOS, "shosetsu", "paperback"):
         lines.append("| %s | %d | %d | %d |" % (o, c[(o, "comic")], c[(o, "novel")], c[(o, "comic")] + c[(o, "novel")]))
     lines.append("| **all** | %d | %d | %d |" % (sum(v for (o, t), v in c.items() if t == "comic"), sum(v for (o, t), v in c.items() if t == "novel"), len(catalog["extensions"])))
     lines += ["", "Flagged `needsReview`: %d (see dedupe-review.md)" % len(review), ""]
@@ -731,6 +785,13 @@ def main():
         log("%d keiyoushi APK(s) have unverified SHA-256 metadata; it was omitted" % unverified_checksums)
     lnr, unknown_lang, failed = build_lnreader(lnr_idx)
     lnr, patch_reviews = vendor_lnreader(lnr, lnr_idx, lnr_commit)
+    try:
+        paperback_candidates, paperback_upstream = prepare_paperback(offline)
+        paperback_error = None
+    except (RuntimeError, OSError, ValueError, subprocess.CalledProcessError) as error:
+        paperback_candidates, paperback_upstream = [], None
+        paperback_error = f"Paperback snapshot unavailable: {error}"
+        log(paperback_error)
     own = build_own()
     if any(o["id"] in {e["id"] for e in lnr} for o in own):
         raise SystemExit("plugins/own ids must not collide with LNReader plugin ids")
@@ -765,7 +826,14 @@ def main():
     lua, lua_upstreams, lua_notes = add_shosetsu_repos(existing + added, previous, offline)
     upstreams.update(lua_upstreams)
     notes.extend(lua_notes)
-    extensions = sorted(existing + added + lua, key=lambda e: (e["origin"], e["id"]))
+    if paperback_error:
+        notes.append(paperback_error)
+        paperback_upstream = previous.get("upstreams", {}).get("paperback")
+        paperback_candidates = [e for e in previous.get("extensions", []) if e["origin"] == "paperback"]
+    paperback = add_paperback(existing + added, paperback_candidates)
+    if paperback_upstream:
+        upstreams["paperback"] = {**paperback_upstream, "published": len(paperback)}
+    extensions = sorted(existing + added + lua + paperback, key=lambda e: (e["origin"], e["id"]))
     ids = [e["id"] for e in extensions]
     dup = [i for i, n in Counter(ids).items() if n > 1]
     if dup:

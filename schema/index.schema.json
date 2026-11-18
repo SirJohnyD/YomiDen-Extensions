@@ -27,7 +27,8 @@
         "shosetsu-noaione": { "$ref": "#/$defs/upstream" },
         "shosetsu-jobobby": { "$ref": "#/$defs/upstream" },
         "shosetsu-suhan": { "$ref": "#/$defs/upstream" },
-        "shosetsu-lazy": { "$ref": "#/$defs/upstream" }
+        "shosetsu-lazy": { "$ref": "#/$defs/upstream" },
+        "paperback": { "$ref": "#/$defs/upstream" }
       }
     },
     "extensions": { "type": "array", "items": { "$ref": "#/$defs/extension" } }
@@ -66,7 +67,7 @@
         "lang": { "type": "string" },
         "contentType": { "enum": ["comic", "novel"] },
         "nsfw": { "type": "boolean" },
-        "origin": { "enum": ["keiyoushi", "lnreader", "lncrawl", "littlesurvival", "kavita", "suwayomi", "cursed-manga", "felipegfa", "shosetsu"] },
+        "origin": { "enum": ["keiyoushi", "lnreader", "lncrawl", "littlesurvival", "kavita", "suwayomi", "cursed-manga", "felipegfa", "shosetsu", "paperback"] },
         "package": { "enum": ["apk", "js", "lua"] },
         "version": { "type": "string" },
         "versionCode": { "type": ["integer", "null"] },
@@ -107,7 +108,7 @@
         },
         {
           "if": { "properties": { "package": { "const": "js" } } },
-          "then": { "properties": { "origin": { "enum": ["lnreader", "lncrawl"] }, "versionCode": { "type": "null" }, "signer": { "type": "null" }, "sha256": { "type": "string" }, "sources": { "maxItems": 0 } } }
+          "then": { "properties": { "origin": { "enum": ["lnreader", "lncrawl", "paperback"] }, "versionCode": { "type": "null" }, "signer": { "type": "null" }, "sha256": { "type": "string" }, "sources": { "maxItems": 0 } } }
         },
         {
           "if": { "properties": { "package": { "const": "lua" } } },
