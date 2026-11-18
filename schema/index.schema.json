@@ -21,7 +21,13 @@
         "kavita": { "$ref": "#/$defs/upstream" },
         "suwayomi": { "$ref": "#/$defs/upstream" },
         "cursed-manga": { "$ref": "#/$defs/upstream" },
-        "felipegfa": { "$ref": "#/$defs/upstream" }
+        "felipegfa": { "$ref": "#/$defs/upstream" },
+        "shosetsu-official": { "$ref": "#/$defs/upstream" },
+        "shosetsu-universe": { "$ref": "#/$defs/upstream" },
+        "shosetsu-noaione": { "$ref": "#/$defs/upstream" },
+        "shosetsu-jobobby": { "$ref": "#/$defs/upstream" },
+        "shosetsu-suhan": { "$ref": "#/$defs/upstream" },
+        "shosetsu-lazy": { "$ref": "#/$defs/upstream" }
       }
     },
     "extensions": { "type": "array", "items": { "$ref": "#/$defs/extension" } }
@@ -60,8 +66,8 @@
         "lang": { "type": "string" },
         "contentType": { "enum": ["comic", "novel"] },
         "nsfw": { "type": "boolean" },
-        "origin": { "enum": ["keiyoushi", "lnreader", "lncrawl", "littlesurvival", "kavita", "suwayomi", "cursed-manga", "felipegfa"] },
-        "package": { "enum": ["apk", "js"] },
+        "origin": { "enum": ["keiyoushi", "lnreader", "lncrawl", "littlesurvival", "kavita", "suwayomi", "cursed-manga", "felipegfa", "shosetsu"] },
+        "package": { "enum": ["apk", "js", "lua"] },
         "version": { "type": "string" },
         "versionCode": { "type": ["integer", "null"] },
         "url": { "type": "string", "format": "uri" },
@@ -71,6 +77,15 @@
         "signer": { "type": ["string", "null"], "pattern": "^[0-9a-f]{64}$" },
         "sources": { "type": "array", "items": { "$ref": "#/$defs/source" } },
         "needsReview": { "type": "boolean" },
+        "shosetsu": {
+          "type": "object",
+          "required": ["root", "libraries"],
+          "additionalProperties": false,
+          "properties": {
+            "root": { "type": "string", "format": "uri" },
+            "libraries": { "type": "array", "items": { "type": "string" } }
+          }
+        },
         "upstreamUrl": { "type": "string", "format": "uri" },
         "upstreamSha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
         "upstream": {
@@ -88,8 +103,18 @@
       "allOf": [
         {
           "if": { "properties": { "package": { "const": "apk" } } },
-          "then": { "properties": { "contentType": { "const": "comic" }, "versionCode": { "type": "integer" }, "signer": { "type": "string" }, "origin": { "enum": ["keiyoushi", "littlesurvival", "kavita", "suwayomi", "cursed-manga", "felipegfa"] } } },
-          "else": { "properties": { "origin": { "enum": ["lnreader", "lncrawl"] }, "versionCode": { "type": "null" }, "signer": { "type": "null" }, "sha256": { "type": "string" }, "sources": { "maxItems": 0 } } }
+          "then": { "properties": { "contentType": { "const": "comic" }, "versionCode": { "type": "integer" }, "signer": { "type": "string" }, "origin": { "enum": ["keiyoushi", "littlesurvival", "kavita", "suwayomi", "cursed-manga", "felipegfa"] } } }
+        },
+        {
+          "if": { "properties": { "package": { "const": "js" } } },
+          "then": { "properties": { "origin": { "enum": ["lnreader", "lncrawl"] }, "versionCode": { "type": "null" }, "signer": { "type": "null" }, "sha256": { "type": "string" }, "sources": { "maxItems": 0 } } }
+        },
+        {
+          "if": { "properties": { "package": { "const": "lua" } } },
+          "then": {
+            "required": ["shosetsu"],
+            "properties": { "origin": { "const": "shosetsu" }, "contentType": { "const": "novel" }, "versionCode": { "type": "null" }, "signer": { "type": "null" }, "sources": { "maxItems": 0 } }
+          }
         },
         {
           "if": { "properties": { "origin": { "const": "lncrawl" } } },

@@ -49,6 +49,15 @@ COMIC_REPOS = {
                   "9bf5754a79fd686cb77e6335a2a9e5351ad73ca824c27b09e7b3437f806fea77"),
 }
 
+SHOSETSU_REPOS = {
+    "shosetsu-official": "https://gitlab.com/shosetsuorg/extensions/-/raw/dev/",
+    "shosetsu-universe": "https://repo.shosetsu.app/universe/",
+    "shosetsu-noaione": "https://raw.githubusercontent.com/noaione/shosetsu-extensions/master/",
+    "shosetsu-jobobby": "https://jobobby04.github.io/ShosetsuExtensions/master/",
+    "shosetsu-suhan": "https://raw.githubusercontent.com/suhan-paradkar/ShosetsuExtensions/master/",
+    "shosetsu-lazy": "https://raw.githubusercontent.com/capthehacker99/ShosetLazyExtensions/master/",
+}
+
 LNR_LANG = {
     "English": "en", "Русский": "ru", "العربية": "ar", "Español": "es", "Français": "fr", "Türkçe": "tr",
     "Português": "pt", "Bahasa Indonesia": "id", "中文, 汉语, 漢語": "zh", "Tiếng Việt": "vi", "日本語": "ja",
@@ -302,6 +311,68 @@ def add_comic_repos(existing, previous, offline):
             sites.update(entry_sites)
             upstreams[origin]["published"] += 1
     return added, upstreams, skipped, notes
+
+
+def build_shosetsu(index, root):
+    libraries = sorted({lib["name"] for lib in index.get("libraries", [])
+                        if re.fullmatch(r"[A-Za-z0-9_-]+", lib["name"])})
+    entries = []
+    for script in index["scripts"]:
+        lang, file_name = script["lang"], script["fileName"]
+        if (script.get("type", "LuaScript") != "LuaScript"
+                or not re.fullmatch(r"[A-Za-z0-9-]+", lang)
+                or not re.fullmatch(r"[A-Za-z0-9_-]+", file_name)):
+            continue
+        digest = script.get("md5") or ""
+        entries.append({
+            "id": f'shosetsu-{int(script["id"])}', "name": script["name"], "lang": lang,
+            "contentType": "novel", "nsfw": True, "origin": "shosetsu", "package": "lua",
+            "version": script["ver"], "versionCode": None,
+            "url": root + f"src/{lang}/{file_name}.lua",
+            "sha256": digest.lower() if re.fullmatch(r"[0-9a-fA-F]{64}", digest) else None,
+            "iconUrl": script.get("imageURL") or "", "sites": [], "signer": None, "sources": [],
+            "needsReview": False, "shosetsu": {"root": root, "libraries": libraries},
+        })
+    return entries
+
+
+def add_shosetsu_repos(existing, previous, offline):
+    def load_repo(item):
+        key, root = item
+        url = root + "index.json"
+        try:
+            index, etag = fetch_json(url, f"{key}-index.json", offline)
+            candidates = build_shosetsu(index, root)
+            state = {"url": url, "commit": None, "etag": etag, "count": len(index["scripts"]), "published": 0}
+            return key, candidates, state, None
+        except (RuntimeError, ValueError, KeyError, TypeError) as error:
+            state = previous.get("upstreams", {}).get(key, {})
+            candidates = [e for e in previous.get("extensions", [])
+                          if e.get("shosetsu", {}).get("root") == root]
+            return key, candidates, {**state, "published": 0} if state else None, f"{key}: {error}"
+
+    def by_name(entry):
+        return re.sub(r"[^\w]+", "", entry["name"].casefold()), entry["lang"]
+
+    ids = {e["id"] for e in existing}
+    names = {by_name(e) for e in existing if e["contentType"] == "novel"}
+    entries, upstreams, notes = [], {}, []
+    with cf.ThreadPoolExecutor(len(SHOSETSU_REPOS)) as pool:
+        for key, candidates, state, note in pool.map(load_repo, SHOSETSU_REPOS.items()):
+            if note:
+                notes.append(note)
+            if state is None:
+                continue
+            upstreams[key] = state
+            for entry in candidates:
+                entry_name = by_name(entry)
+                if entry["id"] in ids or entry_name in names:
+                    continue
+                entries.append(entry)
+                ids.add(entry["id"])
+                names.add(entry_name)
+                state["published"] += 1
+    return entries, upstreams, notes
 
 
 def build_lnreader(plugins):
@@ -578,7 +649,7 @@ def dedupe(kei, lnr, lnc, overrides, rejected_domains):
 def render_report(catalog, skipped, review, notes, extras):
     c = Counter((e["origin"], e["contentType"]) for e in catalog["extensions"])
     lines = ["# YDN catalog report", "", "Generated at %s" % catalog["generatedAt"], "", "## Published", "", "| origin | comic | novel | total |", "|---|---|---|---|"]
-    for o in ("keiyoushi", "lnreader", "lncrawl", *COMIC_REPOS):
+    for o in ("keiyoushi", "lnreader", "lncrawl", *COMIC_REPOS, "shosetsu"):
         lines.append("| %s | %d | %d | %d |" % (o, c[(o, "comic")], c[(o, "novel")], c[(o, "comic")] + c[(o, "novel")]))
     lines.append("| **all** | %d | %d | %d |" % (sum(v for (o, t), v in c.items() if t == "comic"), sum(v for (o, t), v in c.items() if t == "novel"), len(catalog["extensions"])))
     lines += ["", "Flagged `needsReview`: %d (see dedupe-review.md)" % len(review), ""]
@@ -691,7 +762,10 @@ def main():
     added, upstreams, comic_skips, comic_notes = add_comic_repos(existing, previous, offline)
     skipped.extend(comic_skips)
     notes.extend(comic_notes)
-    extensions = sorted(existing + added, key=lambda e: (e["origin"], e["id"]))
+    lua, lua_upstreams, lua_notes = add_shosetsu_repos(existing + added, previous, offline)
+    upstreams.update(lua_upstreams)
+    notes.extend(lua_notes)
+    extensions = sorted(existing + added + lua, key=lambda e: (e["origin"], e["id"]))
     ids = [e["id"] for e in extensions]
     dup = [i for i, n in Counter(ids).items() if n > 1]
     if dup:

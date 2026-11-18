@@ -12,7 +12,7 @@ may appear without a bump, so consumers must ignore unknown keys.
 | `schemaVersion` | int | `1` |
 | `name` | string | Display name of the repo (`YomiDen Extensions (YDN)`) |
 | `generatedAt` | ISO-8601 UTC | Only changes when the catalog content changes |
-| `upstreams` | object | `keiyoushi`, `lnreader`, `lncrawl` and supplemental comic repositories, each `{url, commit, etag, count, published}`; `lncrawl` also has `generated`. `count` = entries upstream, `published` = entries that survived de-dup. `commit` is null when it could not be resolved |
+| `upstreams` | object | `keiyoushi`, `lnreader`, `lncrawl` and supplemental comic and Shosetsu repositories, each `{url, commit, etag, count, published}`; `lncrawl` also has `generated`. `count` = entries upstream, `published` = entries that survived de-dup. `commit` is null when it could not be resolved |
 | `extensions` | array | Sorted by `origin`, then `id` |
 
 ## Extension entry
@@ -25,7 +25,7 @@ may appear without a bump, so consumers must ignore unknown keys.
 | `contentType` | `"comic"` \| `"novel"` | APK = comic, LNReader = novel, lncrawl = either |
 | `nsfw` | bool | APK content warning; supplemental mixed content is also flagged |
 | `origin` | `"keiyoushi"` \| `"lnreader"` \| `"lncrawl"` or the supplemental repository key (`littlesurvival`, `kavita`, `suwayomi`, `cursed-manga`, `felipegfa`) | Attribution / debugging; shown only in extension details |
-| `package` | `"apk"` \| `"js"` | How to install |
+| `package` | `"apk"` \| `"js"` \| `"lua"` | How to install |
 | `version` | string | APK: `versionName`. JS: upstream version; lncrawl: `<generatorRev>.0.<upstream crawler epoch>` (monotonic) |
 | `versionCode` | int \| null | APK only |
 | `url` | string | Download URL. APK: the upstream APK URL (linked, not re-hosted). LNReader: raw URL of OUR copy (`plugins/vendor/lnreader/<id>.js`, or `plugins/patches/<id>.js` when patched). lncrawl: raw URL of the plugin in this repo (`.../plugins/<lang>/<id>.js`) |
@@ -34,6 +34,7 @@ may appear without a bump, so consumers must ignore unknown keys.
 | `sites` | string[] | Home domains, lower-case, `www.`/`m.` stripped. Used for de-dup and "also available as" |
 | `signer` | string \| null | APK: the upstream signing certificate SHA-256 fingerprint. JS: `null` |
 | `sources` | object[] | APK: `{id, name, lang, homeUrl}` per source (`id` is a string; 64-bit). JS: `[]` |
+| `shosetsu` | object | Lua only. `root` is the upstream repository base URL. `libraries` lists its library files by name. |
 | `upstreamUrl` | string | LNReader only: commit-pinned URL of the upstream file our copy came from |
 | `upstreamSha256` | string | LNReader only: sha256 of that upstream file. Equals `sha256` unless the plugin is patched (then `version` ends in `-ydn.N`) |
 | `needsReview` | bool | `true` = published, but a human has not yet decided whether it duplicates another site on a different TLD (see `dist/dedupe-review.md`) |

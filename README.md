@@ -7,6 +7,7 @@ The single extension catalog for the YomiDen app. It aggregates:
 | [Keiyoushi](https://github.com/keiyoushi/extensions) | Manga / manhwa / manhua (APK) | Linked to upstream downloads with SHA-256 + signer pin (signed APKs cannot be re-patched, so they are never re-hosted) |
 | [LittleSurvival](https://github.com/LittleSurvival/copymanga-copy20), [Kavita](https://github.com/Kareadita/tach-extension), [Suwayomi](https://github.com/Suwayomi/tachiyomi-extension), [Cursed Manga](https://github.com/mojuru/cursed-manga-repo), [FelipeGFA](https://github.com/FelipeGFA/extensoes) | Additional manga / manhwa / manhua (APK) | Linked to upstream downloads with each repository's own signer pin |
 | [LNReader plugins](https://github.com/LNReader/lnreader-plugins) | Novels (JS) | Vendored: our own copy in `plugins/vendor/lnreader/` (origin stays `lnreader`), with `upstreamUrl` / `upstreamSha256` |
+| Shosetsu | Novels (Lua) | Linked to upstream scripts and their repository libraries. Requires a YomiDen build with Shosetsu support. |
 | [Lightnovel Crawler](https://github.com/lncrawl/lightnovel-crawler) | Novels + comics | Converted into JS plugins hosted here (`plugins/`) |
 
 Duplicates are removed per content type with priority Keiyoushi → LNReader → lncrawl. Supplemental APKs are added after this step, skipping existing package names, overlapping source IDs, or entries whose
@@ -19,7 +20,7 @@ decisions live in `overrides.json`.
 |---|---|
 | Yūzōnō Tachiyomi | The live manga index only carries a migration entry pointing to Keiyoushi, which YDN already includes. |
 | Paperback | The supplied repo links to Paperback extensions built for its iOS runtime. Each source would need a port. |
-| Shosetsu (official, Universe, noaione, Jobobby04, suhan-paradkar, ShosetLazyExtensions) | These use Shosetsu's Lua runtime. Each missing source would need a port. The Universe index currently returns 404 at the supplied location. |
+| Shosetsu (official, Universe, noaione, Jobobby04, suhan-paradkar, ShosetLazyExtensions) | The catalog imports Lua sources from reachable feeds. The Universe index currently returns 404 at the supplied location. |
 | IReader and NovelSourcery | These use native novel extension APIs. YDN's novels use its JS runtime. Each missing source would need a port or corresponding app runtime. |
 | Yūzōnō Anime | The APKs implement Aniyomi's anime API. YDN supports comics and novels. |
 
