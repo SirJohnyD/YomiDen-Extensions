@@ -1,32 +1,32 @@
 # YDN catalog report
 
-Generated at 2026-11-18T20:31:44Z
+Generated at 2026-11-19T07:26:10Z
 
 ## Published
 
 | origin | comic | novel | total |
 |---|---|---|---|
-| keiyoushi | 1714 | 0 | 1714 |
+| keiyoushi | 1711 | 0 | 1711 |
 | lnreader | 1 | 373 | 374 |
 | lncrawl | 4 | 19 | 23 |
 | littlesurvival | 3 | 0 | 3 |
 | kavita | 1 | 0 | 1 |
 | suwayomi | 1 | 0 | 1 |
 | cursed-manga | 6 | 0 | 6 |
-| felipegfa | 93 | 0 | 93 |
+| felipegfa | 97 | 0 | 97 |
 | shosetsu | 0 | 98 | 98 |
 | paperback | 1 | 0 | 1 |
-| **all** | 1824 | 490 | 2314 |
+| **all** | 1825 | 490 | 2315 |
 
 Flagged `needsReview`: 4 (see dedupe-review.md)
 
 - lncrawl generated plugins: 46
 - lncrawl crawlers not ported (legacy/custom/dead/other templates): 400
 - template crawlers skipped by the generator: 82
-- NOTE: 1714 keiyoushi APK(s) had an unverified release-assets checksum (sha256 = null; signer verification remains)
+- NOTE: 1711 keiyoushi APK(s) had an unverified release-assets checksum (sha256 = null; signer verification remains)
 - NOTE: 1 patched LNReader plugin(s) changed upstream, see patch-review.md
 
-## Skipped by de-dup (1315)
+## Skipped by de-dup (1311)
 
 | origin | id | name | reason |
 |---|---|---|---|
@@ -205,7 +205,6 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | felipegfa | eu.kanade.tachiyomi.extension.ar.mangatuk | MangaTuk | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.ar.manhatok | Manhatok | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.ar.murim | Murim | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.ar.neverscans | NeverScans | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.ar.oduto | Oduto | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.ar.onma | Onma | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.ar.orcamanga | Orca Manga | package, source ID or site and language already covered |
@@ -603,7 +602,6 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | felipegfa | eu.kanade.tachiyomi.extension.es.dynasty | Dynasty | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.es.emperorscan | Emperor Scan | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.es.enchiladascan | EnchiladaScan | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.es.esmi2manga | Es.Mi2Manga | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.es.eternalmangas | EternalMangas | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.es.hadesnofansub | Hades no Fansub | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.es.heavenmanga | HeavenManga | package, source ID or site and language already covered |
@@ -677,7 +675,6 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | felipegfa | eu.kanade.tachiyomi.extension.fr.animesama | AnimeSama | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.fr.aralosbd | AralosBD | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.fr.astralmanga | Astral-Manga | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.fr.bananascan | Harmony-Scan | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.fr.banchanscan | Banchan Scan | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.fr.bigsolo | BigSolo | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.fr.blossomscans | Blossom Scans | package, source ID or site and language already covered |
@@ -783,7 +780,6 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | felipegfa | eu.kanade.tachiyomi.extension.id.ngamenkomik | NgamenKomik | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.id.ngomik | Ngomik (unoriginal) | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.id.noromax | Noromax | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.id.okyykomik | OkyyKomik | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.id.omicaso | Omicaso | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.id.otascans | Ota Scans | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.id.pixhentai | Pix Hentai | package, source ID or site and language already covered |
