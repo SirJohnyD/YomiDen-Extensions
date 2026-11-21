@@ -1,32 +1,32 @@
 # YDN catalog report
 
-Generated at 2026-11-21T07:07:47Z
+Generated at 2026-11-21T19:15:38Z
 
 ## Published
 
 | origin | comic | novel | total |
 |---|---|---|---|
-| keiyoushi | 1716 | 0 | 1716 |
+| keiyoushi | 1711 | 0 | 1711 |
 | lnreader | 1 | 373 | 374 |
 | lncrawl | 4 | 19 | 23 |
 | littlesurvival | 3 | 0 | 3 |
 | kavita | 1 | 0 | 1 |
 | suwayomi | 1 | 0 | 1 |
 | cursed-manga | 6 | 0 | 6 |
-| felipegfa | 97 | 0 | 97 |
+| felipegfa | 104 | 0 | 104 |
 | shosetsu | 0 | 98 | 98 |
 | paperback | 1 | 0 | 1 |
-| **all** | 1830 | 490 | 2320 |
+| **all** | 1832 | 490 | 2322 |
 
 Flagged `needsReview`: 4 (see dedupe-review.md)
 
 - lncrawl generated plugins: 46
 - lncrawl crawlers not ported (legacy/custom/dead/other templates): 400
 - template crawlers skipped by the generator: 82
-- NOTE: 1716 keiyoushi APK(s) had an unverified release-assets checksum (sha256 = null; signer verification remains)
+- NOTE: 1711 keiyoushi APK(s) had an unverified release-assets checksum (sha256 = null; signer verification remains)
 - NOTE: 1 patched LNReader plugin(s) changed upstream, see patch-review.md
 
-## Skipped by de-dup (1311)
+## Skipped by de-dup (1304)
 
 | origin | id | name | reason |
 |---|---|---|---|
@@ -309,7 +309,6 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | felipegfa | eu.kanade.tachiyomi.extension.en.guya | Guya | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.gwtb | Gone with the Blastwave | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.hachirumi | Hachirumi | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.en.hadesscans | Hades Scans | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.hentai4free | Hentai4Free | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.hentaihere | HentaiHere | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.hentaikisu | HentaiKisu | package, source ID or site and language already covered |
@@ -627,7 +626,6 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | felipegfa | eu.kanade.tachiyomi.extension.es.lolivault | Lolivault | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.es.mangacrab | Manga Crab | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.es.mangamx | MangaOni | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.es.mangaromance | Manga Romance | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.es.mangashiina | Manga Mukai | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.es.mangasin | Mangas.in | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.es.mangasnosekai | Mangas No Sekai | package, source ID or site and language already covered |
@@ -786,7 +784,6 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | felipegfa | eu.kanade.tachiyomi.extension.id.pornhwa18 | Pornhwa18 | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.id.pramramadhan | Pramramadhan | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.id.riztranslation | Riztranslation | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.id.roseveil | Roseveil | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.id.ryukomik | Ryukomik | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.id.sasangeyou | Sasangeyou | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.id.sektedoujin | Sekte Doujin | package, source ID or site and language already covered |
@@ -799,7 +796,6 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | felipegfa | eu.kanade.tachiyomi.extension.id.soulscans | Soul Scans | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.id.themanga | TheManga | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.id.tooncubus | Tooncubus | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.id.ulascomic | Ulas Comic | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.id.westmanga | West Manga | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.id.wurmz | Wurmz | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.id.yubikiri | Kaguya | package, source ID or site and language already covered |
@@ -998,7 +994,6 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | felipegfa | eu.kanade.tachiyomi.extension.pt.maidscan | Maid Scan | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.pt.mangadash | MangaDash | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.pt.mangaflix | Manga Flix | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.pt.mangalivre | ToonLivre | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.pt.mangalivreblog | Manga Livre Blog | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.pt.mangalivreto | Manga Livre.to | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.pt.manganyx | Manga NXY | package, source ID or site and language already covered |
@@ -1026,7 +1021,6 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | felipegfa | eu.kanade.tachiyomi.extension.pt.plumacomics | Pluma Comics | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.pt.pointzerotoons | Point Zero Toons | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.pt.portalyaoi | Portal Yaoi | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.pt.randomscan | Lura Toon | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.pt.remangas | NoxManga | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.pt.revistasequadrinhos | Revistas e Quadrinhos | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.pt.rfdragonscan | RF Dragon Scan | package, source ID or site and language already covered |
@@ -1254,7 +1248,6 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | felipegfa | eu.kanade.tachiyomi.extension.vi.truyentvn | TruyenTVN | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.vi.tuitruyen | TuiTruyen | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.vi.tusachxinhxinh | TuSachXinhXinh | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.vi.umetruyen | UmeTruyen | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.vi.vihentai | ViHentai | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.vi.vinahentai | VinaHentai | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.vi.vitruyen | ViTruyen | package, source ID or site and language already covered |
