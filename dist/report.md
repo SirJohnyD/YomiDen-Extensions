@@ -1,32 +1,32 @@
 # YDN catalog report
 
-Generated at 2026-11-22T06:47:48Z
+Generated at 2026-11-22T19:40:15Z
 
 ## Published
 
 | origin | comic | novel | total |
 |---|---|---|---|
-| keiyoushi | 1711 | 0 | 1711 |
+| keiyoushi | 1719 | 0 | 1719 |
 | lnreader | 1 | 373 | 374 |
 | lncrawl | 4 | 19 | 23 |
 | littlesurvival | 3 | 0 | 3 |
 | kavita | 1 | 0 | 1 |
 | suwayomi | 1 | 0 | 1 |
 | cursed-manga | 6 | 0 | 6 |
-| felipegfa | 104 | 0 | 104 |
+| felipegfa | 103 | 0 | 103 |
 | shosetsu | 0 | 98 | 98 |
 | paperback | 1 | 0 | 1 |
-| **all** | 1832 | 490 | 2322 |
+| **all** | 1839 | 490 | 2329 |
 
 Flagged `needsReview`: 4 (see dedupe-review.md)
 
 - lncrawl generated plugins: 46
 - lncrawl crawlers not ported (legacy/custom/dead/other templates): 400
 - template crawlers skipped by the generator: 82
-- NOTE: 1711 keiyoushi APK(s) had an unverified release-assets checksum (sha256 = null; signer verification remains)
+- NOTE: 1719 keiyoushi APK(s) had an unverified release-assets checksum (sha256 = null; signer verification remains)
 - NOTE: 1 patched LNReader plugin(s) changed upstream, see patch-review.md
 
-## Skipped by de-dup (1304)
+## Skipped by de-dup (1305)
 
 | origin | id | name | reason |
 |---|---|---|---|
@@ -994,6 +994,7 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | felipegfa | eu.kanade.tachiyomi.extension.pt.maidscan | Maid Scan | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.pt.mangadash | MangaDash | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.pt.mangaflix | Manga Flix | package, source ID or site and language already covered |
+| felipegfa | eu.kanade.tachiyomi.extension.pt.mangalivre | ToonLivre | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.pt.mangalivreblog | Manga Livre Blog | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.pt.mangalivreto | Manga Livre.to | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.pt.manganyx | Manga NXY | package, source ID or site and language already covered |
