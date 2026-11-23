@@ -1,13 +1,13 @@
 # YDN catalog report
 
-Generated at 2026-11-22T19:40:15Z
+Generated at 2026-11-23T07:38:30Z
 
 ## Published
 
 | origin | comic | novel | total |
 |---|---|---|---|
-| keiyoushi | 1719 | 0 | 1719 |
-| lnreader | 1 | 373 | 374 |
+| keiyoushi | 1727 | 0 | 1727 |
+| lnreader | 0 | 373 | 373 |
 | lncrawl | 4 | 19 | 23 |
 | littlesurvival | 3 | 0 | 3 |
 | kavita | 1 | 0 | 1 |
@@ -16,17 +16,17 @@ Generated at 2026-11-22T19:40:15Z
 | felipegfa | 103 | 0 | 103 |
 | shosetsu | 0 | 98 | 98 |
 | paperback | 1 | 0 | 1 |
-| **all** | 1839 | 490 | 2329 |
+| **all** | 1846 | 490 | 2336 |
 
 Flagged `needsReview`: 4 (see dedupe-review.md)
 
 - lncrawl generated plugins: 46
 - lncrawl crawlers not ported (legacy/custom/dead/other templates): 400
 - template crawlers skipped by the generator: 82
-- NOTE: 1719 keiyoushi APK(s) had an unverified release-assets checksum (sha256 = null; signer verification remains)
+- NOTE: 1727 keiyoushi APK(s) had an unverified release-assets checksum (sha256 = null; signer verification remains)
 - NOTE: 1 patched LNReader plugin(s) changed upstream, see patch-review.md
 
-## Skipped by de-dup (1305)
+## Skipped by de-dup (1306)
 
 | origin | id | name | reason |
 |---|---|---|---|
@@ -1335,3 +1335,4 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | lncrawl | lncrawl-webnovelover | Web Nove Lover | same domain as lnreader: WebNovelLover |
 | lncrawl | lncrawl-wuxiaworldsite | Wuxia World Site | same domain as lnreader: WuxiaWorld.Site |
 | lncrawl | lncrawl-zetrotranslation | Zetro Translation | same domain as lnreader: Zetro Translation |
+| lnreader | noveldex-comics | NovelDex Comics | same domain as keiyoushi: NovelDex |
