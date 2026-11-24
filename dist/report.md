@@ -1,36 +1,35 @@
 # YDN catalog report
 
-Generated at 2026-11-23T23:53:49Z
+Generated at 2026-11-24T09:54:11Z
 
 ## Published
 
 | origin | comic | novel | total |
 |---|---|---|---|
-| keiyoushi | 1727 | 0 | 1727 |
+| keiyoushi | 1706 | 0 | 1706 |
 | lnreader | 0 | 373 | 373 |
 | lncrawl | 4 | 19 | 23 |
 | littlesurvival | 3 | 0 | 3 |
 | kavita | 1 | 0 | 1 |
 | suwayomi | 1 | 0 | 1 |
 | cursed-manga | 6 | 0 | 6 |
-| felipegfa | 103 | 0 | 103 |
+| felipegfa | 128 | 0 | 128 |
 | shosetsu | 0 | 98 | 98 |
 | paperback | 1 | 0 | 1 |
-| **all** | 1846 | 490 | 2336 |
+| **all** | 1850 | 490 | 2340 |
 
 Flagged `needsReview`: 4 (see dedupe-review.md)
 
 - lncrawl generated plugins: 46
 - lncrawl crawlers not ported (legacy/custom/dead/other templates): 400
 - template crawlers skipped by the generator: 82
-- NOTE: 1727 keiyoushi APK(s) had an unverified release-assets checksum (sha256 = null; signer verification remains)
+- NOTE: 1706 keiyoushi APK(s) had an unverified release-assets checksum (sha256 = null; signer verification remains)
 - NOTE: 1 patched LNReader plugin(s) changed upstream, see patch-review.md
 
-## Skipped by de-dup (1306)
+## Skipped by de-dup (1281)
 
 | origin | id | name | reason |
 |---|---|---|---|
-| felipegfa | eu.kanade.tachiyomi.extension.all.ahottie | AHottie | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.all.akuma | Akuma | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.all.allporncomicsco | AllPornComics.co | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.all.asmhentai | AsmHentai | package, source ID or site and language already covered |
@@ -40,7 +39,6 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | felipegfa | eu.kanade.tachiyomi.extension.all.comicgrowl | Comic Growl | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.all.comicklive | Comick (Unoriginal) | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.all.comicskingdom | ComicsKingdom | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.all.comicsvalley | Comics Valley | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.all.comikey | Comikey | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.all.commitstrip | Commit Strip | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.all.coomer | Coomer | package, source ID or site and language already covered |
@@ -181,7 +179,6 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | felipegfa | eu.kanade.tachiyomi.extension.ar.eshadow | EShadow | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.ar.goonscans | Goon Scans | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.ar.hentailek | Hentai Lek | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.ar.hentaiman | HentaiMan | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.ar.hentaislayer | Hentai Slayer | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.ar.hijala | Hijala | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.ar.hizomanga | HizoManga | package, source ID or site and language already covered |
@@ -260,7 +257,6 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | felipegfa | eu.kanade.tachiyomi.extension.en.colorizedmangas | Colorized Mangas | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.comicasura | Comic Asura | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.comichubfree | ComicHubFree | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.en.comickfan | ComicK Fanmade | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.comicland | ComicLand | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.comix | Comix | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.coolmic | Coolmic | package, source ID or site and language already covered |
@@ -299,7 +295,6 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | felipegfa | eu.kanade.tachiyomi.extension.en.gakamangas | GakaMangas | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.galaxydegenscans | GalaxyDegenScans | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.gedecomix | GEDE Comix | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.en.gingertoon | GingeRTooN | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.girlstop | GirlsTop | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.goda | Goda | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.gourmetscans | Gourmet Scans | package, source ID or site and language already covered |
@@ -316,7 +311,6 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | felipegfa | eu.kanade.tachiyomi.extension.en.hentainexus | HentaiNexus | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.hentairead | HentaiRead | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.hentaireadio | HentaiRead.io | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.en.hentaisco | HentaiSco | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.hentaixcomic | HentaiXComic | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.hentaixdickgirl | HentaiXDickgirl | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.hentaixyuri | HentaiXYuri | package, source ID or site and language already covered |
@@ -389,7 +383,6 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | felipegfa | eu.kanade.tachiyomi.extension.en.mangafree | Mangafree | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.mangagg | MangaGG | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.mangago | Mangago | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.en.mangahe | MangaHe | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.mangahen | Gensura | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.mangahere | Mangahere | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.mangahereonl | MangaHere.onl | package, source ID or site and language already covered |
@@ -425,14 +418,12 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | felipegfa | eu.kanade.tachiyomi.extension.en.manhuaplusorg | ManhuaPlus (Unoriginal) | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.manhuatop | ManhuaTop | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.manhuaus | ManhuaUS | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.en.manhuazonghe | Manhua Zonghe | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.manhwa18 | Manhwa18 | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.manhwa68 | Manhwa68 | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.manhwabuddy | ManhwaBuddy | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.manhwacomics | Manhwa Comics | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.manhwaden | ManhwaDen | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.manhwalike | Manhwalike | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.en.manhwamanhua | ManhwaManhua | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.manhwanex | ManhwaNex | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.manhwaread | ManhwaRead | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.manhwareads | Manhwa Reads | package, source ID or site and language already covered |
@@ -455,7 +446,6 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | felipegfa | eu.kanade.tachiyomi.extension.en.myadultcomics | MyAdultComics | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.myhentaicomics | MyHentaiComics | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.myhentaigallery | MyHentaiGallery | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.en.newmanhwa | New Manhwa | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.nexcomic | NexComic | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.ninehentai | NineHentai | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.nuviatoon | Nuvia Toon | package, source ID or site and language already covered |
@@ -539,7 +529,6 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | felipegfa | eu.kanade.tachiyomi.extension.en.thepropertyofhate | The Property of Hate | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.thunderscans | Thunder Scans | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.timelesstoons | TimelessToons | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.en.todaymanga | TodayManga | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.toongod | ToonGod | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.toonily | Toonily | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.en.toonilyme | Toonily.me | package, source ID or site and language already covered |
@@ -687,11 +676,9 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | felipegfa | eu.kanade.tachiyomi.extension.fr.hentaiscanreader | Hentai Scan Reader | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.fr.hentaiscantrad | Hentai-Scantrad | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.fr.hentaizone | HentaiZone | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.fr.histoiredhentai | HistoireDHentai | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.fr.japscan | Japscan | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.fr.lanortrad | LanorTrad | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.fr.lelmanga | Lelmanga | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.fr.lelscan | Lelscan | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.fr.lelscanvf | Lelscan-VF | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.fr.lesporoiniens | Les Poroiniens | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.fr.mangacorporation | Manga-Corporation | package, source ID or site and language already covered |
@@ -715,10 +702,8 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | felipegfa | eu.kanade.tachiyomi.extension.fr.softepsilonscan | Soft Epsilon Scan | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.fr.solarisscans | Solaris Scans | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.fr.sushiscan | Sushi-Scan | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.fr.sushiscanfr | Sushiscan.fr | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.fr.toonfr | Toon FR | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.fr.twatt | Twatt | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.fr.yaoiscan | YaoiScan | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.id.Luvyaa | Luvyaa | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.id.aarlas | Aarlas | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.id.ainzscansid | Ainz Scans ID | package, source ID or site and language already covered |
@@ -943,7 +928,6 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | felipegfa | eu.kanade.tachiyomi.extension.ko.toon11 | 11toon | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.ko.toonkor | Toonkor | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.ko.wolfdotcom | Wolf.com | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.pt.acervoeremita | AcervoEremita | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.pt.acervohentai | Acervo Hentai | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.pt.amuy | Amuy | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.pt.animexnovel | AnimeXNovel | package, source ID or site and language already covered |
@@ -953,7 +937,6 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | felipegfa | eu.kanade.tachiyomi.extension.pt.argosscan | Argos Scan | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.pt.arthurscan | Arthur Scan | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.pt.astratoons | Astratoons | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.pt.azuretoons | Azuretoons | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.pt.bakai | Bakai | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.pt.blackoutcomics | Blackout Comics | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.pt.bladetoons | Bladetoons | package, source ID or site and language already covered |
@@ -984,7 +967,6 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | felipegfa | eu.kanade.tachiyomi.extension.pt.imperiodabritannia | Sagrado Império da Britannia | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.pt.inkapk | Inkapk | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.pt.kamisamaexplorer | Kami Sama Explorer | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.pt.kivaratoons | KivaraToons | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.pt.kuromangas | KuroMangas | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.pt.leitordemangas | Leitor de Mangas | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.pt.leituramanga | Leitura Manga | package, source ID or site and language already covered |
@@ -1089,7 +1071,6 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | felipegfa | eu.kanade.tachiyomi.extension.th.finmanga | Fin Manga | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.th.goddoujin | God-Doujin | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.th.gomanga | Go Manga | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.th.makimaaaaa | Makimaaaaa | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.th.manga168 | Manga168 | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.th.mangaisekaithai | MangaIsekaiThai | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.th.mangakimi | MangaKimi | package, source ID or site and language already covered |
@@ -1196,13 +1177,10 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | felipegfa | eu.kanade.tachiyomi.extension.vi.doctruyen5s | DocTruyen5s | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.vi.dualeotruyen | Dua Leo Truyen | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.vi.fastscan | FastScan | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.vi.goctruyentranh | Goc Truyen Tranh | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.vi.goctruyentranhvui | Goc Truyen Tranh Vui | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.vi.hentaicube | CBHentai | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.vi.hentaivnplus | HentaiVN.plus | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.vi.hentaivnx | HentaiVNx | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.vi.hv2tcomics | Học Viện 2Ten | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.vi.khomanhwa | KhoManhwa | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.vi.kirakira | KiraKira | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.vi.loppytoon | LoppyToon | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.vi.luottruyen | LuotTruyen | package, source ID or site and language already covered |
@@ -1233,13 +1211,10 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | felipegfa | eu.kanade.tachiyomi.extension.vi.teamlanhlung | Team Lanh Lung | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.vi.teletruyen | TeleTruyen | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.vi.thienthaitruyen | ThienThaiTruyen | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.vi.thohamngu | Thỏ Ham Ngủ | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.vi.toptruyen | Top Truyen | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.vi.tranh18 | Tranh18 | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.vi.truyen18 | Truyen18 | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.vi.truyenggvn | TruyenGGVN | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.vi.truyenhentai18 | Truyen Hentai 18+ | package, source ID or site and language already covered |
-| felipegfa | eu.kanade.tachiyomi.extension.vi.truyenhentaivn | TruyenHentaivn | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.vi.truyenhentaiz | TruyenHentaiz | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.vi.truyenqq | TruyenQQ | package, source ID or site and language already covered |
 | felipegfa | eu.kanade.tachiyomi.extension.vi.truyenqqvn | TruyenQQ VN | package, source ID or site and language already covered |
