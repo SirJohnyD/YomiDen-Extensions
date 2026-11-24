@@ -1,6 +1,6 @@
 # YDN catalog report
 
-Generated at 2026-11-24T09:54:11Z
+Generated at 2026-11-24T22:26:49Z
 
 ## Published
 
@@ -8,7 +8,7 @@ Generated at 2026-11-24T09:54:11Z
 |---|---|---|---|
 | keiyoushi | 1706 | 0 | 1706 |
 | lnreader | 0 | 373 | 373 |
-| lncrawl | 4 | 19 | 23 |
+| lncrawl | 5 | 19 | 24 |
 | littlesurvival | 3 | 0 | 3 |
 | kavita | 1 | 0 | 1 |
 | suwayomi | 1 | 0 | 1 |
@@ -16,7 +16,7 @@ Generated at 2026-11-24T09:54:11Z
 | felipegfa | 128 | 0 | 128 |
 | shosetsu | 0 | 98 | 98 |
 | paperback | 1 | 0 | 1 |
-| **all** | 1850 | 490 | 2340 |
+| **all** | 1851 | 490 | 2341 |
 
 Flagged `needsReview`: 4 (see dedupe-review.md)
 
@@ -26,7 +26,7 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 - NOTE: 1706 keiyoushi APK(s) had an unverified release-assets checksum (sha256 = null; signer verification remains)
 - NOTE: 1 patched LNReader plugin(s) changed upstream, see patch-review.md
 
-## Skipped by de-dup (1281)
+## Skipped by de-dup (1280)
 
 | origin | id | name | reason |
 |---|---|---|---|
@@ -1288,7 +1288,6 @@ Flagged `needsReview`: 4 (see dedupe-review.md)
 | littlesurvival | eu.kanade.tachiyomi.extension.zh.hipmh | HipManga | package, source ID or site and language already covered |
 | littlesurvival | eu.kanade.tachiyomi.extension.zh.vomicmh | VomicMHPlus | package, source ID or site and language already covered |
 | lncrawl | lncrawl-allnovelfull | All Novel Full | same domain as lnreader: AllNovelFull |
-| lncrawl | lncrawl-aquamanga | Aqua Manga | same domain as keiyoushi: Aqua Manga |
 | lncrawl | lncrawl-centralnovel | Central Novel | same domain as lnreader: Central Novel |
 | lncrawl | lncrawl-coffeemanga | Coffee Manga | override skip: Dead |
 | lncrawl | lncrawl-duskblossoms | Dusk Blossoms | same domain as lnreader: Dusk Blossoms |
