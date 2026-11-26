@@ -1,13 +1,13 @@
 # YDN catalog report
 
-Generated at 2026-11-26T08:17:05Z
+Generated at 2026-11-26T21:31:45Z
 
 ## Published
 
 | origin | comic | novel | total |
 |---|---|---|---|
 | keiyoushi | 1708 | 0 | 1708 |
-| lnreader | 0 | 373 | 373 |
+| lnreader | 0 | 374 | 374 |
 | lncrawl | 5 | 19 | 24 |
 | littlesurvival | 3 | 0 | 3 |
 | kavita | 1 | 0 | 1 |
@@ -16,7 +16,7 @@ Generated at 2026-11-26T08:17:05Z
 | felipegfa | 128 | 0 | 128 |
 | shosetsu | 0 | 98 | 98 |
 | paperback | 1 | 0 | 1 |
-| **all** | 1853 | 490 | 2343 |
+| **all** | 1853 | 491 | 2344 |
 
 Flagged `needsReview`: 4 (see dedupe-review.md)
 
