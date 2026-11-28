@@ -1,5 +1,5 @@
 {
- "commit": "0c8c4a369cd2dfcf89bcc81bfa23c946af834b7a",
+ "commit": "8626aea9536d61da3f30bbe68b943317dfb4feb2",
  "plugins": {
   "1stkissnovel": {
    "upstreamSha256": "318f7530713825bc8861eab68d80432d96389880b70f5de653c0f65c3001c3a8",
@@ -157,9 +157,9 @@
    "version": "1.1.13"
   },
   "archiveofourown": {
-   "upstreamSha256": "26db5ea67e4ccf3efdfa448036570d85527c9283e45f2e09f251611c39112dd4",
+   "upstreamSha256": "d351562e4217cc065da60ce1095580ee930a008cdf7c93e956c3be3744530192",
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/ao3.js",
-   "version": "1.0.6"
+   "version": "1.1.0"
   },
   "arnovel": {
    "upstreamSha256": "286af47488c63ed68caec53bb9cd5ab8613ce5fb7dff63195d9d7fca0a8e9783",
@@ -1167,9 +1167,9 @@
    "version": "1.0.2"
   },
   "novelfire": {
-   "upstreamSha256": "78be0a58df434b41cb9e3399d2869ca5bb71bbd7b6f87f0177763d228f9d036e",
+   "upstreamSha256": "48588ec90c04a3a86f9173795da2dd7570885b28b09b2513acaba2be1fda4235",
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/NovelFire[novelfire].js",
-   "version": "1.4.7"
+   "version": "1.4.8"
   },
   "novelfrance": {
    "upstreamSha256": "b0461b2584f6b1be737bb960275328f929b96342094d5151e55b05805e8d8913",
@@ -1247,9 +1247,9 @@
    "version": "2.4.1"
   },
   "novelphoenix": {
-   "upstreamSha256": "08cf6fe74a60c2b8e13e76c73f7e4db7fcd4be92a90c9165e04770812e45c59c",
+   "upstreamSha256": "20beb5468b185f13739da8ac5d49fcc0b9fd4a577b896abf9ac5aede2e7fdb62",
    "upstreamUrl": "https://raw.githubusercontent.com/lnreader/lnreader-plugins/plugins/v3.0.0/.js/src/plugins/english/NovelPhoenix[novelfire].js",
-   "version": "1.0.4"
+   "version": "1.0.5"
   },
   "novelping": {
    "upstreamSha256": "689daa0e686622112b6bc2fb7d321cc39fbdfe15364e2b33456c952b54957b54",
